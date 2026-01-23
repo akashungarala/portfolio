@@ -22,12 +22,15 @@ export interface GitHubEvent {
       message: string;
       url: string;
     }>;
+    action?: string;
+    ref?: string;
+    ref_type?: string;
   };
   created_at: string;
 }
 
 /**
- * Fetches recent public commits from GitHub
+ * Fetches recent public activity from GitHub
  * Uses the Events API to get push events with commits
  */
 export async function getRecentCommits(limit = 5): Promise<GitHubCommit[]> {
@@ -38,19 +41,21 @@ export async function getRecentCommits(limit = 5): Promise<GitHubCommit[]> {
     };
 
     // Add auth token if available (increases rate limit from 60 to 5000 requests/hour)
-    if (process.env.GITHUB_TOKEN) {
-      headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    const token = process.env.GITHUB_TOKEN;
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
     }
 
     const response = await fetch(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}/events/public`, {
       headers,
       next: {
-        revalidate: 3600, // Cache for 1 hour (ISR)
+        revalidate: 1800, // Cache for 30 minutes (ISR)
       },
     });
 
     if (!response.ok) {
-      console.error(`GitHub API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`GitHub API error: ${response.status} ${response.statusText}`, errorText);
       return [];
     }
 

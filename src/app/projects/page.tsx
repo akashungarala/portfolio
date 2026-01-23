@@ -35,10 +35,10 @@ export default function ProjectsPage() {
   const personalProjects = projects.filter((p) => p.category === 'personal');
 
   return (
-    <div className="container py-16 md:py-24">
-      <div className="mx-auto max-w-5xl">
-        <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">Projects</h1>
-        <p className="mb-12 max-w-2xl text-lg text-muted-foreground">
+    <div className="py-16 md:py-24">
+      <div className="mx-auto max-w-4xl px-6">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Projects</h1>
+        <p className="mb-12 text-muted-foreground leading-relaxed">
           A collection of projects I&apos;ve worked on throughout my career, from large-scale
           distributed systems to personal experiments.
         </p>
