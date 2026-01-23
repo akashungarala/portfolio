@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/akashungarala/portfolio/compare/v1.1.1...v1.2.0) (2026-01-23)
+
+
+### Features
+
+* refactor to data-driven ui with yaml content management ([6d594e2](https://github.com/akashungarala/portfolio/commit/6d594e2958680e440d6dd42ae7991586621771df))
+
 ## [1.1.1](https://github.com/akashungarala/portfolio/compare/v1.1.0...v1.1.1) (2026-01-23)
 
 
