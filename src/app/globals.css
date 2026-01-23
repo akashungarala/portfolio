@@ -46,286 +46,363 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+/* =============================================================================
+   Light Theme - Clean Zinc/Slate palette
+   ============================================================================= */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.55 0.25 265);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.55 0.25 265);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.55 0.25 265);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.55 0.25 265);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.55 0.25 265);
+  --radius: 0.5rem;
 
-  /* Gradient colors */
-  --gradient-start: oklch(0.55 0.25 265);
-  --gradient-mid: oklch(0.55 0.2 300);
-  --gradient-end: oklch(0.6 0.22 330);
+  /* Zinc-based light theme */
+  --background: #fafafa;
+  --foreground: #18181b;
+
+  --card: #ffffff;
+  --card-foreground: #18181b;
+
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+
+  /* Primary - Sophisticated slate */
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+
+  --destructive: #ef4444;
+
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #18181b;
+
+  /* Charts */
+  --chart-1: #18181b;
+  --chart-2: #3f3f46;
+  --chart-3: #52525b;
+  --chart-4: #71717a;
+  --chart-5: #a1a1aa;
+
+  /* Sidebar */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: #18181b;
 }
 
+/* =============================================================================
+   Dark Theme - Sophisticated dark Zinc/Slate
+   ============================================================================= */
 .dark {
-  --background: oklch(0.12 0.01 265);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.16 0.01 265);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.16 0.01 265);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.7 0.2 265);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.22 0.01 265);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.22 0.01 265);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.7 0.2 265);
-  --accent-foreground: oklch(0.12 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.7 0.2 265);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.16 0.01 265);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.7 0.2 265);
-  --sidebar-primary-foreground: oklch(0.12 0 0);
-  --sidebar-accent: oklch(0.22 0.01 265);
-  --sidebar-accent-foreground: oklch(0.95 0 0);
-  --sidebar-border: oklch(1 0 0 / 12%);
-  --sidebar-ring: oklch(0.7 0.2 265);
+  /* Deep zinc background */
+  --background: #09090b;
+  --foreground: #fafafa;
 
-  /* Gradient colors - brighter for dark mode */
-  --gradient-start: oklch(0.65 0.25 265);
-  --gradient-mid: oklch(0.6 0.22 300);
-  --gradient-end: oklch(0.7 0.25 330);
+  --card: #18181b;
+  --card-foreground: #fafafa;
+
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+
+  /* Primary - Clean white/light for contrast */
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+
+  --destructive: #ef4444;
+
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #d4d4d8;
+
+  /* Charts */
+  --chart-1: #fafafa;
+  --chart-2: #d4d4d8;
+  --chart-3: #a1a1aa;
+  --chart-4: #71717a;
+  --chart-5: #52525b;
+
+  /* Sidebar */
+  --sidebar: #18181b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #fafafa;
+  --sidebar-primary-foreground: #18181b;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #d4d4d8;
 }
 
+/* =============================================================================
+   Base Styles
+   ============================================================================= */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  /* Refined typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl leading-[1.1];
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
+/* =============================================================================
+   Utility Classes
+   ============================================================================= */
 @layer utilities {
-  /* Gradient text */
-  .gradient-text {
+  /* Subtle text gradient for headings */
+  .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(
-      135deg,
-      var(--gradient-start) 0%,
-      var(--gradient-mid) 50%,
-      var(--gradient-end) 100%
-    );
+    background-image: linear-gradient(to right, var(--foreground) 0%, var(--muted-foreground) 100%);
   }
 
-  /* Gradient background */
-  .gradient-bg {
-    background-image: linear-gradient(
-      135deg,
-      var(--gradient-start) 0%,
-      var(--gradient-mid) 50%,
-      var(--gradient-end) 100%
-    );
-  }
-
-  /* Subtle gradient border */
-  .gradient-border {
-    position: relative;
-  }
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      var(--gradient-start) 0%,
-      var(--gradient-mid) 50%,
-      var(--gradient-end) 100%
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  /* Glow effect */
-  .glow {
-    box-shadow:
-      0 0 20px oklch(0.55 0.25 265 / 15%),
-      0 0 40px oklch(0.55 0.25 265 / 10%);
-  }
-  .dark .glow {
-    box-shadow:
-      0 0 20px oklch(0.7 0.2 265 / 20%),
-      0 0 40px oklch(0.7 0.2 265 / 15%);
-  }
-
-  /* Card hover lift effect */
+  /* Card hover effect */
   .card-hover {
     @apply transition-all duration-300 ease-out;
   }
+
   .card-hover:hover {
-    @apply -translate-y-1;
-    box-shadow:
-      0 10px 40px -10px oklch(0 0 0 / 15%),
-      0 4px 20px -5px oklch(0 0 0 / 10%);
+    @apply -translate-y-0.5;
+    box-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.1);
   }
+
   .dark .card-hover:hover {
-    box-shadow:
-      0 10px 40px -10px oklch(0 0 0 / 50%),
-      0 4px 20px -5px oklch(0.7 0.2 265 / 15%);
-  }
-
-  /* Animated gradient background */
-  .animated-gradient {
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite;
-  }
-
-  @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    box-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.4);
   }
 
   /* Subtle background pattern */
   .bg-grid-pattern {
     background-image:
-      linear-gradient(to right, oklch(0 0 0 / 3%) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0 0 0 / 3%) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(to right, rgb(0 0 0 / 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
+
   .dark .bg-grid-pattern {
     background-image:
-      linear-gradient(to right, oklch(1 0 0 / 3%) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(1 0 0 / 3%) 1px, transparent 1px);
+      linear-gradient(to right, rgb(255 255 255 / 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.02) 1px, transparent 1px);
   }
 
-  /* Hero gradient blob */
-  .hero-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-    animation: blob-float 10s ease-in-out infinite;
-  }
-  .dark .hero-blob {
-    opacity: 0.25;
-  }
-
-  @keyframes blob-float {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(20px, -20px) scale(1.05);
-    }
-    66% {
-      transform: translate(-10px, 10px) scale(0.95);
-    }
-  }
-
-  /* Timeline dot pulse */
-  .timeline-dot {
+  /* Noise texture overlay */
+  .bg-noise {
     position: relative;
   }
-  .timeline-dot::after {
+
+  .bg-noise::before {
     content: "";
     position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: var(--gradient-start);
-    opacity: 0;
-    animation: pulse-ring 2s ease-out infinite;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
   }
 
-  @keyframes pulse-ring {
-    0% {
-      transform: scale(0.8);
-      opacity: 0.5;
-    }
-    100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 40px -10px rgb(0 0 0 / 0.1);
   }
 
-  /* Button shine effect */
-  .btn-shine {
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-shine::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, oklch(1 0 0 / 20%), transparent);
-    transition: left 0.5s ease;
-  }
-  .btn-shine:hover::before {
-    left: 100%;
+  .dark .glow {
+    box-shadow: 0 0 40px -10px rgb(255 255 255 / 0.05);
   }
 
-  /* Smooth underline animation */
+  /* Link underline animation */
   .link-underline {
     position: relative;
   }
+
   .link-underline::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
     width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    height: 1px;
+    background: currentColor;
     transition: width 0.3s ease;
   }
+
   .link-underline:hover::after {
     width: 100%;
   }
+
+  /* Subtle border glow on focus */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Image container with aspect ratio */
+  .image-container {
+    @apply relative overflow-hidden;
+  }
+
+  .image-container img {
+    @apply object-cover;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Container max-width override for narrower content */
+  .prose-container {
+    @apply max-w-3xl mx-auto;
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  /* Stagger children animation */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .stagger-children > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .stagger-children > *:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .stagger-children > *:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .stagger-children > *:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .stagger-children > *:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}
+
+/* =============================================================================
+   Component-specific styles
+   ============================================================================= */
+
+/* Profile image styling */
+.profile-image {
+  @apply relative rounded-2xl overflow-hidden;
+  aspect-ratio: 1;
+}
+
+.profile-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
+  pointer-events: none;
+}
+
+.dark .profile-image::after {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+}
+
+/* Badge styling */
+.badge {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full;
+  @apply bg-secondary text-secondary-foreground;
+  @apply border border-border;
+}
+
+/* Timeline styling */
+.timeline-item {
+  @apply relative pl-8 pb-8;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted-foreground);
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 3.5px;
+  top: 20px;
+  width: 1px;
+  height: calc(100% - 12px);
+  background: var(--border);
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
 }
