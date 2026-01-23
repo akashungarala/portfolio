@@ -17,10 +17,10 @@ export function GitHubActivityClient({ commits }: GitHubActivityClientProps) {
         <FadeIn>
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+              <p className="mb-2 text-xs font-medium uppercase tracking-widest text-[var(--highlight)]">
                 Activity
               </p>
-              <h2 className="text-2xl font-semibold sm:text-3xl">Recent Commits</h2>
+              <h2 className="section-title">Recent Commits</h2>
             </div>
             <a
               href="https://github.com/akashungarala"
@@ -28,7 +28,7 @@ export function GitHubActivityClient({ commits }: GitHubActivityClientProps) {
               rel="noopener noreferrer"
               className={cn(
                 'inline-flex items-center gap-1.5 text-sm',
-                'text-muted-foreground hover:text-foreground transition-colors',
+                'text-muted-foreground hover:text-[var(--highlight)] transition-colors',
               )}
             >
               <Github className="h-4 w-4" />

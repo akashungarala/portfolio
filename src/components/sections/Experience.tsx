@@ -24,10 +24,10 @@ export function Experience({ content }: ExperienceProps) {
       <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <div className="mb-10">
-            <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            <p className="mb-2 text-xs font-medium uppercase tracking-widest text-[var(--highlight)]">
               Background
             </p>
-            <h2 className="text-2xl font-semibold sm:text-3xl">Experience & Education</h2>
+            <h2 className="section-title">Experience & Education</h2>
           </div>
         </FadeIn>
 
@@ -43,10 +43,10 @@ export function Experience({ content }: ExperienceProps) {
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
                   'inline-flex items-center gap-2 rounded-md px-3 py-1.5',
-                  'text-sm font-medium transition-colors',
+                  'text-sm font-medium transition-all duration-200',
                   activeTab === tab.id
-                    ? 'bg-foreground text-background'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                    ? 'bg-[var(--highlight)] text-white shadow-md shadow-[var(--highlight)]/20'
+                    : 'text-muted-foreground hover:text-[var(--highlight)] hover:bg-[var(--highlight)]/10',
                 )}
               >
                 <tab.icon className="h-3.5 w-3.5" />

@@ -81,6 +81,10 @@
   --input: #e4e4e7;
   --ring: #18181b;
 
+  /* Accent highlight color - subtle blue */
+  --highlight: #3b82f6;
+  --highlight-muted: #60a5fa;
+
   /* Charts */
   --chart-1: #18181b;
   --chart-2: #3f3f46;
@@ -131,6 +135,10 @@
   --border: #27272a;
   --input: #27272a;
   --ring: #d4d4d8;
+
+  /* Accent highlight color - brighter blue for dark mode */
+  --highlight: #60a5fa;
+  --highlight-muted: #93c5fd;
 
   /* Charts */
   --chart-1: #fafafa;
@@ -200,6 +208,21 @@
    Utility Classes
    ============================================================================= */
 @layer utilities {
+  /* Highlighted keyword styling */
+  .highlight {
+    color: var(--highlight);
+    font-weight: 500;
+  }
+
+  /* Section title with accent */
+  .section-title {
+    @apply text-2xl font-semibold sm:text-3xl;
+    background: linear-gradient(135deg, var(--foreground) 0%, var(--highlight) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* Subtle text gradient for headings */
   .text-gradient {
     @apply bg-clip-text text-transparent;
@@ -212,12 +235,47 @@
   }
 
   .card-hover:hover {
-    @apply -translate-y-0.5;
-    box-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.1);
+    @apply -translate-y-1;
+    box-shadow: 0 8px 30px -8px rgb(0 0 0 / 0.12);
   }
 
   .dark .card-hover:hover {
-    box-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.4);
+    box-shadow: 0 8px 30px -8px rgb(0 0 0 / 0.5);
+  }
+
+  /* Interactive card with border glow */
+  .interactive-card {
+    @apply transition-all duration-300 ease-out;
+    position: relative;
+  }
+
+  .interactive-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, transparent 0%, transparent 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .interactive-card:hover::before {
+    background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-muted) 100%);
+    opacity: 1;
+  }
+
+  .interactive-card:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 8px 30px -8px var(--highlight);
   }
 
   /* Subtle background pattern */
