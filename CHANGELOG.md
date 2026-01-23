@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/akashungarala/portfolio/compare/v1.3.0...v1.4.0) (2026-01-23)
+
+
+### Features
+
+* improve layout proportions and profile image styling ([ea3db4f](https://github.com/akashungarala/portfolio/commit/ea3db4fee507861d7902e5b96c66c5e4cc397344))
+
 # [1.3.0](https://github.com/akashungarala/portfolio/compare/v1.2.0...v1.3.0) (2026-01-23)
 
 
