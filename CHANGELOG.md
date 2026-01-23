@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/akashungarala/portfolio/compare/v1.4.0...v1.4.1) (2026-01-23)
+
+
+### Bug Fixes
+
+* consistent page centering and improved github activity caching ([6746e82](https://github.com/akashungarala/portfolio/commit/6746e82876b18710ee997034ecb16faab133d728))
+
 # [1.4.0](https://github.com/akashungarala/portfolio/compare/v1.3.0...v1.4.0) (2026-01-23)
 
 
