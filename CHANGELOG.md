@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/akashungarala/portfolio/compare/v1.0.0...v1.1.0) (2026-01-23)
+
+
+### Features
+
+* add project detail pages and privacy policy ([3abc17e](https://github.com/akashungarala/portfolio/commit/3abc17e05672396f535ccd652bcc7d684b88fda2))
+
 # 1.0.0 (2026-01-23)
 
 
