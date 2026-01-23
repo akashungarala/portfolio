@@ -21,7 +21,7 @@ export function Experience({ content }: ExperienceProps) {
 
   return (
     <section id="experience" className="py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <div className="mb-10">
             <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">

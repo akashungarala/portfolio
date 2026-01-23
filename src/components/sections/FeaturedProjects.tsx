@@ -27,7 +27,7 @@ interface FeaturedProjectsProps {
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   return (
     <section id="projects" className="py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <div className="mb-10 flex items-end justify-between">
             <div>
