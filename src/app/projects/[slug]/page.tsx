@@ -42,8 +42,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const links = 'links' in project ? project.links : null;
 
   return (
-    <main className="container py-20 md:py-32">
-      <div className="mx-auto max-w-4xl">
+    <main className="py-16 md:py-24">
+      <div className="mx-auto max-w-4xl px-6">
         {/* Back link */}
         <Link
           href="/projects"
