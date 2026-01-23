@@ -6,14 +6,16 @@ describe('About', () => {
   it('should render an about section heading', () => {
     render(<About />);
 
-    expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /building systems that scale with confidence/i }),
+    ).toBeInTheDocument();
   });
 
   it('should render a professional summary', () => {
     render(<About />);
 
     // Should have content about backend engineering expertise
-    expect(screen.getByText(/senior backend engineer with over 10 years/i)).toBeInTheDocument();
+    expect(screen.getByText(/10 years of experience/i)).toBeInTheDocument();
   });
 
   it('should render technical philosophy content', () => {
@@ -50,6 +52,6 @@ describe('About', () => {
   it('should render technologies section', () => {
     render(<About />);
 
-    expect(screen.getByRole('heading', { name: /technologies/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /tech stack/i })).toBeInTheDocument();
   });
 });

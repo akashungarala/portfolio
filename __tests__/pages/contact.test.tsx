@@ -7,7 +7,7 @@ describe('Contact Page', () => {
     render(<ContactPage />);
 
     // Contact section uses h2 as the main heading
-    expect(screen.getByRole('heading', { name: /get in touch/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /work together/i })).toBeInTheDocument();
   });
 
   it('should render the contact form', () => {
