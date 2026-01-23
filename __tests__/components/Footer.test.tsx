@@ -23,9 +23,9 @@ describe('Footer', () => {
     expect(screen.getByRole('contentinfo')).toBeInTheDocument();
   });
 
-  it('should render status indicator', () => {
+  it('should render privacy link', () => {
     render(<Footer />);
 
-    expect(screen.getByText(/status/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /privacy/i })).toBeInTheDocument();
   });
 });

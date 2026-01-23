@@ -33,19 +33,15 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-4">
-          {/* Status Indicator */}
+          {/* Privacy Link */}
           <Link
-            href="/status"
+            href="/privacy"
             className={cn(
-              'flex items-center gap-2 text-sm text-muted-foreground',
+              'text-sm text-muted-foreground',
               'hover:text-foreground transition-colors',
             )}
           >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-            </span>
-            <span>Status</span>
+            Privacy
           </Link>
 
           {/* Social Links */}
