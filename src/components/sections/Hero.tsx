@@ -19,7 +19,7 @@ export function Hero({ content }: HeroProps) {
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-grid-pattern" aria-hidden="true" />
 
-      <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center">
+      <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-6 text-center">
         {/* Profile Image */}
         <FadeIn delay={0}>
           <div className="profile-image mb-8 h-28 w-28 md:h-36 md:w-36">

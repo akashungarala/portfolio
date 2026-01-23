@@ -13,7 +13,7 @@ interface GitHubActivityClientProps {
 export function GitHubActivityClient({ commits }: GitHubActivityClientProps) {
   return (
     <section id="github" className="py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <div className="mb-8 flex items-center justify-between">
             <div>

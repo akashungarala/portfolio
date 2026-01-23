@@ -33,7 +33,7 @@ export function Header() {
         'supports-[backdrop-filter]:bg-background/80',
       )}
     >
-      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+      <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-6">
         {/* Breadcrumb Path */}
         <Link
           href="/"

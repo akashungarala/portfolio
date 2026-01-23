@@ -25,7 +25,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border/40 py-6">
-      <div className="mx-auto max-w-3xl px-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="mx-auto max-w-4xl px-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-xs text-muted-foreground">&copy; {currentYear} Akash Ungarala</p>
 
         <div className="flex items-center gap-3">
