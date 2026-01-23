@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/akashungarala/portfolio/compare/v1.2.0...v1.3.0) (2026-01-23)
+
+
+### Features
+
+* upgrade ui with breadcrumb navigation and consistent layout ([c122a40](https://github.com/akashungarala/portfolio/commit/c122a40af02950ee8c4a43f4524be4ceecfc6791))
+
 # [1.2.0](https://github.com/akashungarala/portfolio/compare/v1.1.1...v1.2.0) (2026-01-23)
 
 
