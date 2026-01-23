@@ -10,12 +10,12 @@ describe('Contact', () => {
     expect(screen.getByRole('heading', { name: /work together/i })).toBeInTheDocument();
   });
 
-  it('should render contact information', () => {
+  it('should render social link buttons', () => {
     render(<Contact content={mockContent} />);
 
-    // Should show email address - use getAllByText since 'email' appears multiple times
-    const emailElements = screen.getAllByText(/akash\.ungarala@gmail\.com/i);
-    expect(emailElements.length).toBeGreaterThanOrEqual(1);
+    // Email is now shown as a social link button, not as text
+    const emailLink = screen.getByRole('link', { name: /email/i });
+    expect(emailLink).toBeInTheDocument();
   });
 
   it('should render social links', () => {

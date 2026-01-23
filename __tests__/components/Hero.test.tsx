@@ -31,12 +31,12 @@ describe('Hero', () => {
     expect(cta).toBeInTheDocument();
   });
 
-  it('should render a resume link', () => {
+  it('should not render a resume link in hero (moved to navbar)', () => {
     render(<Hero content={mockContent} />);
 
-    const resumeLink = screen.getByRole('link', { name: /resume/i });
-    expect(resumeLink).toBeInTheDocument();
-    expect(resumeLink).toHaveAttribute('href', '/resume.pdf');
+    // Resume link has been moved to the navbar, so it shouldn't be in Hero anymore
+    const resumeLinks = screen.queryAllByRole('link', { name: /resume/i });
+    expect(resumeLinks).toHaveLength(0);
   });
 
   it('should have proper heading hierarchy', () => {

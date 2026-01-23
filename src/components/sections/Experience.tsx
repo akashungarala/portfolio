@@ -20,20 +20,20 @@ export function Experience({ content }: ExperienceProps) {
   ];
 
   return (
-    <section id="experience" className="relative container section-padding">
-      <div className="mx-auto max-w-4xl">
+    <section id="experience" className="py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-6">
         <FadeIn>
-          <div className="mb-12">
-            <p className="mb-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+          <div className="mb-10">
+            <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
               Background
             </p>
-            <h2>Experience & Education</h2>
+            <h2 className="text-2xl font-semibold sm:text-3xl">Experience & Education</h2>
           </div>
         </FadeIn>
 
         {/* Tabs */}
         <FadeIn delay={0.1}>
-          <div className="mb-10 flex gap-2" role="tablist">
+          <div className="mb-8 flex gap-1" role="tablist">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -42,14 +42,14 @@ export function Experience({ content }: ExperienceProps) {
                 aria-selected={activeTab === tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  'inline-flex items-center gap-2 rounded-lg px-4 py-2',
+                  'inline-flex items-center gap-2 rounded-md px-3 py-1.5',
                   'text-sm font-medium transition-colors',
                   activeTab === tab.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+                    ? 'bg-foreground text-background'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
                 )}
               >
-                <tab.icon className="h-4 w-4" />
+                <tab.icon className="h-3.5 w-3.5" />
                 {tab.label}
               </button>
             ))}
@@ -63,31 +63,28 @@ export function Experience({ content }: ExperienceProps) {
               <div className="space-y-0">
                 {workExperience.map((job) => (
                   <div key={job.id} className="timeline-item">
-                    <div className="flex flex-col gap-1 mb-3">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <h3 className="text-lg font-semibold">{job.title}</h3>
-                        <span className="text-muted-foreground">at</span>
-                        <span className="font-medium">{job.company}</span>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                        <span>
-                          {job.startDate} — {job.endDate}
-                        </span>
-                        <span>·</span>
-                        <span>{job.location}</span>
-                      </div>
+                    <div className="flex flex-col gap-0.5 mb-2">
+                      <h3 className="font-medium">{job.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {job.company} · {job.location}
+                      </p>
+                      <p className="text-xs text-muted-foreground/75">
+                        {job.startDate} — {job.endDate}
+                      </p>
                     </div>
 
-                    <p className="mb-3 text-muted-foreground">{job.description.trim()}</p>
+                    <p className="mb-2 text-sm text-muted-foreground leading-relaxed">
+                      {job.description.trim()}
+                    </p>
 
-                    <ul className="space-y-2">
+                    <ul className="space-y-1">
                       {job.highlights.map((highlight) => (
                         <li
                           key={highlight}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
                         >
-                          <span className="mt-2 h-1 w-1 rounded-full bg-muted-foreground flex-shrink-0" />
-                          <span>{highlight.trim()}</span>
+                          <span className="mt-2 h-1 w-1 rounded-full bg-muted-foreground/50 flex-shrink-0" />
+                          <span className="leading-relaxed">{highlight.trim()}</span>
                         </li>
                       ))}
                     </ul>
@@ -103,30 +100,28 @@ export function Experience({ content }: ExperienceProps) {
               <div className="space-y-0">
                 {education.map((edu) => (
                   <div key={edu.id} className="timeline-item">
-                    <div className="flex flex-col gap-1 mb-3">
-                      <h3 className="text-lg font-semibold">
+                    <div className="flex flex-col gap-0.5 mb-2">
+                      <h3 className="font-medium">
                         {edu.degree} in {edu.field}
                       </h3>
-                      <div className="font-medium">{edu.school}</div>
-                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                        <span>
-                          {edu.startDate} — {edu.endDate}
-                        </span>
-                        <span>·</span>
-                        <span>{edu.location}</span>
-                      </div>
+                      <p className="text-sm text-muted-foreground">{edu.school}</p>
+                      <p className="text-xs text-muted-foreground/75">
+                        {edu.startDate} — {edu.endDate} · {edu.location}
+                      </p>
                     </div>
 
-                    <p className="mb-3 text-muted-foreground">{edu.description}</p>
+                    <p className="mb-2 text-sm text-muted-foreground leading-relaxed">
+                      {edu.description}
+                    </p>
 
-                    <ul className="space-y-2">
+                    <ul className="space-y-1">
                       {edu.highlights.map((highlight) => (
                         <li
                           key={highlight}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
                         >
-                          <span className="mt-2 h-1 w-1 rounded-full bg-muted-foreground flex-shrink-0" />
-                          <span>{highlight}</span>
+                          <span className="mt-2 h-1 w-1 rounded-full bg-muted-foreground/50 flex-shrink-0" />
+                          <span className="leading-relaxed">{highlight}</span>
                         </li>
                       ))}
                     </ul>

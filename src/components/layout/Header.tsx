@@ -1,5 +1,6 @@
 'use client';
 
+import { FileText, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -11,36 +12,45 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 
+function getBreadcrumbPath(pathname: string | null): string {
+  if (!pathname || pathname === '/') return '~/home';
+  if (pathname === '/projects') return '~/projects';
+  if (pathname.startsWith('/projects/')) return '~/projects/*';
+  if (pathname === '/contact') return '~/contact';
+  if (pathname === '/privacy') return '~/privacy';
+  return `~${pathname}`;
+}
+
 export function Header() {
   const pathname = usePathname();
+  const breadcrumb = getBreadcrumbPath(pathname);
 
   return (
     <header
       className={cn(
         'sticky top-0 z-50 w-full',
-        'border-b border-border/40 bg-background/80 backdrop-blur-lg',
-        'supports-[backdrop-filter]:bg-background/60',
+        'border-b border-border/40 bg-background/95 backdrop-blur-md',
+        'supports-[backdrop-filter]:bg-background/80',
       )}
     >
-      <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div
-            className={cn(
-              'h-8 w-8 rounded-lg gradient-bg',
-              'flex items-center justify-center',
-              'text-white font-bold text-sm',
-              'shadow-lg shadow-primary/20',
-              'group-hover:shadow-xl group-hover:shadow-primary/30',
-              'transition-all duration-300',
-            )}
-          >
-            AU
-          </div>
-          <span className="font-bold text-lg hidden sm:block">Akash Ungarala</span>
+      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+        {/* Breadcrumb Path */}
+        <Link
+          href="/"
+          className={cn(
+            'group flex items-center gap-2',
+            'rounded-md px-3 py-1.5',
+            'bg-muted/50 hover:bg-muted',
+            'transition-colors duration-200',
+          )}
+        >
+          <Terminal className="h-3.5 w-3.5 text-muted-foreground" />
+          <span className="font-mono text-sm text-foreground">{breadcrumb}</span>
         </Link>
 
+        {/* Navigation */}
         <nav className="flex items-center gap-1">
-          <div className="hidden sm:flex items-center gap-1 mr-4">
+          <div className="hidden sm:flex items-center">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -48,38 +58,34 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'relative px-4 py-2 rounded-lg text-sm font-medium',
-                    'transition-all duration-200',
+                    'px-3 py-1.5 text-sm font-medium',
+                    'rounded-md transition-colors duration-200',
                     isActive
-                      ? 'text-primary'
+                      ? 'text-foreground bg-muted'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
                   )}
                 >
                   {link.label}
-                  {isActive && (
-                    <span
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
-                      aria-hidden="true"
-                    />
-                  )}
                 </Link>
               );
             })}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 ml-2">
             <ThemeToggle />
             <a
               href="/resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
-                'hidden sm:inline-flex items-center justify-center',
-                'rounded-lg px-4 py-2 text-sm font-semibold',
-                'border border-border bg-background',
-                'hover:bg-muted transition-colors',
+                'inline-flex items-center gap-1.5',
+                'rounded-md px-3 py-1.5 text-sm font-medium',
+                'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                'transition-colors duration-200',
               )}
             >
-              Resume
+              <FileText className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Resume</span>
             </a>
           </div>
         </nav>
