@@ -3,14 +3,13 @@
 import { ArrowRight, ExternalLink, Folder, Github } from 'lucide-react';
 import Link from 'next/link';
 import { FadeIn } from '@/components/motion';
-import projectsData from '@/data/projects.json';
 import { cn } from '@/lib/utils';
 
 interface Project {
   id: string;
   title: string;
   description: string;
-  longDescription?: string;
+  longDescription: string;
   techStack: string[];
   category: 'work' | 'personal';
   featured: boolean;
@@ -21,33 +20,27 @@ interface Project {
   };
 }
 
-export function FeaturedProjects() {
-  const featuredProjects = (projectsData as Project[]).filter((project) => project.featured);
+interface FeaturedProjectsProps {
+  projects: Project[];
+}
 
+export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   return (
-    <section id="projects" className="relative container py-20 md:py-32">
-      {/* Background accent */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent"
-        aria-hidden="true"
-      />
-
-      <div className="relative mx-auto max-w-6xl">
+    <section id="projects" className="relative container section-padding">
+      <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-12 flex items-end justify-between">
+          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
+              <p className="mb-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
                 Portfolio
               </p>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Featured Projects
-              </h2>
+              <h2>Featured Projects</h2>
             </div>
             <Link
               href="/projects"
               className={cn(
-                'group inline-flex items-center gap-2 text-sm font-semibold',
-                'text-muted-foreground hover:text-primary transition-colors',
+                'group inline-flex items-center gap-2 text-sm font-medium',
+                'text-muted-foreground hover:text-foreground transition-colors',
               )}
             >
               View all projects
@@ -57,31 +50,21 @@ export function FeaturedProjects() {
         </FadeIn>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <FadeIn key={project.id} delay={0.1 * index}>
               <article
                 className={cn(
-                  'group relative flex h-full flex-col rounded-xl',
-                  'border border-border/50 bg-card/80 backdrop-blur-sm',
+                  'group flex h-full flex-col rounded-xl',
+                  'border border-border bg-card',
                   'card-hover',
-                  'hover:border-primary/30',
                 )}
               >
-                {/* Gradient border on hover */}
-                <div
-                  className={cn(
-                    'absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300',
-                    'gradient-border group-hover:opacity-100',
-                  )}
-                  aria-hidden="true"
-                />
-
                 {/* Card header with icon */}
                 <div className="flex items-center justify-between p-6 pb-0">
-                  <div className="rounded-lg bg-primary/10 p-3">
-                    <Folder className="h-6 w-6 text-primary" />
+                  <div className="rounded-lg bg-secondary p-3">
+                    <Folder className="h-5 w-5" />
                   </div>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2">
                     {project.links?.github && (
                       <a
                         href={project.links.github}
@@ -89,11 +72,11 @@ export function FeaturedProjects() {
                         rel="noopener noreferrer"
                         className={cn(
                           'rounded-lg p-2 text-muted-foreground',
-                          'hover:bg-muted hover:text-foreground transition-colors',
+                          'hover:bg-secondary hover:text-foreground transition-colors',
                         )}
                         aria-label="View source code"
                       >
-                        <Github className="h-5 w-5" />
+                        <Github className="h-4 w-4" />
                       </a>
                     )}
                     {project.links?.live && (
@@ -103,22 +86,22 @@ export function FeaturedProjects() {
                         rel="noopener noreferrer"
                         className={cn(
                           'rounded-lg p-2 text-muted-foreground',
-                          'hover:bg-muted hover:text-foreground transition-colors',
+                          'hover:bg-secondary hover:text-foreground transition-colors',
                         )}
                         aria-label="View live demo"
                       >
-                        <ExternalLink className="h-5 w-5" />
+                        <ExternalLink className="h-4 w-4" />
                       </a>
                     )}
                   </div>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="mb-2 text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="mb-4 flex-1 text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
+                  <Link href={`/projects/${project.id}`}>
+                    <h3 className="mb-2 text-lg font-semibold hover:underline">{project.title}</h3>
+                  </Link>
+                  <p className="mb-4 flex-1 text-sm text-muted-foreground">
+                    {project.description.trim()}
                   </p>
 
                   {/* Metrics */}
@@ -129,7 +112,7 @@ export function FeaturedProjects() {
                           key={metric}
                           className="flex items-center gap-2 text-xs text-muted-foreground"
                         >
-                          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                          <span className="h-1 w-1 rounded-full bg-muted-foreground" />
                           {metric}
                         </li>
                       ))}
@@ -137,15 +120,15 @@ export function FeaturedProjects() {
                   )}
 
                   {/* Tech Stack */}
-                  <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-border/50">
+                  <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-border">
                     {project.techStack.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
                         data-testid="tech-badge"
                         className={cn(
-                          'inline-flex items-center rounded-md px-2.5 py-1',
-                          'bg-muted/50 text-xs font-medium text-muted-foreground',
-                          'border border-border/50',
+                          'inline-flex items-center rounded-md px-2 py-0.5',
+                          'bg-secondary text-xs font-medium',
+                          'border border-border',
                         )}
                       >
                         {tech}
@@ -154,10 +137,7 @@ export function FeaturedProjects() {
                     {project.techStack.length > 4 && (
                       <span
                         data-testid="tech-badge"
-                        className={cn(
-                          'inline-flex items-center rounded-md px-2.5 py-1',
-                          'bg-primary/10 text-xs font-medium text-primary',
-                        )}
+                        className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium text-muted-foreground"
                       >
                         +{project.techStack.length - 4}
                       </span>

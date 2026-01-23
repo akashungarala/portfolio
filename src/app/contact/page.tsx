@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Contact } from '@/components/sections/Contact';
+import { getProfileContent } from '@/lib/get-content';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -13,5 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <Contact />;
+  const content = getProfileContent();
+  return <Contact content={content} />;
 }
