@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/akashungarala/portfolio/compare/v1.1.0...v1.1.1) (2026-01-23)
+
+
+### Bug Fixes
+
+* add issues and pull-requests permissions to release workflow ([967c57a](https://github.com/akashungarala/portfolio/commit/967c57a36b9104b7c37943b7bb6a72fbc7490f7e))
+
 # [1.1.0](https://github.com/akashungarala/portfolio/compare/v1.0.0...v1.1.0) (2026-01-23)
 
 
