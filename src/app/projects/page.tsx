@@ -4,9 +4,14 @@ import projectsData from '@/data/projects.json';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Projects | Akash Ungarala',
+  title: 'Projects',
   description:
     'Explore my portfolio of projects spanning distributed systems, real-time platforms, and backend engineering.',
+  openGraph: {
+    title: 'Projects | Akash Ungarala',
+    description:
+      'Explore my portfolio of projects spanning distributed systems, real-time platforms, and backend engineering.',
+  },
 };
 
 interface Project {
