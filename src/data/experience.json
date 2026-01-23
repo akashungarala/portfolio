@@ -1,0 +1,72 @@
+[
+  {
+    "id": "fox",
+    "company": "Fox Corporation",
+    "title": "Senior Software Engineer",
+    "location": "Los Angeles, CA",
+    "startDate": "2022",
+    "endDate": "Present",
+    "description": "Building real-time broadcast captioning systems and distributed media pipelines at scale.",
+    "highlights": [
+      "Architected microservices platform handling live broadcast caption delivery",
+      "Implemented WebSocket-based real-time communication infrastructure",
+      "Led development of multi-tenant caption exchange system"
+    ]
+  },
+  {
+    "id": "fidelity",
+    "company": "Fidelity Investments",
+    "title": "Senior Software Engineer",
+    "location": "Boston, MA",
+    "startDate": "2020",
+    "endDate": "2022",
+    "description": "Developed high-throughput trading systems and financial data pipelines.",
+    "highlights": [
+      "Built real-time market data processing systems",
+      "Designed SLO-based monitoring and alerting platforms",
+      "Optimized batch processing jobs for portfolio analytics"
+    ]
+  },
+  {
+    "id": "niantic",
+    "company": "Niantic",
+    "title": "Backend Engineer",
+    "location": "San Francisco, CA",
+    "startDate": "2018",
+    "endDate": "2020",
+    "description": "Scaled backend systems for location-based gaming platforms with millions of daily active users.",
+    "highlights": [
+      "Scaled game server infrastructure to handle millions of concurrent users",
+      "Implemented geospatial data processing pipelines",
+      "Built event-driven architecture for real-time game state synchronization"
+    ]
+  },
+  {
+    "id": "adara",
+    "company": "Adara",
+    "title": "Software Engineer",
+    "location": "Mountain View, CA",
+    "startDate": "2016",
+    "endDate": "2018",
+    "description": "Built high-throughput ad-tech platforms processing billions of events daily.",
+    "highlights": [
+      "Developed real-time bidding systems processing 1M+ QPS",
+      "Built data pipelines for audience segmentation and targeting",
+      "Implemented distributed caching layer for low-latency ad serving"
+    ]
+  },
+  {
+    "id": "infosys",
+    "company": "Infosys",
+    "title": "Software Engineer",
+    "location": "Bangalore, India",
+    "startDate": "2013",
+    "endDate": "2016",
+    "description": "Started career building enterprise applications and learning distributed systems fundamentals.",
+    "highlights": [
+      "Developed enterprise Java applications for banking clients",
+      "Built RESTful APIs and microservices architecture",
+      "Gained foundation in software engineering best practices"
+    ]
+  }
+]

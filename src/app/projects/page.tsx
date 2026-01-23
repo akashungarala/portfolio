@@ -1,0 +1,157 @@
+import { ExternalLink, Github } from 'lucide-react';
+import type { Metadata } from 'next';
+import projectsData from '@/data/projects.json';
+import { cn } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: 'Projects | Akash Ungarala',
+  description:
+    'Explore my portfolio of projects spanning distributed systems, real-time platforms, and backend engineering.',
+};
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  longDescription?: string;
+  techStack: string[];
+  category: 'work' | 'personal';
+  featured: boolean;
+  metrics?: string[];
+  links?: {
+    github?: string;
+    live?: string;
+  };
+}
+
+export default function ProjectsPage() {
+  const projects = projectsData as Project[];
+  const workProjects = projects.filter((p) => p.category === 'work');
+  const personalProjects = projects.filter((p) => p.category === 'personal');
+
+  return (
+    <div className="container py-16 md:py-24">
+      <div className="mx-auto max-w-5xl">
+        <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">Projects</h1>
+        <p className="mb-12 max-w-2xl text-lg text-muted-foreground">
+          A collection of projects I&apos;ve worked on throughout my career, from large-scale
+          distributed systems to personal experiments.
+        </p>
+
+        {/* Work Projects */}
+        <section className="mb-16">
+          <h2 className="mb-6 text-2xl font-semibold">Work Projects</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {workProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </section>
+
+        {/* Personal Projects */}
+        {personalProjects.length > 0 && (
+          <section>
+            <h2 className="mb-6 text-2xl font-semibold">Personal Projects</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {personalProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <article
+      className={cn(
+        'group relative flex flex-col rounded-lg border border-border/50',
+        'bg-card/50 backdrop-blur-sm',
+        'hover:border-border hover:bg-card transition-colors',
+      )}
+    >
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-2 flex items-center justify-between">
+          <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
+          <span
+            className={cn(
+              'rounded-full px-2 py-0.5 text-xs font-medium',
+              project.category === 'work'
+                ? 'bg-blue-500/10 text-blue-500'
+                : 'bg-green-500/10 text-green-500',
+            )}
+          >
+            {project.category}
+          </span>
+        </div>
+
+        <p className="mb-4 flex-1 text-sm text-muted-foreground">{project.description}</p>
+
+        {/* Metrics */}
+        {project.metrics && project.metrics.length > 0 && (
+          <ul className="mb-4 space-y-1">
+            {project.metrics.map((metric) => (
+              <li key={metric} className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span className="h-1 w-1 rounded-full bg-primary" />
+                {metric}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2">
+          {project.techStack.map((tech) => (
+            <span
+              key={tech}
+              data-testid="tech-badge"
+              className={cn(
+                'inline-flex items-center rounded-md px-2 py-1',
+                'bg-muted text-xs font-medium text-muted-foreground',
+              )}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        {project.links && (
+          <div className="mt-4 flex gap-4 border-t border-border/50 pt-4">
+            {project.links.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  'inline-flex items-center gap-1 text-sm',
+                  'text-muted-foreground hover:text-foreground transition-colors',
+                )}
+              >
+                <Github className="h-4 w-4" />
+                Code
+              </a>
+            )}
+            {project.links.live && (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  'inline-flex items-center gap-1 text-sm',
+                  'text-muted-foreground hover:text-foreground transition-colors',
+                )}
+              >
+                <ExternalLink className="h-4 w-4" />
+                Live
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </article>
+  );
+}

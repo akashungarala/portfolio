@@ -1,0 +1,48 @@
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
+
+describe('FeaturedProjects', () => {
+  it('should render a projects section heading', () => {
+    render(<FeaturedProjects />);
+
+    expect(screen.getByRole('heading', { name: /projects/i })).toBeInTheDocument();
+  });
+
+  it('should render featured project cards', () => {
+    render(<FeaturedProjects />);
+
+    // Should show at least one project card
+    const projectCards = screen.getAllByRole('article');
+    expect(projectCards.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('should display project titles', () => {
+    render(<FeaturedProjects />);
+
+    // Should have at least one project heading
+    const projectHeadings = screen.getAllByRole('heading', { level: 3 });
+    expect(projectHeadings.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('should display tech stack badges', () => {
+    render(<FeaturedProjects />);
+
+    // Should have technology badges
+    const badges = document.querySelectorAll('[data-testid="tech-badge"]');
+    expect(badges.length).toBeGreaterThan(0);
+  });
+
+  it('should have proper section landmark', () => {
+    render(<FeaturedProjects />);
+
+    const section = document.querySelector('section#projects');
+    expect(section).toBeInTheDocument();
+  });
+
+  it('should render a view all projects link', () => {
+    render(<FeaturedProjects />);
+
+    expect(screen.getByRole('link', { name: /view all projects/i })).toBeInTheDocument();
+  });
+});

@@ -1,0 +1,63 @@
+[
+  {
+    "id": "caption-exchange",
+    "title": "CaptionExchange Platform",
+    "description": "Real-time broadcast captioning system handling live caption delivery for major TV networks.",
+    "longDescription": "Multi-tenant platform enabling real-time caption exchange between broadcasters, supporting WebSocket-based communication and multiple transcription providers.",
+    "techStack": ["Node.js", "TypeScript", "WebSocket", "Redis", "Docker", "Kubernetes"],
+    "category": "work",
+    "featured": true,
+    "metrics": [
+      "Sub-100ms latency for live captions",
+      "99.99% uptime for broadcast operations",
+      "Supporting 100+ concurrent broadcasts"
+    ]
+  },
+  {
+    "id": "slo-platform",
+    "title": "SLO Monitoring Platform",
+    "description": "Service Level Objective monitoring and alerting platform for financial trading systems.",
+    "longDescription": "Built end-to-end SLO platform with custom metrics collection, anomaly detection, and intelligent alerting for high-frequency trading systems.",
+    "techStack": ["Python", "Go", "Prometheus", "Grafana", "Kafka", "PostgreSQL"],
+    "category": "work",
+    "featured": true,
+    "metrics": [
+      "Monitoring 500+ microservices",
+      "Processing 1M+ metrics per second",
+      "Reduced incident response time by 60%"
+    ]
+  },
+  {
+    "id": "adtech-platform",
+    "title": "Real-Time Bidding Platform",
+    "description": "High-throughput ad-tech platform processing billions of bid requests daily.",
+    "longDescription": "Designed and built real-time bidding infrastructure capable of handling millions of QPS with sub-10ms response times.",
+    "techStack": ["Java", "Kafka", "Redis", "Cassandra", "AWS", "Terraform"],
+    "category": "work",
+    "featured": true,
+    "metrics": ["1M+ QPS at peak traffic", "Sub-10ms p99 latency", "Processing 10B+ events daily"]
+  },
+  {
+    "id": "game-backend",
+    "title": "Location-Based Game Backend",
+    "description": "Scalable backend infrastructure for location-based mobile games with millions of DAU.",
+    "longDescription": "Built geospatial data processing pipelines and real-time game state synchronization systems for location-based gaming platforms.",
+    "techStack": ["Go", "gRPC", "MongoDB", "Redis", "GCP", "Kubernetes"],
+    "category": "work",
+    "featured": false,
+    "metrics": ["10M+ daily active users", "Real-time geospatial queries", "99.9% API availability"]
+  },
+  {
+    "id": "portfolio-site",
+    "title": "Personal Portfolio",
+    "description": "Modern portfolio website built with Next.js, featuring dark mode and smooth animations.",
+    "longDescription": "Production-grade portfolio showcasing modern web development practices with CI/CD, Docker, and comprehensive testing.",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    "category": "personal",
+    "featured": false,
+    "links": {
+      "github": "https://github.com/akashungarala/portfolio",
+      "live": "https://akashungarala.com"
+    }
+  }
+]

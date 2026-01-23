@@ -1,0 +1,32 @@
+[
+  {
+    "id": "masters",
+    "school": "University of Southern California",
+    "degree": "Master of Science",
+    "field": "Computer Science",
+    "location": "Los Angeles, CA",
+    "startDate": "2011",
+    "endDate": "2013",
+    "description": "Specialized in distributed systems and database systems.",
+    "highlights": [
+      "Graduate coursework in distributed computing and algorithms",
+      "Research focus on scalable data processing systems",
+      "Teaching Assistant for database systems course"
+    ]
+  },
+  {
+    "id": "bachelors",
+    "school": "Jawaharlal Nehru Technological University",
+    "degree": "Bachelor of Technology",
+    "field": "Computer Science and Engineering",
+    "location": "Hyderabad, India",
+    "startDate": "2007",
+    "endDate": "2011",
+    "description": "Foundation in computer science fundamentals and software engineering.",
+    "highlights": [
+      "Strong foundation in data structures and algorithms",
+      "Coursework in operating systems and computer networks",
+      "Senior project on distributed file systems"
+    ]
+  }
+]
