@@ -44,6 +44,7 @@ describe('FeaturedProjects', () => {
   it('should render a view all projects link', () => {
     render(<FeaturedProjects projects={mockProjects} />);
 
-    expect(screen.getByRole('link', { name: /view all projects/i })).toBeInTheDocument();
+    // Changed from "View all projects" to "View all"
+    expect(screen.getByRole('link', { name: /view all/i })).toBeInTheDocument();
   });
 });

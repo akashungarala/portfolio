@@ -8,16 +8,19 @@ const renderWithProviders = (ui: React.ReactElement) => {
 };
 
 describe('Header', () => {
-  it('should render the site title/logo', () => {
+  it('should render the breadcrumb path', () => {
     renderWithProviders(<Header />);
 
-    expect(screen.getByText(/akash/i)).toBeInTheDocument();
+    // The header now shows a breadcrumb path like ~/home
+    expect(screen.getByText(/~\/home/)).toBeInTheDocument();
   });
 
   it('should render navigation links', () => {
     renderWithProviders(<Header />);
 
-    expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
+    // Home appears twice (breadcrumb + nav link), so use getAllByRole
+    const homeLinks = screen.getAllByRole('link', { name: /home/i });
+    expect(homeLinks.length).toBeGreaterThanOrEqual(1);
     expect(screen.getByRole('link', { name: /projects/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument();
   });

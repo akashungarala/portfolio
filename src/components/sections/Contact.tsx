@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUpRight, Github, Linkedin, Mail, MessageSquare, Send } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, Send } from 'lucide-react';
 import { useState } from 'react';
 import { FadeIn } from '@/components/motion';
 import type { ProfileContent } from '@/lib/types';
@@ -58,171 +58,149 @@ export function Contact({ content }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="relative container section-padding">
-      <div className="mx-auto max-w-5xl">
+    <section id="contact" className="py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-6">
         <FadeIn>
-          <div className="mb-12 text-center">
-            <p className="mb-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+          <div className="mb-10">
+            <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
               Contact
             </p>
-            <h2>{contactInfo.heading}</h2>
-            <p className="mt-4 mx-auto max-w-2xl text-muted-foreground">
+            <h2 className="text-2xl font-semibold sm:text-3xl">{contactInfo.heading}</h2>
+            <p className="mt-3 text-muted-foreground leading-relaxed">
               {contactInfo.description.trim()}
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid gap-8 lg:grid-cols-5">
-          {/* Contact Form */}
-          <div className="lg:col-span-3">
-            <FadeIn delay={0.1}>
-              <div className={cn('rounded-xl border border-border p-6 sm:p-8', 'bg-card')}>
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="rounded-lg bg-secondary p-2.5">
-                    <MessageSquare className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Send a Message</h3>
-                </div>
+        {/* Social Links */}
+        <FadeIn delay={0.1}>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  'group inline-flex items-center gap-2 rounded-md px-3 py-1.5',
+                  'bg-muted/50 border border-border/50',
+                  'hover:bg-muted hover:border-border transition-colors',
+                  'text-sm',
+                )}
+                aria-label={link.label}
+              >
+                <link.icon className="h-3.5 w-3.5 text-muted-foreground" />
+                <span>{link.label}</span>
+                <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+            ))}
+          </div>
+        </FadeIn>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="name" className="mb-2 block text-sm font-medium">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className={cn(
-                          'w-full rounded-lg border border-border bg-background px-4 py-3',
-                          'placeholder:text-muted-foreground',
-                          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background',
-                          'transition-all',
-                        )}
-                        placeholder="Your name"
-                      />
-                    </div>
+        {/* Contact Form */}
+        <FadeIn delay={0.2}>
+          <div className="rounded-lg border border-border/50 bg-card/50 p-6">
+            <h3 className="mb-4 text-sm font-medium">Send a Message</h3>
 
-                    <div>
-                      <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className={cn(
-                          'w-full rounded-lg border border-border bg-background px-4 py-3',
-                          'placeholder:text-muted-foreground',
-                          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background',
-                          'transition-all',
-                        )}
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="mb-2 block text-sm font-medium">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className={cn(
-                        'w-full rounded-lg border border-border bg-background px-4 py-3',
-                        'placeholder:text-muted-foreground',
-                        'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background',
-                        'transition-all resize-none',
-                      )}
-                      placeholder="Tell me about your project..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="mb-1.5 block text-xs text-muted-foreground">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className={cn(
-                      'w-full inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3',
-                      'bg-primary text-primary-foreground font-medium',
-                      'hover:opacity-90 transition-opacity',
-                      'disabled:opacity-50 disabled:cursor-not-allowed',
+                      'w-full rounded-md border border-border/50 bg-background px-3 py-2 text-sm',
+                      'placeholder:text-muted-foreground/50',
+                      'focus:outline-none focus:border-border focus:ring-1 focus:ring-ring/20',
+                      'transition-colors',
                     )}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4" />
-                        Send Message
-                      </>
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="mb-1.5 block text-xs text-muted-foreground">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className={cn(
+                      'w-full rounded-md border border-border/50 bg-background px-3 py-2 text-sm',
+                      'placeholder:text-muted-foreground/50',
+                      'focus:outline-none focus:border-border focus:ring-1 focus:ring-ring/20',
+                      'transition-colors',
                     )}
-                  </button>
-                </form>
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <FadeIn delay={0.2}>
-              <div className={cn('rounded-xl border border-border p-6', 'bg-card', 'card-hover')}>
-                <h3 className="mb-4 text-lg font-semibold">Connect with me</h3>
-                <p className="mb-6 text-sm text-muted-foreground">
-                  Feel free to reach out through any of these platforms.
-                </p>
-
-                <div className="space-y-3">
-                  {socialLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        'group flex items-center justify-between rounded-lg p-3 -mx-3',
-                        'hover:bg-secondary transition-colors',
-                      )}
-                      aria-label={link.label}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="rounded-lg bg-secondary p-2">
-                          <link.icon className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <p className="font-medium text-sm">{link.label}</p>
-                          <p className="text-xs text-muted-foreground">{link.username}</p>
-                        </div>
-                      </div>
-                      <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  ))}
+                    placeholder="your.email@example.com"
+                  />
                 </div>
               </div>
-            </FadeIn>
 
-            <FadeIn delay={0.3}>
-              <div className={cn('rounded-xl p-6', 'bg-secondary border border-border')}>
-                <p className="text-sm font-medium text-muted-foreground">Current availability</p>
-                <p className="mt-2 font-medium">{contactInfo.availability}</p>
+              <div>
+                <label htmlFor="message" className="mb-1.5 block text-xs text-muted-foreground">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className={cn(
+                    'w-full rounded-md border border-border/50 bg-background px-3 py-2 text-sm',
+                    'placeholder:text-muted-foreground/50',
+                    'focus:outline-none focus:border-border focus:ring-1 focus:ring-ring/20',
+                    'transition-colors resize-none',
+                  )}
+                  placeholder="Tell me about your project..."
+                />
               </div>
-            </FadeIn>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={cn(
+                  'inline-flex items-center justify-center gap-2 rounded-md px-4 py-2',
+                  'bg-foreground text-background text-sm font-medium',
+                  'hover:bg-foreground/90 transition-colors',
+                  'disabled:opacity-50 disabled:cursor-not-allowed',
+                )}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-background/30 border-t-background" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-3.5 w-3.5" />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </form>
           </div>
-        </div>
+        </FadeIn>
+
+        {/* Availability */}
+        <FadeIn delay={0.3}>
+          <div className="mt-6 rounded-lg bg-muted/30 border border-border/30 p-4">
+            <p className="text-xs text-muted-foreground mb-1">Current availability</p>
+            <p className="text-sm">{contactInfo.availability}</p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

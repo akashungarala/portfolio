@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, ExternalLink, Folder, Github } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
 import { FadeIn } from '@/components/motion';
 import { cn } from '@/lib/utils';
@@ -26,54 +26,51 @@ interface FeaturedProjectsProps {
 
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   return (
-    <section id="projects" className="relative container section-padding">
-      <div className="mx-auto max-w-6xl">
+    <section id="projects" className="py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-6">
         <FadeIn>
-          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-10 flex items-end justify-between">
             <div>
-              <p className="mb-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
                 Portfolio
               </p>
-              <h2>Featured Projects</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Featured Projects</h2>
             </div>
             <Link
               href="/projects"
               className={cn(
-                'group inline-flex items-center gap-2 text-sm font-medium',
+                'group inline-flex items-center gap-1.5 text-sm',
                 'text-muted-foreground hover:text-foreground transition-colors',
               )}
             >
-              View all projects
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              View all
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
         </FadeIn>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-4">
           {projects.map((project, index) => (
             <FadeIn key={project.id} delay={0.1 * index}>
               <article
                 className={cn(
-                  'group flex h-full flex-col rounded-xl',
-                  'border border-border bg-card',
-                  'card-hover',
+                  'group rounded-lg border border-border/50 bg-card/50 p-5',
+                  'hover:border-border hover:bg-card transition-colors',
                 )}
               >
-                {/* Card header with icon */}
-                <div className="flex items-center justify-between p-6 pb-0">
-                  <div className="rounded-lg bg-secondary p-3">
-                    <Folder className="h-5 w-5" />
-                  </div>
-                  <div className="flex gap-2">
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <Link href={`/projects/${project.id}`}>
+                    <h3 className="font-medium hover:underline underline-offset-4">
+                      {project.title}
+                    </h3>
+                  </Link>
+                  <div className="flex gap-1.5 flex-shrink-0">
                     {project.links?.github && (
                       <a
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={cn(
-                          'rounded-lg p-2 text-muted-foreground',
-                          'hover:bg-secondary hover:text-foreground transition-colors',
-                        )}
+                        className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
                         aria-label="View source code"
                       >
                         <Github className="h-4 w-4" />
@@ -84,10 +81,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={cn(
-                          'rounded-lg p-2 text-muted-foreground',
-                          'hover:bg-secondary hover:text-foreground transition-colors',
-                        )}
+                        className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
                         aria-label="View live demo"
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -96,53 +90,40 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col p-6">
-                  <Link href={`/projects/${project.id}`}>
-                    <h3 className="mb-2 text-lg font-semibold hover:underline">{project.title}</h3>
-                  </Link>
-                  <p className="mb-4 flex-1 text-sm text-muted-foreground">
-                    {project.description.trim()}
-                  </p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  {project.description.trim()}
+                </p>
 
-                  {/* Metrics */}
-                  {project.metrics && project.metrics.length > 0 && (
-                    <ul className="mb-4 space-y-1.5">
-                      {project.metrics.slice(0, 2).map((metric) => (
-                        <li
-                          key={metric}
-                          className="flex items-center gap-2 text-xs text-muted-foreground"
-                        >
-                          <span className="h-1 w-1 rounded-full bg-muted-foreground" />
-                          {metric}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {/* Tech Stack */}
-                  <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-border">
-                    {project.techStack.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        data-testid="tech-badge"
-                        className={cn(
-                          'inline-flex items-center rounded-md px-2 py-0.5',
-                          'bg-secondary text-xs font-medium',
-                          'border border-border',
-                        )}
-                      >
-                        {tech}
-                      </span>
+                {/* Metrics */}
+                {project.metrics && project.metrics.length > 0 && (
+                  <ul className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
+                    {project.metrics.slice(0, 3).map((metric) => (
+                      <li key={metric} className="text-xs text-muted-foreground/75">
+                        • {metric}
+                      </li>
                     ))}
-                    {project.techStack.length > 4 && (
-                      <span
-                        data-testid="tech-badge"
-                        className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium text-muted-foreground"
-                      >
-                        +{project.techStack.length - 4}
-                      </span>
-                    )}
-                  </div>
+                  </ul>
+                )}
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-1.5">
+                  {project.techStack.slice(0, 5).map((tech) => (
+                    <span
+                      key={tech}
+                      data-testid="tech-badge"
+                      className="inline-flex items-center rounded px-2 py-0.5 bg-muted/50 text-xs font-mono"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.techStack.length > 5 && (
+                    <span
+                      data-testid="tech-badge"
+                      className="inline-flex items-center rounded px-2 py-0.5 text-xs text-muted-foreground"
+                    >
+                      +{project.techStack.length - 5}
+                    </span>
+                  )}
                 </div>
               </article>
             </FadeIn>
