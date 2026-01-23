@@ -62,10 +62,10 @@ export function Contact({ content }: ContactProps) {
       <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <div className="mb-10">
-            <p className="mb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            <p className="mb-2 text-xs font-medium uppercase tracking-widest text-[var(--highlight)]">
               Contact
             </p>
-            <h2 className="text-2xl font-semibold sm:text-3xl">{contactInfo.heading}</h2>
+            <h2 className="section-title">{contactInfo.heading}</h2>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               {contactInfo.description.trim()}
             </p>
