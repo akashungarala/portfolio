@@ -5,21 +5,20 @@ module.exports = {
       2,
       'always',
       [
-        'feat',
-        'fix',
-        'docs',
-        'style',
-        'refactor',
-        'perf',
-        'test',
-        'build',
-        'ci',
-        'chore',
-        'revert',
+        'feat', // New feature
+        'fix', // Bug fix
+        'docs', // Documentation
+        'style', // Formatting
+        'refactor', // Code restructuring
+        'perf', // Performance
+        'test', // Testing
+        'build', // Build system
+        'ci', // CI/CD
+        'chore', // Maintenance
+        'revert', // Revert commit
       ],
     ],
     'subject-case': [2, 'always', 'lower-case'],
-    'subject-empty': [2, 'never'],
-    'type-empty': [2, 'never'],
+    'header-max-length': [2, 'always', 100],
   },
 };

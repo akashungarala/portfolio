@@ -1,0 +1,35 @@
+# Dependencies
+node_modules
+
+# Build output
+.next
+
+# Testing
+__tests__
+coverage
+*.test.ts
+*.test.tsx
+
+# Development
+.env*.local
+.vscode
+.idea
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+CHANGELOG.md
+*.md
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
