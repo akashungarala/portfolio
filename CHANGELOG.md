@@ -1,3 +1,20 @@
+# [1.3.0](https://github.com/akashungarala/portfolio/compare/v1.2.0...v1.3.0) (2026-01-26)
+
+
+### Bug Fixes
+
+* consistent page centering and improved github activity caching ([6746e82](https://github.com/akashungarala/portfolio/commit/6746e82876b18710ee997034ecb16faab133d728))
+
+
+### Features
+
+* add keyword highlighting, accent colors, and enhanced animations ([2b78350](https://github.com/akashungarala/portfolio/commit/2b783506c5ff72e933b270d22942c30bcb8cacb0))
+* improve layout proportions and profile image styling ([ea3db4f](https://github.com/akashungarala/portfolio/commit/ea3db4fee507861d7902e5b96c66c5e4cc397344))
+* refactor to data-driven ui with yaml content management ([6d594e2](https://github.com/akashungarala/portfolio/commit/6d594e2958680e440d6dd42ae7991586621771df))
+* remove theme toggle and enforce dark mode only ([484a2fa](https://github.com/akashungarala/portfolio/commit/484a2fa6908722a282727603895bbfe7ac404eb4))
+* update accent colors to Claude-style and make project cards clickable ([8966625](https://github.com/akashungarala/portfolio/commit/896662530658d9b195763483061eb628b346135e)), closes [#da7756](https://github.com/akashungarala/portfolio/issues/da7756) [#e8967a](https://github.com/akashungarala/portfolio/issues/e8967a)
+* upgrade ui with breadcrumb navigation and consistent layout ([c122a40](https://github.com/akashungarala/portfolio/commit/c122a40af02950ee8c4a43f4524be4ceecfc6791))
+
 ## [1.4.1](https://github.com/akashungarala/portfolio/compare/v1.4.0...v1.4.1) (2026-01-23)
 
 
