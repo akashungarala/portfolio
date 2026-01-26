@@ -81,9 +81,9 @@
   --input: #e4e4e7;
   --ring: #18181b;
 
-  /* Accent highlight color - subtle blue */
-  --highlight: #3b82f6;
-  --highlight-muted: #60a5fa;
+  /* Accent highlight color - Claude terracotta/coral */
+  --highlight: #da7756;
+  --highlight-muted: #e8967a;
 
   /* Charts */
   --chart-1: #18181b;
@@ -136,9 +136,9 @@
   --input: #27272a;
   --ring: #d4d4d8;
 
-  /* Accent highlight color - brighter blue for dark mode */
-  --highlight: #60a5fa;
-  --highlight-muted: #93c5fd;
+  /* Accent highlight color - Claude terracotta/coral for dark mode */
+  --highlight: #e8967a;
+  --highlight-muted: #f0b8a2;
 
   /* Charts */
   --chart-1: #fafafa;

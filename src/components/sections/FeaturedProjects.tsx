@@ -52,94 +52,94 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
         <div className="space-y-4">
           {projects.map((project, index) => (
             <FadeIn key={project.id} delay={0.1 * index}>
-              <article
-                className={cn(
-                  'group rounded-lg border border-border/50 bg-card/50 p-5',
-                  'hover:border-[var(--highlight)]/50 hover:bg-card',
-                  'hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--highlight)]/5',
-                  'transition-all duration-300 ease-out',
-                )}
-              >
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <Link href={`/projects/${project.id}`}>
-                    <h3 className="font-medium hover:text-[var(--highlight)] transition-colors underline-offset-4">
+              <Link href={`/projects/${project.id}`} className="block">
+                <article
+                  className={cn(
+                    'group rounded-lg border border-border/50 bg-card/50 p-5 cursor-pointer',
+                    'hover:border-[var(--highlight)]/50 hover:bg-card',
+                    'hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--highlight)]/5',
+                    'transition-all duration-300 ease-out',
+                  )}
+                >
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <h3 className="font-medium group-hover:text-[var(--highlight)] transition-colors underline-offset-4">
                       {project.title}
                     </h3>
-                  </Link>
-                  <div className="flex gap-1.5 flex-shrink-0">
-                    {project.links?.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <div className="flex gap-1.5 flex-shrink-0">
+                      {project.links?.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(
+                            'p-1.5 text-muted-foreground rounded-md',
+                            'hover:text-[var(--highlight)] hover:bg-[var(--highlight)]/10',
+                            'transition-all duration-200',
+                          )}
+                          aria-label="View source code"
+                        >
+                          <Github className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.links?.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(
+                            'p-1.5 text-muted-foreground rounded-md',
+                            'hover:text-[var(--highlight)] hover:bg-[var(--highlight)]/10',
+                            'transition-all duration-200',
+                          )}
+                          aria-label="View live demo"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    {project.description.trim()}
+                  </p>
+
+                  {/* Metrics */}
+                  {project.metrics && project.metrics.length > 0 && (
+                    <ul className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
+                      {project.metrics.slice(0, 3).map((metric) => (
+                        <li key={metric} className="text-xs text-[var(--highlight)]/70">
+                          • {metric}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.techStack.slice(0, 5).map((tech) => (
+                      <span
+                        key={tech}
+                        data-testid="tech-badge"
                         className={cn(
-                          'p-1.5 text-muted-foreground rounded-md',
-                          'hover:text-[var(--highlight)] hover:bg-[var(--highlight)]/10',
-                          'transition-all duration-200',
+                          'inline-flex items-center rounded px-2 py-0.5 bg-muted/50 text-xs font-mono',
+                          'group-hover:bg-[var(--highlight)]/10 group-hover:text-[var(--highlight)]',
+                          'transition-colors duration-200',
                         )}
-                        aria-label="View source code"
                       >
-                        <Github className="h-4 w-4" />
-                      </a>
-                    )}
-                    {project.links?.live && (
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          'p-1.5 text-muted-foreground rounded-md',
-                          'hover:text-[var(--highlight)] hover:bg-[var(--highlight)]/10',
-                          'transition-all duration-200',
-                        )}
-                        aria-label="View live demo"
+                        {tech}
+                      </span>
+                    ))}
+                    {project.techStack.length > 5 && (
+                      <span
+                        data-testid="tech-badge"
+                        className="inline-flex items-center rounded px-2 py-0.5 text-xs text-muted-foreground"
                       >
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
+                        +{project.techStack.length - 5}
+                      </span>
                     )}
                   </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  {project.description.trim()}
-                </p>
-
-                {/* Metrics */}
-                {project.metrics && project.metrics.length > 0 && (
-                  <ul className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
-                    {project.metrics.slice(0, 3).map((metric) => (
-                      <li key={metric} className="text-xs text-[var(--highlight)]/70">
-                        • {metric}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.techStack.slice(0, 5).map((tech) => (
-                    <span
-                      key={tech}
-                      data-testid="tech-badge"
-                      className={cn(
-                        'inline-flex items-center rounded px-2 py-0.5 bg-muted/50 text-xs font-mono',
-                        'group-hover:bg-[var(--highlight)]/10 group-hover:text-[var(--highlight)]',
-                        'transition-colors duration-200',
-                      )}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 5 && (
-                    <span
-                      data-testid="tech-badge"
-                      className="inline-flex items-center rounded px-2 py-0.5 text-xs text-muted-foreground"
-                    >
-                      +{project.techStack.length - 5}
-                    </span>
-                  )}
-                </div>
-              </article>
+                </article>
+              </Link>
             </FadeIn>
           ))}
         </div>
