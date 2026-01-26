@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/akashungarala/portfolio/compare/v1.3.0...v1.3.1) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove gradients and github activity section ([9cff5c4](https://github.com/akashungarala/portfolio/commit/9cff5c4fa0ee8489abeefb68b3f1388b9fb845a4))
+
 # [1.3.0](https://github.com/akashungarala/portfolio/compare/v1.2.0...v1.3.0) (2026-01-26)
 
 
