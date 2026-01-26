@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
-import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import './globals.css';
 
 const geistSans = Geist({
@@ -74,17 +73,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
+    <html lang="en" className="dark overflow-x-hidden">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
-        <ThemeProvider>
-          <SmoothScrollProvider>
-            <div className="relative flex min-h-screen flex-col bg-background">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
-          </SmoothScrollProvider>
-        </ThemeProvider>
+        <SmoothScrollProvider>
+          <div className="relative flex min-h-screen flex-col bg-background">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
