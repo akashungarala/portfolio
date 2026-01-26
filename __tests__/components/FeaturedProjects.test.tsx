@@ -1,7 +1,21 @@
+/**
+ * FeaturedProjects Component Tests
+ *
+ * Tests for the featured projects section displayed on the home page.
+ */
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
 import { mockProjects } from '../fixtures/mockContent';
+
+// Mock next/navigation for useRouter
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+}));
 
 describe('FeaturedProjects', () => {
   it('should render a projects section heading', () => {
@@ -13,9 +27,9 @@ describe('FeaturedProjects', () => {
   it('should render featured project cards', () => {
     render(<FeaturedProjects projects={mockProjects} />);
 
-    // Should show at least one project card
-    const projectCards = screen.getAllByRole('article');
-    expect(projectCards.length).toBeGreaterThanOrEqual(1);
+    // Should show at least one clickable project card
+    const projectCards = screen.getAllByRole('button');
+    expect(projectCards.length).toBeGreaterThanOrEqual(mockProjects.length);
   });
 
   it('should display project titles', () => {
@@ -44,7 +58,6 @@ describe('FeaturedProjects', () => {
   it('should render a view all projects link', () => {
     render(<FeaturedProjects projects={mockProjects} />);
 
-    // Changed from "View all projects" to "View all"
     expect(screen.getByRole('link', { name: /view all/i })).toBeInTheDocument();
   });
 });
