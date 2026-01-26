@@ -214,15 +214,19 @@
     font-weight: 500;
   }
 
-  /* Section title with accent color */
+  /* Section title with accent */
   .section-title {
     @apply text-2xl font-semibold sm:text-3xl;
-    color: var(--highlight);
+    background: linear-gradient(135deg, var(--foreground) 0%, var(--highlight) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  /* Text gradient - now solid color */
+  /* Subtle text gradient for headings */
   .text-gradient {
-    color: var(--foreground);
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--foreground) 0%, var(--muted-foreground) 100%);
   }
 
   /* Card hover effect */

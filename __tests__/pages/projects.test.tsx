@@ -1,6 +1,20 @@
+/**
+ * Projects Page Tests
+ *
+ * Tests for the projects listing page displaying all work and personal projects.
+ */
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import ProjectsPage from '@/app/projects/page';
+
+// Mock next/navigation for useRouter
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+}));
 
 describe('Projects Page', () => {
   it('should render a page heading', () => {
@@ -13,8 +27,8 @@ describe('Projects Page', () => {
   it('should display all projects', () => {
     render(<ProjectsPage />);
 
-    // Should show project cards
-    const projectCards = screen.getAllByRole('article');
+    // Should show project cards (using button role since cards are clickable div elements)
+    const projectCards = screen.getAllByRole('button');
     expect(projectCards.length).toBeGreaterThanOrEqual(1);
   });
 

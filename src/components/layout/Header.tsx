@@ -3,6 +3,7 @@
 import { FileText, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -70,7 +71,8 @@ export function Header() {
             })}
           </div>
 
-          <div className="flex items-center ml-2">
+          <div className="flex items-center gap-1 ml-2">
+            <ThemeToggle />
             <a
               href="/resume.pdf"
               target="_blank"
