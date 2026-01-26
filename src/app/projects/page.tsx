@@ -1,18 +1,9 @@
+'use client';
+
 import { ExternalLink, Github } from 'lucide-react';
-import type { Metadata } from 'next';
+import Link from 'next/link';
 import projectsData from '@/data/projects.json';
 import { cn } from '@/lib/utils';
-
-export const metadata: Metadata = {
-  title: 'Projects',
-  description:
-    'Explore my portfolio of projects spanning distributed systems, real-time platforms, and backend engineering.',
-  openGraph: {
-    title: 'Projects | Akash Ungarala',
-    description:
-      'Explore my portfolio of projects spanning distributed systems, real-time platforms, and backend engineering.',
-  },
-};
 
 interface Project {
   id: string;
@@ -71,92 +62,101 @@ export default function ProjectsPage() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article
-      className={cn(
-        'group relative flex flex-col rounded-lg border border-border/50',
-        'bg-card/50 backdrop-blur-sm',
-        'hover:border-border hover:bg-card transition-colors',
-      )}
-    >
-      <div className="flex flex-1 flex-col p-6">
-        <div className="mb-2 flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-          <span
-            className={cn(
-              'rounded-full px-2 py-0.5 text-xs font-medium',
-              project.category === 'work'
-                ? 'bg-blue-500/10 text-blue-500'
-                : 'bg-green-500/10 text-green-500',
-            )}
-          >
-            {project.category}
-          </span>
-        </div>
-
-        <p className="mb-4 flex-1 text-sm text-muted-foreground">{project.description}</p>
-
-        {/* Metrics */}
-        {project.metrics && project.metrics.length > 0 && (
-          <ul className="mb-4 space-y-1">
-            {project.metrics.map((metric) => (
-              <li key={metric} className="flex items-center gap-2 text-xs text-muted-foreground">
-                <span className="h-1 w-1 rounded-full bg-primary" />
-                {metric}
-              </li>
-            ))}
-          </ul>
+    <Link href={`/projects/${project.id}`} className="block">
+      <article
+        className={cn(
+          'group relative flex h-full flex-col rounded-lg border border-border/50 cursor-pointer',
+          'bg-card/50 backdrop-blur-sm',
+          'hover:border-[var(--highlight)]/50 hover:bg-card',
+          'hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--highlight)]/5',
+          'transition-all duration-300 ease-out',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--highlight)] focus-visible:ring-offset-2',
         )}
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2">
-          {project.techStack.map((tech) => (
+      >
+        <div className="flex flex-1 flex-col p-6">
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="text-lg font-semibold text-foreground group-hover:text-[var(--highlight)] transition-colors">
+              {project.title}
+            </h3>
             <span
-              key={tech}
-              data-testid="tech-badge"
               className={cn(
-                'inline-flex items-center rounded-md px-2 py-1',
-                'bg-muted text-xs font-medium text-muted-foreground',
+                'rounded-full px-2 py-0.5 text-xs font-medium',
+                project.category === 'work'
+                  ? 'bg-[var(--highlight)]/10 text-[var(--highlight)]'
+                  : 'bg-green-500/10 text-green-500',
               )}
             >
-              {tech}
+              {project.category}
             </span>
-          ))}
-        </div>
-
-        {/* Links */}
-        {project.links && (
-          <div className="mt-4 flex gap-4 border-t border-border/50 pt-4">
-            {project.links.github && (
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  'inline-flex items-center gap-1 text-sm',
-                  'text-muted-foreground hover:text-foreground transition-colors',
-                )}
-              >
-                <Github className="h-4 w-4" />
-                Code
-              </a>
-            )}
-            {project.links.live && (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  'inline-flex items-center gap-1 text-sm',
-                  'text-muted-foreground hover:text-foreground transition-colors',
-                )}
-              >
-                <ExternalLink className="h-4 w-4" />
-                Live
-              </a>
-            )}
           </div>
-        )}
-      </div>
-    </article>
+
+          <p className="mb-4 flex-1 text-sm text-muted-foreground">{project.description}</p>
+
+          {/* Metrics */}
+          {project.metrics && project.metrics.length > 0 && (
+            <ul className="mb-4 space-y-1">
+              {project.metrics.map((metric) => (
+                <li key={metric} className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="h-1 w-1 rounded-full bg-[var(--highlight)]" />
+                  {metric}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2">
+            {project.techStack.map((tech) => (
+              <span
+                key={tech}
+                data-testid="tech-badge"
+                className={cn(
+                  'inline-flex items-center rounded-md px-2 py-1',
+                  'bg-muted text-xs font-medium text-muted-foreground',
+                  'group-hover:bg-[var(--highlight)]/10 group-hover:text-[var(--highlight)]',
+                  'transition-colors duration-200',
+                )}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Links */}
+          {project.links && (
+            <div className="mt-4 flex gap-4 border-t border-border/50 pt-4">
+              {project.links.github && (
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    'inline-flex items-center gap-1 text-sm',
+                    'text-muted-foreground hover:text-[var(--highlight)] transition-colors',
+                  )}
+                >
+                  <Github className="h-4 w-4" />
+                  Code
+                </a>
+              )}
+              {project.links.live && (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    'inline-flex items-center gap-1 text-sm',
+                    'text-muted-foreground hover:text-[var(--highlight)] transition-colors',
+                  )}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Live
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </article>
+    </Link>
   );
 }
