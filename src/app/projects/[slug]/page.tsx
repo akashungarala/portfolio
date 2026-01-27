@@ -173,9 +173,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             className={cn(
               'inline-flex items-center justify-center',
               'rounded-lg px-6 py-3',
-              'gradient-bg text-white font-semibold',
-              'shadow-lg shadow-primary/20',
-              'hover:shadow-xl hover:shadow-primary/30',
+              'bg-foreground text-background font-semibold',
+              'shadow-lg shadow-foreground/20',
+              'hover:bg-[var(--highlight)] hover:shadow-xl hover:shadow-[var(--highlight)]/30',
               'transition-all duration-300',
             )}
           >

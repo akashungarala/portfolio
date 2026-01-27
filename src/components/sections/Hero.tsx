@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn } from '@/components/motion';
@@ -61,7 +61,22 @@ export function Hero({ content }: HeroProps) {
 
         {/* Title */}
         <FadeIn delay={0.3}>
-          <p className="mb-6 text-lg font-medium text-muted-foreground md:text-xl">{title}</p>
+          <p className="mb-4 text-lg font-medium text-muted-foreground md:text-xl">{title}</p>
+        </FadeIn>
+
+        {/* Location Info */}
+        <FadeIn delay={0.35}>
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="h-4 w-4 text-[var(--highlight)]" />
+              Charlotte, NC
+            </span>
+            <span className="hidden sm:inline text-border">•</span>
+            <span className="inline-flex items-center gap-1.5">
+              <Globe className="h-4 w-4 text-[var(--highlight)]" />
+              Open to Remote & Any Timezone
+            </span>
+          </div>
         </FadeIn>
 
         {/* Tagline with highlighted keywords */}
