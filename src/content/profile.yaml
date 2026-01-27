@@ -9,9 +9,9 @@
 # Personal Information
 # -----------------------------------------------------------------------------
 name: Akash Ungarala
-title: Senior Backend Engineer
+title: Senior Backend Developer
 email: akash.ungarala@gmail.com
-location: Charlotte, NC
+location: North Carolina, USA
 profileImage: /assets/profile.jpg
 resumeUrl: /resume.pdf
 
@@ -24,60 +24,62 @@ social:
 # Hero Section
 # -----------------------------------------------------------------------------
 headline:
-  badge: Available for opportunities
+  badge: Open to Remote & Relocation
   tagline: |
-    Building distributed systems at scale. 10+ years across gaming, fintech,
-    media, and ad-tech. Focused on reliability, performance, and high-throughput platforms.
+    Senior Backend Developer specializing in Python and TypeScript. 6+ years building
+    real-time systems, data pipelines, and scalable APIs across broadcast media,
+    fintech, gaming, and ad-tech.
   highlights:
-    - distributed systems at scale
-    - reliability
-    - performance
-    - high-throughput platforms
+    - Python
+    - TypeScript
+    - real-time systems
+    - scalable APIs
 
 # -----------------------------------------------------------------------------
 # About Section
 # -----------------------------------------------------------------------------
 about:
-  heading: Building systems that scale with confidence
+  heading: Backend systems that power millions of users
   intro: |
-    I'm a Senior Backend Engineer with over 10 years of experience building
-    and scaling distributed systems across diverse industries including gaming,
-    fintech, media, and ad-tech.
+    I'm a backend developer with 10+ years in software engineering, the last 6+ focused
+    exclusively on building high-throughput backend systems. From real-time broadcast
+    captioning at Fox to ad analytics serving millions at Niantic, I've built systems
+    where reliability isn't optional—it's the baseline.
   philosophy: |
-    My technical philosophy centers on three core principles: reliability,
-    performance, and scale. I believe that great backend systems are invisible
-    to users—they just work, fast and consistently, regardless of load.
+    I believe great backend systems are invisible to users: fast, consistent, and resilient
+    under load. My approach combines Python's expressiveness with TypeScript's type safety
+    to build APIs and services that teams can maintain and scale with confidence.
   currentFocus: |
-    Currently, I'm focused on designing high-throughput platforms and real-time
-    data pipelines. I have a deep interest in distributed systems architecture,
-    service mesh patterns, and building infrastructure that empowers teams to
-    ship faster with confidence.
+    Currently building real-time captioning infrastructure at Fox Corporation—distributed
+    microservices handling live broadcast captions with automatic failover. I'm drawn to
+    problems involving real-time data, event-driven architectures, and systems that need
+    to work the first time, every time.
   coreValues:
     - reliability
     - performance
-    - scale
+    - maintainability
 
 # Core Expertise
 expertise:
   - icon: server
-    label: Distributed Systems Architecture
+    label: RESTful APIs & Microservices
   - icon: zap
-    label: High-Throughput Data Pipelines
+    label: Real-Time & Event-Driven Systems
   - icon: database
-    label: Real-Time Processing Systems
+    label: Data Pipelines & ETL
   - icon: cloud
-    label: Platform Engineering
+    label: Cloud-Native Architecture
 
 # Tech Stack
 technologies:
-  - category: Languages
-    items: [Go, Python, Node.js, Java]
-  - category: Infrastructure
-    items: [Kubernetes, Docker, Terraform]
+  - category: Backend
+    items: [Python, TypeScript, FastAPI, Flask, Express.js, Node.js]
   - category: Data
-    items: [PostgreSQL, Redis, Kafka]
+    items: [PostgreSQL, MySQL, MongoDB, BigQuery, Redis]
   - category: Cloud
-    items: [AWS, GCP, Azure]
+    items: [AWS, GCP, Docker, Kubernetes]
+  - category: Tools
+    items: [Celery, RabbitMQ, Pub/Sub, Airflow]
 
 # -----------------------------------------------------------------------------
 # Work Experience
@@ -85,200 +87,261 @@ technologies:
 workExperience:
   - id: fox
     company: Fox Corporation
-    title: Senior Software Engineer
-    location: Los Angeles, CA
-    startDate: "2022"
+    title: Senior Backend Developer
+    location: Remote (AZ)
+    startDate: Sep 2024
     endDate: Present
     description: |
-      Building real-time broadcast captioning systems and distributed media
-      pipelines at scale.
+      Spearheading CaptionExchange, a real-time captioning platform supporting
+      AI/ASR and human captions with intelligent routing and automatic failover
+      for live broadcast operations.
     highlights:
       - |
-        Architected microservices platform handling live broadcast caption
-        delivery for major TV networks
+        Designed backend microservices using Python (FastAPI, Flask) and Express.js
+        for broker, agent, and caption routing with real-time buffer management
       - |
-        Implemented WebSocket-based real-time communication infrastructure
-        with sub-100ms latency
+        Implemented scalable gateway service managing decoded audio transport,
+        caption injection through edge devices, and human captioner sessions
       - |
-        Led development of multi-tenant caption exchange system supporting
-        100+ concurrent broadcasts
+        Led full-stack Electron app development with WebSockets for reactive
+        real-time communication across broadcast teams
+      - |
+        Containerized services with Docker and deployed to Kubernetes clusters
+        using Helm, with CI/CD pipelines via GitHub Actions
 
   - id: fidelity
     company: Fidelity Investments
-    title: Senior Software Engineer
-    location: Boston, MA
-    startDate: "2020"
-    endDate: "2022"
+    title: Senior Observability Engineer
+    location: North Carolina
+    startDate: Oct 2023
+    endDate: Jul 2024
     description: |
-      Developed high-throughput trading systems and financial data pipelines.
+      Led design and development of a custom SLO Tracker solution integrated
+      with OpenTelemetry gateway stack and AWS backend services.
     highlights:
       - |
-        Built real-time market data processing systems handling millions of
-        events per second
+        Built backend services in Python/FastAPI with AWS Lambda, API Gateway,
+        and Terraform, using PostgreSQL RDS with Alembic for migrations
       - |
-        Designed SLO-based monitoring platform tracking 500+ microservices
-        with intelligent alerting
+        Enabled teams to define SLOs using alerts-as-code model with error
+        budgets and automated breach notifications via SNS
       - |
-        Optimized batch processing jobs reducing portfolio analytics
-        computation time by 60%
+        Developed responsive React frontend providing centralized visibility
+        into SLOs, targets, and deficits across engineering teams
+      - |
+        Implemented proof of concept for high-cardinality metrics using
+        Amazon Managed Prometheus with Grafana dashboards
 
   - id: niantic
     company: Niantic
-    title: Backend Engineer
+    title: Software Engineer II
     location: San Francisco, CA
-    startDate: "2018"
-    endDate: "2020"
+    startDate: Nov 2021
+    endDate: Aug 2023
     description: |
-      Scaled backend systems for location-based gaming platforms with
-      millions of daily active users.
+      Designed scalable, contextual location-based ad solutions serving millions
+      of users daily with real-time performance tracking and analytics.
     highlights:
       - |
-        Scaled game server infrastructure to handle 10M+ concurrent users
-        during peak events
+        Developed high-performance RESTful APIs using TypeScript (Node.js) and
+        Python (FastAPI) for real-time data access and system responsiveness
       - |
-        Implemented geospatial data processing pipelines for real-time
-        location-based queries
+        Built Node.js application with Express.js, protocol buffers, and Google
+        Cloud Spanner, optimizing data storage with TypeORM
       - |
-        Built event-driven architecture for real-time game state
-        synchronization across regions
+        Implemented Celery for async task processing and job scheduling,
+        reducing system latency and improving responsiveness
+      - |
+        Contributed to Pokemon GO by developing WebAR ad telemetry mechanisms
+        and tiered reward patterns for future Ads SDK flows
 
   - id: adara
     company: Adara
-    title: Software Engineer
-    location: Mountain View, CA
-    startDate: "2016"
-    endDate: "2018"
+    title: Senior Backend Engineer
+    location: San Francisco, CA
+    startDate: Feb 2019
+    endDate: Nov 2021
     description: |
-      Built high-throughput ad-tech platforms processing billions of
-      events daily.
+      Developed and optimized data pipelines supporting data science, business
+      applications, and real-time analytics at scale.
     highlights:
       - |
-        Developed real-time bidding systems processing 1M+ QPS with
-        sub-10ms response times
+        Engineered high-throughput data ingestion systems in Python using
+        Cloud Pub/Sub, processing terabytes of data daily
       - |
-        Built data pipelines for audience segmentation processing
-        10B+ events daily
+        Spearheaded real-time analytics dashboard using Flask and SQLAlchemy,
+        providing stakeholders with insights into key metrics
       - |
-        Implemented distributed caching layer reducing ad serving
-        latency by 40%
+        Designed custom ORM layer on Postgres, optimizing schema for complex
+        queries and reducing query times by 30%
+      - |
+        Orchestrated complex workflows using Apache Airflow DAGs for ETL and
+        process automation with containerized Kubernetes deployments
+
+  - id: apple
+    company: Apple (via L&T Infotech)
+    title: Senior Software Engineer
+    location: Cupertino, CA
+    startDate: Dec 2018
+    endDate: Feb 2019
+    description: |
+      Developed key features for a Learning Management Services application
+      used by Apple retail employees for training completion.
+    highlights:
+      - |
+        Designed and implemented RESTful APIs using FastAPI with Swagger,
+        enhancing data accessibility with clear API documentation
+      - |
+        Integrated APIs into iOS, iPad, and macOS client applications ensuring
+        seamless backend-frontend communication
+      - |
+        Implemented GitLab CI/CD pipelines for automated testing, code quality
+        checks, and deployments
+
+  - id: google
+    company: Google (via Bucher & Christian)
+    title: Action Support Engineer
+    location: Mountain View, CA
+    startDate: Oct 2017
+    endDate: Dec 2018
+    description: |
+      Supported Dialogflow, leveraging Google's ML and Cloud Speech-to-Text,
+      powering actions for 400M+ Google Assistant devices.
+    highlights:
+      - |
+        Developed Dialogflow chatbot prototypes using Python, Node.js, and Java
+        with demo apps for iOS and Android
+      - |
+        Implemented webhooks for chatbots to process natural language requests
+        and return real-time dynamic responses
+      - |
+        Recommended scalable agent designs to enterprise partners, delivering
+        prototypes tailored to AI scenarios
 
   - id: infosys
     company: Infosys
-    title: Software Engineer
-    location: Bangalore, India
-    startDate: "2013"
-    endDate: "2016"
+    title: Systems Engineer
+    location: Hyderabad, India
+    startDate: Feb 2014
+    endDate: Jul 2015
     description: |
-      Started career building enterprise applications and learning
-      distributed systems fundamentals.
+      Developed features for enterprise self-service web portal for PG&E
+      (Pacific Gas and Electric Company) using Python Django.
     highlights:
       - |
-        Developed enterprise Java applications for Fortune 500 banking
-        clients
+        Implemented sign-up, login modules, and CRUD operations for organization
+        and employee data management
       - |
-        Built RESTful APIs and transitioned monoliths to microservices
-        architecture
+        Worked extensively with MySQL, writing SQL queries and managing stored
+        procedures, triggers, and indexes
       - |
-        Gained strong foundation in software engineering best practices
-        and agile methodologies
+        Gained foundational experience in full-stack development, database
+        design, and API integration
 
 # -----------------------------------------------------------------------------
 # Education
 # -----------------------------------------------------------------------------
 education:
   - id: masters
-    school: University of Southern California
+    school: University of North Carolina at Charlotte
     degree: Master of Science
     field: Computer Science
-    location: Los Angeles, CA
-    startDate: "2011"
-    endDate: "2013"
-    description: Specialized in distributed systems and database systems.
+    location: Charlotte, NC
+    startDate: Aug 2015
+    endDate: Dec 2016
+    description: |
+      Graduate studies in computer science with research focus on location-based
+      services and cloud-native application development.
     highlights:
-      - Graduate coursework in distributed computing and algorithms
-      - Research focus on scalable data processing systems
-      - Teaching Assistant for database systems course
+      - |
+        Graduate Research Assistant: Built NatureNet, a citizen science platform
+        using Python Flask on Google Cloud Platform
+      - |
+        Developed location-based services with Firebase, Firestore, and Cloud Storage
+        for cross-platform data collection
 
   - id: bachelors
     school: Jawaharlal Nehru Technological University
     degree: Bachelor of Technology
-    field: Computer Science and Engineering
+    field: Electronics Engineering
     location: Hyderabad, India
-    startDate: "2007"
-    endDate: "2011"
-    description: Foundation in computer science fundamentals and software engineering.
+    startDate: Sep 2009
+    endDate: May 2013
+    description: |
+      Foundation in engineering principles with coursework spanning electronics,
+      programming, and systems design.
     highlights:
-      - Strong foundation in data structures and algorithms
-      - Coursework in operating systems and computer networks
-      - Senior project on distributed file systems
+      - Strong foundation in programming fundamentals and algorithms
+      - Coursework in embedded systems and digital electronics
 
 # -----------------------------------------------------------------------------
 # Projects
 # -----------------------------------------------------------------------------
 workProjects:
   - id: caption-exchange
-    title: CaptionExchange Platform
+    title: CaptionExchange
     description: |
-      Real-time broadcast captioning system handling live caption delivery
-      for major TV networks.
+      Real-time AI-human caption routing platform with distributed buffering
+      and automatic failover for live broadcast delivery.
     longDescription: |
-      Multi-tenant platform enabling real-time caption exchange between
-      broadcasters, supporting WebSocket-based communication and multiple
-      transcription providers.
-    techStack: [Node.js, TypeScript, WebSocket, Redis, Docker, Kubernetes]
+      Multi-tenant captioning platform supporting both AI/ASR and human captioners
+      with intelligent routing, real-time buffer management, and automatic failover.
+      Built with microservices architecture handling live broadcast operations with
+      sub-second latency requirements.
+    techStack: [Python, FastAPI, Flask, Express.js, WebSockets, AWS, Docker, Kubernetes]
     featured: true
     metrics:
-      - Sub-100ms latency for live captions
-      - 99.99% uptime for broadcast operations
-      - Supporting 100+ concurrent broadcasts
+      - Real-time caption routing with automatic failover
+      - Multi-tenant support for concurrent broadcasts
+      - Sub-second latency for live delivery
 
-  - id: slo-platform
-    title: SLO Monitoring Platform
+  - id: slo-tracker
+    title: SLO Tracker
     description: |
-      Service Level Objective monitoring and alerting platform for
-      financial trading systems.
+      Serverless solution for automated SLO creation and alerting, improving
+      system reliability visibility across engineering teams.
     longDescription: |
-      Built end-to-end SLO platform with custom metrics collection,
-      anomaly detection, and intelligent alerting for high-frequency
-      trading systems.
-    techStack: [Python, Go, Prometheus, Grafana, Kafka, PostgreSQL]
+      Custom SLO tracking platform integrated with OpenTelemetry gateway stack.
+      Teams define SLOs using alerts-as-code model, set error budgets, and receive
+      automated breach notifications. Built with API-first design for scalability.
+    techStack: [Python, FastAPI, AWS Lambda, API Gateway, PostgreSQL, React, Terraform]
     featured: true
     metrics:
-      - Monitoring 500+ microservices
-      - Processing 1M+ metrics per second
-      - Reduced incident response time by 60%
+      - Alerts-as-code model for SLO definitions
+      - Automated breach notifications via SNS
+      - Centralized visibility across teams
 
-  - id: adtech-platform
-    title: Real-Time Bidding Platform
+  - id: ad-analytics
+    title: Ad Analytics Pipeline
     description: |
-      High-throughput ad-tech platform processing billions of bid
-      requests daily.
+      Event-driven analytics pipeline enabling real-time ad performance tracking
+      at scale for location-based gaming platforms.
     longDescription: |
-      Designed and built real-time bidding infrastructure capable of
-      handling millions of QPS with sub-10ms response times.
-    techStack: [Java, Kafka, Redis, Cassandra, AWS, Terraform]
+      High-throughput data ingestion and analytics system processing terabytes of
+      ad telemetry data daily. Built with event-driven microservices architecture
+      using Cloud Pub/Sub for decoupled, scalable processing.
+    techStack: [Python, BigQuery, Cloud Pub/Sub, Celery, Flask, GCP]
     featured: true
     metrics:
-      - 1M+ QPS at peak traffic
-      - Sub-10ms p99 latency
-      - Processing 10B+ events daily
-
-  - id: game-backend
-    title: Location-Based Game Backend
-    description: |
-      Scalable backend infrastructure for location-based mobile games
-      with millions of DAU.
-    longDescription: |
-      Built geospatial data processing pipelines and real-time game
-      state synchronization systems for location-based gaming platforms.
-    techStack: [Go, gRPC, MongoDB, Redis, GCP, Kubernetes]
-    featured: false
-    metrics:
-      - 10M+ daily active users
-      - Real-time geospatial queries
-      - 99.9% API availability
+      - Processing terabytes of data daily
+      - Real-time ad performance tracking
+      - Serving millions of users
 
 personalProjects:
+  - id: chirp
+    title: Chirp API
+    description: |
+      Production-ready REST API for user registration, authentication, voting,
+      and relational data management with full CI/CD pipeline.
+    longDescription: |
+      Backend API demonstrating modern Python development practices including
+      schema validation with Pydantic, SQLAlchemy ORM, Alembic migrations,
+      and automated CI/CD with GitHub Actions.
+    techStack: [Python, FastAPI, PostgreSQL, SQLAlchemy, Docker, GitHub Actions]
+    featured: false
+    links:
+      github: https://github.com/akashungarala/chirp
+
   - id: portfolio-site
     title: Personal Portfolio
     description: |
@@ -286,8 +349,8 @@ personalProjects:
       and smooth animations.
     longDescription: |
       Production-grade portfolio showcasing modern web development
-      practices with CI/CD, Docker, and comprehensive testing.
-    techStack: [Next.js, TypeScript, Tailwind CSS, Framer Motion, Vercel]
+      practices with TypeScript, Tailwind CSS, and Framer Motion.
+    techStack: [Next.js, TypeScript, Tailwind CSS, Framer Motion]
     featured: false
     links:
       github: https://github.com/akashungarala/portfolio
@@ -297,8 +360,9 @@ personalProjects:
 # Contact Section
 # -----------------------------------------------------------------------------
 contact:
-  heading: Let's work together
+  heading: Let's build something together
   description: |
-    I'm always interested in hearing about new opportunities,
-    challenging projects, or just connecting with fellow engineers.
-  availability: Currently open to senior backend and platform engineering roles.
+    I'm interested in senior and staff backend roles where I can design systems
+    at scale. Whether it's real-time platforms, data pipelines, or API architecture,
+    I enjoy solving hard problems with Python and TypeScript.
+  availability: Open to remote positions and relocation within the US.

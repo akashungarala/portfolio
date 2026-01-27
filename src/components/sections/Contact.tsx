@@ -172,10 +172,12 @@ export function Contact({ content }: ContactProps) {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  'inline-flex items-center justify-center gap-2 rounded-md px-4 py-2',
+                  'group inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5',
                   'bg-foreground text-background text-sm font-medium',
-                  'hover:bg-foreground/90 transition-colors',
-                  'disabled:opacity-50 disabled:cursor-not-allowed',
+                  'hover:bg-[var(--highlight)] hover:scale-105',
+                  'transition-all duration-300 ease-out',
+                  'shadow-lg hover:shadow-xl hover:shadow-[var(--highlight)]/20',
+                  'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-foreground',
                 )}
               >
                 {isSubmitting ? (
@@ -185,7 +187,7 @@ export function Contact({ content }: ContactProps) {
                   </>
                 ) : (
                   <>
-                    <Send className="h-3.5 w-3.5" />
+                    <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                     Send Message
                   </>
                 )}

@@ -1,58 +1,81 @@
 [
   {
     "id": "caption-exchange",
-    "title": "CaptionExchange Platform",
-    "description": "Real-time broadcast captioning system handling live caption delivery for major TV networks.",
-    "longDescription": "Multi-tenant platform enabling real-time caption exchange between broadcasters, supporting WebSocket-based communication and multiple transcription providers.",
-    "techStack": ["Node.js", "TypeScript", "WebSocket", "Redis", "Docker", "Kubernetes"],
+    "title": "CaptionExchange",
+    "description": "Real-time AI-human caption routing platform with distributed buffering and automatic failover for live broadcast delivery.",
+    "longDescription": "Multi-tenant captioning platform supporting both AI/ASR and human captioners with intelligent routing, real-time buffer management, and automatic failover. Built with microservices architecture handling live broadcast operations with sub-second latency requirements.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "Express.js",
+      "WebSockets",
+      "AWS",
+      "Docker",
+      "Kubernetes"
+    ],
     "category": "work",
     "featured": true,
     "metrics": [
-      "Sub-100ms latency for live captions",
-      "99.99% uptime for broadcast operations",
-      "Supporting 100+ concurrent broadcasts"
+      "Real-time caption routing with automatic failover",
+      "Multi-tenant support for concurrent broadcasts",
+      "Sub-second latency for live delivery"
     ]
   },
   {
-    "id": "slo-platform",
-    "title": "SLO Monitoring Platform",
-    "description": "Service Level Objective monitoring and alerting platform for financial trading systems.",
-    "longDescription": "Built end-to-end SLO platform with custom metrics collection, anomaly detection, and intelligent alerting for high-frequency trading systems.",
-    "techStack": ["Python", "Go", "Prometheus", "Grafana", "Kafka", "PostgreSQL"],
+    "id": "slo-tracker",
+    "title": "SLO Tracker",
+    "description": "Serverless solution for automated SLO creation and alerting, improving system reliability visibility across engineering teams.",
+    "longDescription": "Custom SLO tracking platform integrated with OpenTelemetry gateway stack. Teams define SLOs using alerts-as-code model, set error budgets, and receive automated breach notifications. Built with API-first design for scalability.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "AWS Lambda",
+      "API Gateway",
+      "PostgreSQL",
+      "React",
+      "Terraform"
+    ],
     "category": "work",
     "featured": true,
     "metrics": [
-      "Monitoring 500+ microservices",
-      "Processing 1M+ metrics per second",
-      "Reduced incident response time by 60%"
+      "Alerts-as-code model for SLO definitions",
+      "Automated breach notifications via SNS",
+      "Centralized visibility across teams"
     ]
   },
   {
-    "id": "adtech-platform",
-    "title": "Real-Time Bidding Platform",
-    "description": "High-throughput ad-tech platform processing billions of bid requests daily.",
-    "longDescription": "Designed and built real-time bidding infrastructure capable of handling millions of QPS with sub-10ms response times.",
-    "techStack": ["Java", "Kafka", "Redis", "Cassandra", "AWS", "Terraform"],
+    "id": "ad-analytics",
+    "title": "Ad Analytics Pipeline",
+    "description": "Event-driven analytics pipeline enabling real-time ad performance tracking at scale for location-based gaming platforms.",
+    "longDescription": "High-throughput data ingestion and analytics system processing terabytes of ad telemetry data daily. Built with event-driven microservices architecture using Cloud Pub/Sub for decoupled, scalable processing.",
+    "techStack": ["Python", "BigQuery", "Cloud Pub/Sub", "Celery", "Flask", "GCP"],
     "category": "work",
     "featured": true,
-    "metrics": ["1M+ QPS at peak traffic", "Sub-10ms p99 latency", "Processing 10B+ events daily"]
+    "metrics": [
+      "Processing terabytes of data daily",
+      "Real-time ad performance tracking",
+      "Serving millions of users"
+    ]
   },
   {
-    "id": "game-backend",
-    "title": "Location-Based Game Backend",
-    "description": "Scalable backend infrastructure for location-based mobile games with millions of DAU.",
-    "longDescription": "Built geospatial data processing pipelines and real-time game state synchronization systems for location-based gaming platforms.",
-    "techStack": ["Go", "gRPC", "MongoDB", "Redis", "GCP", "Kubernetes"],
-    "category": "work",
+    "id": "chirp",
+    "title": "Chirp API",
+    "description": "Production-ready REST API for user registration, authentication, voting, and relational data management with full CI/CD pipeline.",
+    "longDescription": "Backend API demonstrating modern Python development practices including schema validation with Pydantic, SQLAlchemy ORM, Alembic migrations, and automated CI/CD with GitHub Actions.",
+    "techStack": ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "GitHub Actions"],
+    "category": "personal",
     "featured": false,
-    "metrics": ["10M+ daily active users", "Real-time geospatial queries", "99.9% API availability"]
+    "links": {
+      "github": "https://github.com/akashungarala/chirp"
+    }
   },
   {
     "id": "portfolio-site",
     "title": "Personal Portfolio",
     "description": "Modern portfolio website built with Next.js, featuring dark mode and smooth animations.",
-    "longDescription": "Production-grade portfolio showcasing modern web development practices with CI/CD, Docker, and comprehensive testing.",
-    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    "longDescription": "Production-grade portfolio showcasing modern web development practices with TypeScript, Tailwind CSS, and Framer Motion.",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     "category": "personal",
     "featured": false,
     "links": {
