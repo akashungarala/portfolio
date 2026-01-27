@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/akashungarala/portfolio/compare/v1.4.0...v1.5.0) (2026-01-27)
+
+
+### Bug Fixes
+
+* update contact test to match new heading ([be1b74d](https://github.com/akashungarala/portfolio/commit/be1b74d1ab12a9138ddeaa2c75f4898d9d2f066e))
+
+
+### Features
+
+* update portfolio content from resume and fix button animations ([32e9825](https://github.com/akashungarala/portfolio/commit/32e9825dd9b71a9637fb0ffeeb36341344ca14b1))
+
 # [1.4.0](https://github.com/akashungarala/portfolio/compare/v1.3.1...v1.4.0) (2026-01-27)
 
 
