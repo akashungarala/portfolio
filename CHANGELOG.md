@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/akashungarala/portfolio/compare/v1.3.1...v1.4.0) (2026-01-27)
+
+
+### Features
+
+* fix button colors and add location info to hero section ([0b2cddc](https://github.com/akashungarala/portfolio/commit/0b2cddc5bb88b08d5bb8d261109ab4d182f36fdf))
+
 ## [1.3.1](https://github.com/akashungarala/portfolio/compare/v1.3.0...v1.3.1) (2026-01-26)
 
 
