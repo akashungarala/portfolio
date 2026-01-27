@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next';
-import projects from '@/data/projects.json';
+import { getAllProjects } from '@/lib/get-content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://akashungarala.com';
+  const projects = getAllProjects();
 
   const projectRoutes = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.id}`,

@@ -2,7 +2,7 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import projects from '@/data/projects.json';
+import { getAllProjects, getProjectById } from '@/lib/get-content';
 import { cn } from '@/lib/utils';
 
 interface ProjectPageProps {
@@ -10,6 +10,7 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
+  const projects = getAllProjects();
   return projects.map((project) => ({
     slug: project.id,
   }));
@@ -17,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.id === slug);
+  const project = getProjectById(slug);
 
   if (!project) {
     return {
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.id === slug);
+  const project = getProjectById(slug);
 
   if (!project) {
     notFound();
