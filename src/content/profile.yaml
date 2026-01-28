@@ -11,7 +11,7 @@
 name: Akash Ungarala
 title: Senior Backend Developer
 email: akash.ungarala@gmail.com
-location: North Carolina, USA
+location: Charlotte, North Carolina, USA
 profileImage: /assets/profile.jpg
 resumeUrl: /resume.pdf
 
@@ -24,9 +24,9 @@ social:
 # Hero Section
 # -----------------------------------------------------------------------------
 headline:
-  badge: Open to Remote & Relocation
+  badge: Available for opportunities (NC or Remote)
   tagline: |
-    Senior Backend Developer specializing in Python and TypeScript. 6+ years building
+    Senior Backend Developer specializing in Python and TypeScript. 10+ years building
     real-time systems, data pipelines, and scalable APIs across broadcast media,
     fintech, gaming, and ad-tech.
   highlights:
@@ -72,14 +72,20 @@ expertise:
 
 # Tech Stack
 technologies:
-  - category: Backend
-    items: [Python, TypeScript, FastAPI, Flask, Express.js, Node.js]
-  - category: Data
-    items: [PostgreSQL, MySQL, MongoDB, BigQuery, Redis]
+  - category: Backend & APIs
+    items: [Python, FastAPI, Flask, Django, TypeScript, Node.js, Express.js, REST, OpenAPI, WebSockets]
+  - category: Distributed Systems
+    items: [Event-Driven Architecture, Async Processing, Microservices, Fault Tolerance, Idempotency]
   - category: Cloud
-    items: [AWS, GCP, Docker, Kubernetes]
-  - category: Tools
-    items: [Celery, RabbitMQ, Pub/Sub, Airflow]
+    items: [AWS Lambda, API Gateway, RDS, DynamoDB, S3, SNS, GCP, GKE, Pub/Sub, BigQuery, Spanner, Firestore]
+  - category: DevOps & Infra
+    items: [Docker, Kubernetes, Helm, Terraform, GitHub Actions, GitLab CI, Spinnaker]
+  - category: Data & Messaging
+    items: [PostgreSQL, MySQL, Redis, MongoDB, RabbitMQ, Celery, Apache Airflow]
+  - category: Reliability
+    items: [SLOs/SLIs, OpenTelemetry, Prometheus, Grafana, Incident Response, Structured Logging]
+  - category: AI & ML Systems
+    items: [LLM Integration, Real-Time Inference, AI-Enabled Backends]
 
 # -----------------------------------------------------------------------------
 # Work Experience
