@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/akashungarala/portfolio/compare/v1.6.0...v1.7.0) (2026-01-28)
+
+
+### Features
+
+* update profile content with improved metrics and impact statements ([d9d64d3](https://github.com/akashungarala/portfolio/commit/d9d64d393d930b38fa3ec2395bf5672b118c7d05))
+
 # [1.6.0](https://github.com/akashungarala/portfolio/compare/v1.5.0...v1.6.0) (2026-01-28)
 
 
