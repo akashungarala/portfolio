@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/akashungarala/portfolio/compare/v1.5.0...v1.6.0) (2026-01-28)
+
+
+### Features
+
+* expand technologies section with comprehensive skill categories ([60e3d5b](https://github.com/akashungarala/portfolio/commit/60e3d5b89f19c22baf1df399348176b540358a33))
+
 # [1.5.0](https://github.com/akashungarala/portfolio/compare/v1.4.0...v1.5.0) (2026-01-27)
 
 
