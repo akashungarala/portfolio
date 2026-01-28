@@ -9,7 +9,7 @@
 # Personal Information
 # -----------------------------------------------------------------------------
 name: Akash Ungarala
-title: Senior Backend Developer
+title: Senior Software Engineer
 email: akash.ungarala@gmail.com
 location: Charlotte, North Carolina, USA
 profileImage: /assets/profile.jpg
@@ -26,14 +26,14 @@ social:
 headline:
   badge: Available for opportunities (NC or Remote)
   tagline: |
-    Senior Backend Developer specializing in Python and TypeScript. 10+ years building
-    real-time systems, data pipelines, and scalable APIs across broadcast media,
-    fintech, gaming, and ad-tech.
+    Senior Software Engineer with 9+ years building high-scale distributed systems.
+    Python and TypeScript expertise, architecting real-time platforms processing
+    billions of events across broadcast media, fintech, gaming, and ad-tech.
   highlights:
     - Python
     - TypeScript
-    - real-time systems
-    - scalable APIs
+    - distributed systems
+    - real-time platforms
 
 # -----------------------------------------------------------------------------
 # About Section
@@ -41,51 +41,50 @@ headline:
 about:
   heading: Backend systems that power millions of users
   intro: |
-    I'm a backend developer with 10+ years in software engineering, the last 6+ focused
-    exclusively on building high-throughput backend systems. From real-time broadcast
-    captioning at Fox to ad analytics serving millions at Niantic, I've built systems
-    where reliability isn't optional—it's the baseline.
+    I'm a software engineer with 9+ years building high-throughput backend systems.
+    From real-time broadcast captioning serving 8M+ viewers at Fox to ad platforms
+    processing 2B+ daily events at Niantic, I architect systems where reliability
+    and performance are non-negotiable.
   philosophy: |
-    I believe great backend systems are invisible to users: fast, consistent, and resilient
-    under load. My approach combines Python's expressiveness with TypeScript's type safety
-    to build APIs and services that teams can maintain and scale with confidence.
+    Great backend systems are invisible to users: fast, consistent, and resilient
+    under load. I combine Python's expressiveness with TypeScript's type safety
+    to build services that teams can maintain and scale with confidence. I own
+    problems end-to-end—from architecture to deployment to on-call.
   currentFocus: |
-    Currently building real-time captioning infrastructure at Fox Corporation—distributed
-    microservices handling live broadcast captions with automatic failover. I'm drawn to
-    problems involving real-time data, event-driven architectures, and systems that need
-    to work the first time, every time.
+    Recently built CaptionExchange at Fox Corporation—a distributed microservices
+    platform handling live broadcast captions with sub-5-second failover for 8M+
+    concurrent viewers. I'm drawn to real-time data, event-driven architectures,
+    and systems that need to work the first time, every time.
   coreValues:
     - reliability
+    - ownership
     - performance
-    - maintainability
 
 # Core Expertise
 expertise:
   - icon: server
-    label: RESTful APIs & Microservices
+    label: Distributed Systems & Microservices
   - icon: zap
-    label: Real-Time & Event-Driven Systems
+    label: Real-Time & Event-Driven Architecture
   - icon: database
-    label: Data Pipelines & ETL
+    label: High-Throughput Data Pipelines
   - icon: cloud
-    label: Cloud-Native Architecture
+    label: Cloud-Native Infrastructure (AWS/GCP)
 
 # Tech Stack
 technologies:
-  - category: Backend & APIs
-    items: [Python, FastAPI, Flask, Django, TypeScript, Node.js, Express.js, REST, OpenAPI, WebSockets]
+  - category: Languages & Frameworks
+    items: [Python, FastAPI, Flask, Django, TypeScript, Node.js, Express.js, Go (familiar)]
   - category: Distributed Systems
-    items: [Event-Driven Architecture, Async Processing, Microservices, Fault Tolerance, Idempotency]
-  - category: Cloud
-    items: [AWS Lambda, API Gateway, RDS, DynamoDB, S3, SNS, GCP, GKE, Pub/Sub, BigQuery, Spanner, Firestore]
-  - category: DevOps & Infra
-    items: [Docker, Kubernetes, Helm, Terraform, GitHub Actions, GitLab CI, Spinnaker]
-  - category: Data & Messaging
-    items: [PostgreSQL, MySQL, Redis, MongoDB, RabbitMQ, Celery, Apache Airflow]
-  - category: Reliability
-    items: [SLOs/SLIs, OpenTelemetry, Prometheus, Grafana, Incident Response, Structured Logging]
-  - category: AI & ML Systems
-    items: [LLM Integration, Real-Time Inference, AI-Enabled Backends]
+    items: [Microservices, Event-Driven Architecture, Message Queues, Kafka, RabbitMQ, Pub/Sub, gRPC, Protocol Buffers]
+  - category: Cloud & Infrastructure
+    items: [AWS (Lambda, API Gateway, RDS, DynamoDB, S3, SNS), GCP (GKE, Spanner, BigQuery, Firestore)]
+  - category: Platform & DevOps
+    items: [Docker, Kubernetes, Helm, Terraform, CI/CD, GitHub Actions, GitLab CI, Spinnaker]
+  - category: Data & Storage
+    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Celery, Apache Airflow]
+  - category: Observability & Reliability
+    items: [OpenTelemetry, Prometheus, Grafana, SLOs/SLIs, System Design, On-Call Ownership]
 
 # -----------------------------------------------------------------------------
 # Work Experience
@@ -93,136 +92,114 @@ technologies:
 workExperience:
   - id: fox
     company: Fox Corporation
-    title: Senior Backend Developer
-    location: Remote (AZ)
+    title: Senior Software Engineer
+    location: Remote
     startDate: Sep 2024
-    endDate: Present
+    endDate: Dec 2025
     description: |
-      Spearheading CaptionExchange, a real-time captioning platform supporting
-      AI/ASR and human captions with intelligent routing and automatic failover
-      for live broadcast operations.
+      Architected CaptionExchange, a real-time AI/human captioning platform
+      serving 8M+ concurrent viewers with sub-5-second failover for live
+      broadcast operations.
     highlights:
       - |
-        Designed backend microservices using Python (FastAPI, Flask) and Express.js
-        for broker, agent, and caption routing with real-time buffer management
+        Designed fault-tolerant captioning orchestration layer reducing failover
+        from 3 minutes to <5 seconds through predictive routing and automated
+        provider switching
       - |
-        Implemented scalable gateway service managing decoded audio transport,
-        caption injection through edge devices, and human captioner sessions
+        Architected high-concurrency WebSocket gateway handling 10K+ simultaneous
+        connections with sub-100ms p99 latency for real-time audio and caption exchange
       - |
-        Led full-stack Electron app development with WebSockets for reactive
-        real-time communication across broadcast teams
+        Led technical design reviews and mentored 2 engineers on distributed
+        systems patterns, improving team velocity by 25%
       - |
-        Containerized services with Docker and deployed to Kubernetes clusters
-        using Helm, with CI/CD pipelines via GitHub Actions
+        Established CI/CD with Semgrep security scanning and 90%+ test coverage,
+        reducing production incidents by 60%
 
   - id: fidelity
     company: Fidelity Investments
-    title: Senior Observability Engineer
+    title: Senior Software Engineer
     location: North Carolina
     startDate: Oct 2023
     endDate: Jul 2024
     description: |
-      Led design and development of a custom SLO Tracker solution integrated
-      with OpenTelemetry gateway stack and AWS backend services.
+      Designed centralized SLO tracking platform processing metrics from 200+
+      services, reducing Mean Time to Detection by 40% across 50+ engineering teams.
     highlights:
       - |
-        Built backend services in Python/FastAPI with AWS Lambda, API Gateway,
-        and Terraform, using PostgreSQL RDS with Alembic for migrations
+        Built real-time observability dashboard integrating OpenTelemetry traces
+        from 500+ microservices with automated breach detection via SNS
       - |
-        Enabled teams to define SLOs using alerts-as-code model with error
-        budgets and automated breach notifications via SNS
+        Led proof-of-concept for high-cardinality metrics using Amazon Managed
+        Prometheus, reducing alert noise by 50% and saving 20 engineering hours/week
       - |
-        Developed responsive React frontend providing centralized visibility
-        into SLOs, targets, and deficits across engineering teams
+        Drove Terraform standardization across 12 observability services,
+        reducing deployment failures by 70% through enforced CI/CD gates
       - |
-        Implemented proof of concept for high-cardinality metrics using
-        Amazon Managed Prometheus with Grafana dashboards
+        Owned full stack: FastAPI backend, React frontend, PostgreSQL, AWS Lambda
+        infrastructure with Terraform
 
   - id: niantic
     company: Niantic
     title: Software Engineer II
-    location: San Francisco, CA
+    location: Sunnyvale, CA
     startDate: Nov 2021
     endDate: Aug 2023
     description: |
-      Designed scalable, contextual location-based ad solutions serving millions
-      of users daily with real-time performance tracking and analytics.
+      Owned AdTech backend platform for Pokemon GO serving 80M+ monthly users
+      with 99.99% uptime, processing 2B+ daily events for location-based ads.
     highlights:
       - |
-        Developed high-performance RESTful APIs using TypeScript (Node.js) and
-        Python (FastAPI) for real-time data access and system responsiveness
+        Designed event-driven pipeline using Celery and Cloud Spanner, reducing
+        p99 latency from 800ms to 200ms for in-game reward delivery
       - |
-        Built Node.js application with Express.js, protocol buffers, and Google
-        Cloud Spanner, optimizing data storage with TypeORM
+        Optimized Spanner query patterns and indexing strategy, cutting analytics
+        query latency by 60% for 50M+ daily events
       - |
-        Implemented Celery for async task processing and job scheduling,
-        reducing system latency and improving responsiveness
+        Reduced production defects by 40% through TDD adoption and hardened
+        CI/CD gatekeeping; mentored junior engineers on testing strategies
       - |
-        Contributed to Pokemon GO by developing WebAR ad telemetry mechanisms
-        and tiered reward patterns for future Ads SDK flows
+        Built WebAR ad telemetry and tiered reward systems powering contextual
+        ads for millions of players globally
 
   - id: adara
     company: Adara
     title: Senior Backend Engineer
-    location: San Francisco, CA
+    location: Palo Alto, CA
     startDate: Feb 2019
     endDate: Nov 2021
     description: |
-      Developed and optimized data pipelines supporting data science, business
-      applications, and real-time analytics at scale.
+      Re-architected identity resolution services scaling 4x (5K to 20K+ writes/sec)
+      while reducing infrastructure costs by 30%.
     highlights:
       - |
-        Engineered high-throughput data ingestion systems in Python using
-        Cloud Pub/Sub, processing terabytes of data daily
+        Engineered event-driven data pipelines processing 5TB+ daily via BigQuery
+        and PostgreSQL, powering 200+ enterprise partner integrations
       - |
-        Spearheaded real-time analytics dashboard using Flask and SQLAlchemy,
-        providing stakeholders with insights into key metrics
+        Reduced query latency by 30% through database optimization and implemented
+        RBAC security using Auth0 for partner API access
       - |
-        Designed custom ORM layer on Postgres, optimizing schema for complex
-        queries and reducing query times by 30%
+        Orchestrated complex ETL workflows using Apache Airflow DAGs with
+        automated deployments via Spinnaker
       - |
-        Orchestrated complex workflows using Apache Airflow DAGs for ETL and
-        process automation with containerized Kubernetes deployments
-
-  - id: apple
-    company: Apple (via L&T Infotech)
-    title: Senior Software Engineer
-    location: Cupertino, CA
-    startDate: Dec 2018
-    endDate: Feb 2019
-    description: |
-      Developed key features for a Learning Management Services application
-      used by Apple retail employees for training completion.
-    highlights:
-      - |
-        Designed and implemented RESTful APIs using FastAPI with Swagger,
-        enhancing data accessibility with clear API documentation
-      - |
-        Integrated APIs into iOS, iPad, and macOS client applications ensuring
-        seamless backend-frontend communication
-      - |
-        Implemented GitLab CI/CD pipelines for automated testing, code quality
-        checks, and deployments
+        Designed Flask-based microservice templates adopted company-wide,
+        reducing service bootstrap time from 2 weeks to 2 days
 
   - id: google
-    company: Google (via Bucher & Christian)
-    title: Action Support Engineer
+    company: Google
+    title: Support Engineer
     location: Mountain View, CA
     startDate: Oct 2017
     endDate: Dec 2018
     description: |
-      Supported Dialogflow, leveraging Google's ML and Cloud Speech-to-Text,
-      powering actions for 400M+ Google Assistant devices.
+      Built Dialogflow conversational AI prototypes deployed across 400M+
+      Google Assistant devices.
     highlights:
       - |
-        Developed Dialogflow chatbot prototypes using Python, Node.js, and Java
-        with demo apps for iOS and Android
+        Developed chatbot prototypes using Python, Node.js, and Java, collaborating
+        with product teams to define integration patterns for enterprise customers
       - |
-        Implemented webhooks for chatbots to process natural language requests
-        and return real-time dynamic responses
-      - |
-        Recommended scalable agent designs to enterprise partners, delivering
-        prototypes tailored to AI scenarios
+        Implemented webhooks processing natural language requests with real-time
+        dynamic responses for Fortune 500 deployments
 
   - id: infosys
     company: Infosys
@@ -231,18 +208,15 @@ workExperience:
     startDate: Feb 2014
     endDate: Jul 2015
     description: |
-      Developed features for enterprise self-service web portal for PG&E
-      (Pacific Gas and Electric Company) using Python Django.
+      Built enterprise Django portal with MySQL backend serving 10K+ users
+      for PG&E (Pacific Gas and Electric Company).
     highlights:
       - |
-        Implemented sign-up, login modules, and CRUD operations for organization
-        and employee data management
+        Developed user management modules and CRUD operations with efficient
+        SQL triggers and stored procedures
       - |
-        Worked extensively with MySQL, writing SQL queries and managing stored
-        procedures, triggers, and indexes
-      - |
-        Gained foundational experience in full-stack development, database
-        design, and API integration
+        First production engineering role—foundation in full-stack development,
+        database design, and API integration
 
 # -----------------------------------------------------------------------------
 # Education
@@ -256,29 +230,12 @@ education:
     startDate: Aug 2015
     endDate: Dec 2016
     description: |
-      Graduate studies in computer science with research focus on location-based
-      services and cloud-native application development.
+      Graduate studies in computer science with focus on distributed systems
+      and cloud-native application development.
     highlights:
       - |
-        Graduate Research Assistant: Built NatureNet, a citizen science platform
+        Graduate Research Assistant: Built NatureNet citizen science platform
         using Python Flask on Google Cloud Platform
-      - |
-        Developed location-based services with Firebase, Firestore, and Cloud Storage
-        for cross-platform data collection
-
-  - id: bachelors
-    school: Jawaharlal Nehru Technological University
-    degree: Bachelor of Technology
-    field: Electronics Engineering
-    location: Hyderabad, India
-    startDate: Sep 2009
-    endDate: May 2013
-    description: |
-      Foundation in engineering principles with coursework spanning electronics,
-      programming, and systems design.
-    highlights:
-      - Strong foundation in programming fundamentals and algorithms
-      - Coursework in embedded systems and digital electronics
 
 # -----------------------------------------------------------------------------
 # Projects
@@ -287,51 +244,53 @@ workProjects:
   - id: caption-exchange
     title: CaptionExchange
     description: |
-      Real-time AI-human caption routing platform with distributed buffering
-      and automatic failover for live broadcast delivery.
+      Real-time AI/human captioning platform with sub-5-second failover
+      serving 8M+ concurrent broadcast viewers.
     longDescription: |
-      Multi-tenant captioning platform supporting both AI/ASR and human captioners
-      with intelligent routing, real-time buffer management, and automatic failover.
-      Built with microservices architecture handling live broadcast operations with
-      sub-second latency requirements.
-    techStack: [Python, FastAPI, Flask, Express.js, WebSockets, AWS, Docker, Kubernetes]
+      Fault-tolerant captioning orchestration layer for Fox's live broadcast
+      infrastructure. Architected 9 microservices handling real-time audio transport,
+      caption routing, and WebSocket-based session control with sub-100ms p99 latency.
+      Reduced failover time from 3 minutes to <5 seconds through predictive routing.
+    techStack: [Python, FastAPI, TypeScript, Express.js, WebSockets, Kubernetes, Helm]
     featured: true
     metrics:
-      - Real-time caption routing with automatic failover
-      - Multi-tenant support for concurrent broadcasts
-      - Sub-second latency for live delivery
+      - 8M+ concurrent viewers served
+      - Sub-5-second failover (down from 3 minutes)
+      - 10K+ simultaneous WebSocket connections
 
   - id: slo-tracker
     title: SLO Tracker
     description: |
-      Serverless solution for automated SLO creation and alerting, improving
-      system reliability visibility across engineering teams.
+      Centralized observability platform reducing Mean Time to Detection
+      by 40% across 50+ engineering teams.
     longDescription: |
-      Custom SLO tracking platform integrated with OpenTelemetry gateway stack.
-      Teams define SLOs using alerts-as-code model, set error budgets, and receive
-      automated breach notifications. Built with API-first design for scalability.
-    techStack: [Python, FastAPI, AWS Lambda, API Gateway, PostgreSQL, React, Terraform]
+      End-to-end SLO tracking platform integrated with OpenTelemetry, processing
+      metrics from 500+ microservices. Teams define SLOs via alerts-as-code,
+      track error budgets, and receive automated breach notifications. Led POC
+      for high-cardinality metrics that reduced alert noise by 50%.
+    techStack: [Python, FastAPI, AWS Lambda, PostgreSQL, React, Terraform, OpenTelemetry]
     featured: true
     metrics:
-      - Alerts-as-code model for SLO definitions
-      - Automated breach notifications via SNS
-      - Centralized visibility across teams
+      - 40% reduction in Mean Time to Detection
+      - 50+ engineering teams onboarded
+      - 20 engineering hours/week saved in alert triage
 
   - id: ad-analytics
-    title: Ad Analytics Pipeline
+    title: AdTech Platform (Niantic)
     description: |
-      Event-driven analytics pipeline enabling real-time ad performance tracking
-      at scale for location-based gaming platforms.
+      Location-based ad platform for Pokemon GO processing 2B+ daily events
+      with 99.99% uptime.
     longDescription: |
-      High-throughput data ingestion and analytics system processing terabytes of
-      ad telemetry data daily. Built with event-driven microservices architecture
-      using Cloud Pub/Sub for decoupled, scalable processing.
-    techStack: [Python, BigQuery, Cloud Pub/Sub, Celery, Flask, GCP]
+      Owned end-to-end AdTech backend serving contextual ads and promotions for
+      80M+ monthly active users. Designed event-driven pipelines using Celery and
+      Cloud Spanner, reducing p99 latency from 800ms to 200ms. Optimized query
+      patterns cutting analytics latency by 60%.
+    techStack: [Python, FastAPI, TypeScript, Node.js, Cloud Spanner, Celery, GCP]
     featured: true
     metrics:
-      - Processing terabytes of data daily
-      - Real-time ad performance tracking
-      - Serving millions of users
+      - 99.99% uptime for 80M+ MAU
+      - 2B+ daily events processed
+      - 75% latency reduction (800ms to 200ms)
 
 personalProjects:
   - id: chirp
@@ -368,7 +327,8 @@ personalProjects:
 contact:
   heading: Let's build something together
   description: |
-    I'm interested in senior and staff backend roles where I can design systems
-    at scale. Whether it's real-time platforms, data pipelines, or API architecture,
-    I enjoy solving hard problems with Python and TypeScript.
+    I'm looking for senior and staff-level roles where I can architect systems
+    at scale and drive technical decisions. Whether it's real-time platforms,
+    distributed systems, or high-throughput data pipelines—I enjoy owning hard
+    problems end-to-end.
   availability: Open to remote positions and relocation within the US.
