@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/akashungarala/portfolio/compare/v1.7.0...v1.8.0) (2026-01-29)
+
+
+### Features
+
+* improve portfolio content based on ux review ([e3680a3](https://github.com/akashungarala/portfolio/commit/e3680a3c5f637739853d5b16d0d34e7ebc0256dc))
+
 # [1.7.0](https://github.com/akashungarala/portfolio/compare/v1.6.0...v1.7.0) (2026-01-28)
 
 
