@@ -25,15 +25,15 @@ social:
 headline:
   badge: Open to senior backend roles
   tagline: |
-    Senior Software Engineer building resilient systems that scale. 9+ years
-    architecting real-time platforms processing billions of events across
-    broadcast media, fintech, gaming, and ad-tech.
+    I build resilient, high-scale backend systems. 9+ years architecting 
+    real-time platforms processing billions of events across broadcast 
+    media, fintech, gaming, and ad tech.
   highlights:
-    - Senior Software Engineer
-    - 8M+ concurrent users
-    - 99.99% uptime
-    - Python
-    - TypeScript
+    - resilient
+    - high-scale
+    - 9+ years
+    - real-time
+    - billions of events
 
 # -----------------------------------------------------------------------------
 # About Section
@@ -48,16 +48,21 @@ about:
   philosophy: |
     Great backend systems are invisible: fast, consistent, resilient under load.
     I combine Python's expressiveness with TypeScript's type safety to build
-    services teams can maintain and scale. I own problems end-to-end—architecture,
+    services teams can maintain and scale. I own problems end-to-end — architecture,
     deployment, and on-call.
   currentFocus: |
-    Recently built CaptionExchange at Fox—a distributed microservices platform
+    Recently built CaptionExchange at Fox — a distributed microservices platform
     with sub-5-second failover for live broadcasts. Drawn to real-time data,
     event-driven architectures, and systems that work the first time, every time.
   coreValues:
-    - reliability
-    - ownership
-    - performance
+    - failure isn't an option
+    - 8M+ viewers
+    - 2B+ daily events
+    - 50+ engineering teams
+    - Python
+    - TypeScript
+    - end-to-end
+    - sub-5-second failover
 
 # Core Expertise
 expertise:
@@ -73,17 +78,15 @@ expertise:
 # Tech Stack
 technologies:
   - category: Languages & Frameworks
-    items: [Python, FastAPI, Flask, Django, TypeScript, Node.js, Express.js, Go (familiar)]
+    items: [Python (FastAPI | Flask | Django), TypeScript/Node.js (Express | Next), Async (Celery | asyncio)]
   - category: Distributed Systems
-    items: [Microservices, Event-Driven Architecture, Message Queues, Kafka, RabbitMQ, Pub/Sub, gRPC, Protocol Buffers]
-  - category: Cloud & Infrastructure
-    items: [AWS, Lambda, API Gateway, RDS, DynamoDB, S3, SNS, GCP, GKE, Spanner, BigQuery, Firestore]
+    items: [Microservices, Event-Driven Architecture, Message Queues (RabbitMQ | Kafka | Pub/Sub), Protocol Buffers, gRPC]
+  - category: Cloud & Infrastucture
+    items: [AWS (Lambda | API Gateway | RDS | DynamoDB | S3 | SNS | CloudWatch), GCP (GKE | Spanner | Pub/Sub | BigQuery | Firestore)]
   - category: Platform & DevOps
-    items: [Docker, Kubernetes, Helm, Terraform, CI/CD, GitHub Actions, GitLab CI, Spinnaker]
-  - category: Data & Storage
-    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Celery, Apache Airflow]
-  - category: Observability & Reliability
-    items: [OpenTelemetry, Prometheus, Grafana, SLOs/SLIs, System Design]
+    items: [Docker, Kubernetes, Helm, Terraform, CI/CD (GitHub Actions | GitLab CI | Spinnaker), System Design]
+  - category: Data & Observability
+    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Airflow, OpenTelemetry, Prometheus, Grafana, SLOs/SLIs, System Design]
 
 # -----------------------------------------------------------------------------
 # Work Experience
@@ -117,7 +120,7 @@ workExperience:
   - id: fidelity
     company: Fidelity Investments (Contract)
     title: Senior Software Engineer
-    location: North Carolina
+    location: Durham, NC
     startDate: Oct 2023
     endDate: Jul 2024
     description: |
@@ -138,7 +141,7 @@ workExperience:
         infrastructure with Terraform
 
   - id: niantic
-    company: Niantic
+    company: Niantic Inc
     title: Software Engineer II
     location: Sunnyvale, CA
     startDate: Nov 2021
@@ -161,7 +164,7 @@ workExperience:
         ads for millions of players globally
 
   - id: adara
-    company: Adara
+    company: Adara Inc
     title: Senior Backend Engineer
     location: Palo Alto, CA
     startDate: Feb 2019
@@ -184,7 +187,7 @@ workExperience:
         reducing service bootstrap time from 2 weeks to 2 days
 
   - id: google
-    company: Google (Contract)
+    company: Google Inc (Contract)
     title: Support Engineer
     location: Mountain View, CA
     startDate: Oct 2017
@@ -201,7 +204,7 @@ workExperience:
         dynamic responses
 
   - id: infosys
-    company: Infosys
+    company: Infosys Ltd
     title: Systems Engineer
     location: Hyderabad, India
     startDate: Feb 2014
@@ -214,7 +217,7 @@ workExperience:
         Developed user management modules and CRUD operations with efficient
         SQL triggers and stored procedures
       - |
-        First production engineering role—foundation in full-stack development,
+        First production engineering role — foundation in full-stack development,
         database design, and API integration
 
 # -----------------------------------------------------------------------------
@@ -233,7 +236,6 @@ education:
     highlights:
       - |
         Graduate Research Assistant: Built features for NatureNet citizen science platform
-        using Python Flask on Google Cloud Platform
 
 # -----------------------------------------------------------------------------
 # Projects
@@ -246,13 +248,13 @@ workProjects:
       serving 8M+ concurrent broadcast viewers.
     longDescription: |
       Challenge: Fox's live broadcasts needed seamless captioning with instant
-      failover between AI and human captioners—existing solutions had 3+ minute
+      failover between AI and human captioners — existing solutions had 3+ minute
       recovery times, unacceptable for live TV.
-
+      
       Solution: Architected 9 microservices handling real-time audio transport,
       caption routing, and WebSocket-based session control. Built predictive
       routing that detects failures before they impact viewers.
-
+      
       Impact: Reduced failover from 3 minutes to under 5 seconds. Platform now
       serves 8M+ concurrent viewers with sub-100ms p99 latency across 10K+
       simultaneous connections.
@@ -346,6 +348,6 @@ contact:
   heading: Let's build something together
   description: |
     Looking for senior and staff-level roles where I can architect systems at
-    scale. Real-time platforms, distributed systems, high-throughput pipelines—I
-    own hard problems end-to-end.
+    scale. Real-time platforms, distributed systems, high-throughput pipelines 
+    — I own hard problems end-to-end.
   availability: Remote (US) or Hybrid/Onsite (NC)

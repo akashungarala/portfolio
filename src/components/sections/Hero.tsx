@@ -16,12 +16,7 @@ export function Hero({ content }: HeroProps) {
   const { name, headline, profileImage } = content;
 
   // First highlight is the title, rest are keywords to highlight in tagline
-  const [title, ...highlights] = headline.highlights || [
-    'Senior Software Engineer',
-    'distributed systems',
-    'reliability',
-    'performance',
-  ];
+  const [title, ...highlights] = headline.highlights;
 
   return (
     <section className="relative flex min-h-[calc(100vh-3.5rem)] flex-col items-center justify-center py-16 md:py-24">
@@ -74,7 +69,7 @@ export function Hero({ content }: HeroProps) {
             <span className="hidden sm:inline text-border">•</span>
             <span className="inline-flex items-center gap-1.5">
               <Globe className="h-4 w-4 text-[var(--highlight)]" />
-              Open to Remote & Any Timezone
+              Remote-friendly (any timezone in US)
             </span>
           </div>
         </FadeIn>

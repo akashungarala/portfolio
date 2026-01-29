@@ -21,7 +21,7 @@ export function About({ content }: AboutProps) {
   const { about, expertise, technologies } = content;
 
   // Keywords to highlight in about content
-  const highlights = about.coreValues || ['reliability', 'performance', 'scale'];
+  const highlights = about.coreValues;
 
   return (
     <section id="about" className="py-16 md:py-24">
