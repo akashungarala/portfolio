@@ -23,38 +23,37 @@ social:
 # Hero Section
 # -----------------------------------------------------------------------------
 headline:
-  badge: Available for opportunities
+  badge: Open to senior backend roles
   tagline: |
-    Senior Software Engineer with 9+ years building high-scale distributed systems.
-    Python and TypeScript expertise, architecting real-time platforms processing
-    billions of events across broadcast media, fintech, gaming, and ad-tech.
+    Senior Software Engineer building resilient systems that scale. 9+ years
+    architecting real-time platforms processing billions of events across
+    broadcast media, fintech, gaming, and ad-tech.
   highlights:
     - Senior Software Engineer
+    - 8M+ concurrent users
+    - 99.99% uptime
     - Python
     - TypeScript
-    - distributed systems
-    - real-time platforms
 
 # -----------------------------------------------------------------------------
 # About Section
 # -----------------------------------------------------------------------------
 about:
-  heading: Backend systems that power millions of users
+  heading: Systems that scale when it matters most
   intro: |
-    I'm a software engineer with 9+ years building high-throughput backend systems.
-    From real-time broadcast captioning serving 8M+ viewers at Fox to ad platforms
-    processing 2B+ daily events at Niantic, I architect systems where reliability
-    and performance are non-negotiable.
+    9+ years building backend systems where failure isn't an option. Real-time
+    broadcast captioning for 8M+ viewers. Ad platforms processing 2B+ daily events.
+    Observability tools trusted by 50+ engineering teams. I design systems where
+    uptime and throughput are non-negotiable.
   philosophy: |
-    Great backend systems are invisible to users: fast, consistent, and resilient
-    under load. I combine Python's expressiveness with TypeScript's type safety
-    to build services that teams can maintain and scale with confidence. I own
-    problems end-to-end—from architecture to deployment to on-call.
+    Great backend systems are invisible: fast, consistent, resilient under load.
+    I combine Python's expressiveness with TypeScript's type safety to build
+    services teams can maintain and scale. I own problems end-to-end—architecture,
+    deployment, and on-call.
   currentFocus: |
-    Recently built CaptionExchange at Fox Corporation—a distributed microservices
-    platform handling live broadcast captions with sub-5-second failover for 8M+
-    concurrent viewers. I'm drawn to real-time data, event-driven architectures,
-    and systems that need to work the first time, every time.
+    Recently built CaptionExchange at Fox—a distributed microservices platform
+    with sub-5-second failover for live broadcasts. Drawn to real-time data,
+    event-driven architectures, and systems that work the first time, every time.
   coreValues:
     - reliability
     - ownership
@@ -246,10 +245,17 @@ workProjects:
       Real-time AI/human captioning platform with sub-5-second failover
       serving 8M+ concurrent broadcast viewers.
     longDescription: |
-      Fault-tolerant captioning orchestration layer for Fox's live broadcast
-      infrastructure. Architected 9 microservices handling real-time audio transport,
-      caption routing, and WebSocket-based session control with sub-100ms p99 latency.
-      Reduced failover time from 3 minutes to <5 seconds through predictive routing.
+      Challenge: Fox's live broadcasts needed seamless captioning with instant
+      failover between AI and human captioners—existing solutions had 3+ minute
+      recovery times, unacceptable for live TV.
+
+      Solution: Architected 9 microservices handling real-time audio transport,
+      caption routing, and WebSocket-based session control. Built predictive
+      routing that detects failures before they impact viewers.
+
+      Impact: Reduced failover from 3 minutes to under 5 seconds. Platform now
+      serves 8M+ concurrent viewers with sub-100ms p99 latency across 10K+
+      simultaneous connections.
     techStack: [Python, FastAPI, TypeScript, Express.js, WebSockets, Kubernetes, Helm]
     featured: true
     metrics:
@@ -263,10 +269,16 @@ workProjects:
       Centralized observability platform reducing Mean Time to Detection
       by 40% across 50+ engineering teams.
     longDescription: |
-      End-to-end SLO tracking platform integrated with OpenTelemetry, processing
-      metrics from 500+ microservices. Teams define SLOs via alerts-as-code,
-      track error budgets, and receive automated breach notifications. Led POC
-      for high-cardinality metrics that reduced alert noise by 50%.
+      Challenge: Fidelity's 500+ microservices lacked unified reliability metrics.
+      Teams couldn't track SLOs consistently, leading to slow incident detection
+      and alert fatigue.
+
+      Solution: Built end-to-end SLO platform with alerts-as-code, error budget
+      tracking, and automated breach notifications. Integrated OpenTelemetry
+      across all services with a React dashboard for visibility.
+
+      Impact: Reduced Mean Time to Detection by 40% across 50+ teams. High-cardinality
+      metrics POC cut alert noise by 50%, saving 20 engineering hours weekly.
     techStack: [Python, FastAPI, AWS Lambda, PostgreSQL, React, TypeScript, Terraform, OpenTelemetry]
     featured: true
     metrics:
@@ -280,10 +292,17 @@ workProjects:
       Location-based ad platform for Pokemon GO processing 2B+ daily events
       with 99.99% uptime.
     longDescription: |
-      Owned end-to-end AdTech backend serving contextual ads and promotions for
-      80M+ monthly active users. Designed event-driven pipelines using Celery and
-      Cloud Spanner, reducing p99 latency from 800ms to 200ms. Optimized query
-      patterns cutting analytics latency by 60%.
+      Challenge: Pokemon GO needed a location-based ad platform that could handle
+      massive scale (80M+ MAU) while delivering real-time rewards without impacting
+      gameplay performance.
+
+      Solution: Designed event-driven pipelines using Celery and Cloud Spanner.
+      Optimized query patterns and indexing strategies for real-time analytics
+      at scale.
+
+      Impact: Achieved 99.99% uptime processing 2B+ daily events. Reduced p99
+      latency from 800ms to 200ms for reward delivery, with 60% improvement in
+      analytics query performance.
     techStack: [Python, FastAPI, TypeScript, Express.js, Cloud Spanner, Celery, GCP]
     featured: true
     metrics:
@@ -326,8 +345,7 @@ personalProjects:
 contact:
   heading: Let's build something together
   description: |
-    I'm looking for senior and staff-level roles where I can architect systems
-    at scale and drive technical decisions. Whether it's real-time platforms,
-    distributed systems, or high-throughput data pipelines—I enjoy owning hard
-    problems end-to-end.
-  availability: Open to Remote (US) or Hybrid/Onsite (NC)
+    Looking for senior and staff-level roles where I can architect systems at
+    scale. Real-time platforms, distributed systems, high-throughput pipelines—I
+    own hard problems end-to-end.
+  availability: Remote (US) or Hybrid/Onsite (NC)

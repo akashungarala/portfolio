@@ -25,18 +25,20 @@ export const metadata: Metadata = {
     template: '%s | Akash Ungarala',
   },
   description:
-    'Senior Backend Engineer with 9+ years building distributed systems across gaming, fintech, media, and ad-tech.',
+    'Senior Software Engineer building resilient distributed systems. 9+ years shipping real-time platforms for Fox, Niantic, Fidelity. Python, TypeScript, Kubernetes, AWS, GCP.',
   keywords: [
-    'Backend Engineer',
+    'Senior Backend Engineer',
+    'Senior Software Engineer',
     'Distributed Systems',
-    'Software Engineer',
-    'TypeScript',
-    'Node.js',
-    'Python',
-    'Go',
+    'Python Developer',
+    'TypeScript Developer',
     'Kubernetes',
     'AWS',
     'GCP',
+    'Real-time Systems',
+    'Microservices',
+    'FastAPI',
+    'Node.js',
   ],
   authors: [{ name: 'Akash Ungarala' }],
   creator: 'Akash Ungarala',
@@ -47,13 +49,13 @@ export const metadata: Metadata = {
     siteName: 'Akash Ungarala',
     title: 'Akash Ungarala | Senior Software Engineer',
     description:
-      'Senior Software Engineer with 9+ years building distributed systems across gaming, fintech, media, and ad-tech.',
+      'Senior Software Engineer building resilient distributed systems. 9+ years shipping real-time platforms for Fox, Niantic, Fidelity. Python, TypeScript, Kubernetes.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Akash Ungarala | Senior Software Engineer',
     description:
-      'Senior Software Engineer with 9+ years building distributed systems across gaming, fintech, media, and ad-tech.',
+      'Senior Software Engineer building resilient distributed systems. 9+ years shipping real-time platforms for Fox, Niantic, Fidelity. Python, TypeScript, Kubernetes.',
   },
   robots: {
     index: true,
