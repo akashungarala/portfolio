@@ -88,7 +88,6 @@ export interface Contact {
 export interface ProfileContent {
   // Personal Information
   name: string;
-  title: string;
   email: string;
   location: string;
   profileImage: string;

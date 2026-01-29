@@ -13,14 +13,14 @@ interface HeroProps {
 }
 
 export function Hero({ content }: HeroProps) {
-  const { name, title, headline, profileImage } = content;
+  const { name, headline, profileImage } = content;
 
-  // Keywords to highlight in the tagline
-  const highlights = headline.highlights || [
+  // First highlight is the title, rest are keywords to highlight in tagline
+  const [title, ...highlights] = headline.highlights || [
+    'Senior Software Engineer',
     'distributed systems',
     'reliability',
     'performance',
-    'high-throughput',
   ];
 
   return (

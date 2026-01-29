@@ -9,7 +9,6 @@
 # Personal Information
 # -----------------------------------------------------------------------------
 name: Akash Ungarala
-title: Senior Software Engineer
 email: akash.ungarala@gmail.com
 location: Charlotte, North Carolina, USA
 profileImage: /assets/profile.jpg
@@ -24,12 +23,13 @@ social:
 # Hero Section
 # -----------------------------------------------------------------------------
 headline:
-  badge: Available for opportunities (NC or Remote)
+  badge: Available for opportunities
   tagline: |
     Senior Software Engineer with 9+ years building high-scale distributed systems.
     Python and TypeScript expertise, architecting real-time platforms processing
     billions of events across broadcast media, fintech, gaming, and ad-tech.
   highlights:
+    - Senior Software Engineer
     - Python
     - TypeScript
     - distributed systems
@@ -78,20 +78,20 @@ technologies:
   - category: Distributed Systems
     items: [Microservices, Event-Driven Architecture, Message Queues, Kafka, RabbitMQ, Pub/Sub, gRPC, Protocol Buffers]
   - category: Cloud & Infrastructure
-    items: [AWS (Lambda, API Gateway, RDS, DynamoDB, S3, SNS), GCP (GKE, Spanner, BigQuery, Firestore)]
+    items: [AWS, Lambda, API Gateway, RDS, DynamoDB, S3, SNS, GCP, GKE, Spanner, BigQuery, Firestore]
   - category: Platform & DevOps
     items: [Docker, Kubernetes, Helm, Terraform, CI/CD, GitHub Actions, GitLab CI, Spinnaker]
   - category: Data & Storage
     items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Celery, Apache Airflow]
   - category: Observability & Reliability
-    items: [OpenTelemetry, Prometheus, Grafana, SLOs/SLIs, System Design, On-Call Ownership]
+    items: [OpenTelemetry, Prometheus, Grafana, SLOs/SLIs, System Design]
 
 # -----------------------------------------------------------------------------
 # Work Experience
 # -----------------------------------------------------------------------------
 workExperience:
   - id: fox
-    company: Fox Corporation
+    company: Fox Corporation (Contract)
     title: Senior Software Engineer
     location: Remote
     startDate: Sep 2024
@@ -116,7 +116,7 @@ workExperience:
         reducing production incidents by 60%
 
   - id: fidelity
-    company: Fidelity Investments
+    company: Fidelity Investments (Contract)
     title: Senior Software Engineer
     location: North Carolina
     startDate: Oct 2023
@@ -185,7 +185,7 @@ workExperience:
         reducing service bootstrap time from 2 weeks to 2 days
 
   - id: google
-    company: Google
+    company: Google (Contract)
     title: Support Engineer
     location: Mountain View, CA
     startDate: Oct 2017
@@ -195,11 +195,11 @@ workExperience:
       Google Assistant devices.
     highlights:
       - |
-        Developed chatbot prototypes using Python, Node.js, and Java, collaborating
+        Developed chatbot prototypes using Python and Node.js, collaborating
         with product teams to define integration patterns for enterprise customers
       - |
         Implemented webhooks processing natural language requests with real-time
-        dynamic responses for Fortune 500 deployments
+        dynamic responses
 
   - id: infosys
     company: Infosys
@@ -230,11 +230,10 @@ education:
     startDate: Aug 2015
     endDate: Dec 2016
     description: |
-      Graduate studies in computer science with focus on distributed systems
-      and cloud-native application development.
+      MS in computer science with database systems and management as majors.
     highlights:
       - |
-        Graduate Research Assistant: Built NatureNet citizen science platform
+        Graduate Research Assistant: Built features for NatureNet citizen science platform
         using Python Flask on Google Cloud Platform
 
 # -----------------------------------------------------------------------------
@@ -268,7 +267,7 @@ workProjects:
       metrics from 500+ microservices. Teams define SLOs via alerts-as-code,
       track error budgets, and receive automated breach notifications. Led POC
       for high-cardinality metrics that reduced alert noise by 50%.
-    techStack: [Python, FastAPI, AWS Lambda, PostgreSQL, React, Terraform, OpenTelemetry]
+    techStack: [Python, FastAPI, AWS Lambda, PostgreSQL, React, TypeScript, Terraform, OpenTelemetry]
     featured: true
     metrics:
       - 40% reduction in Mean Time to Detection
@@ -285,7 +284,7 @@ workProjects:
       80M+ monthly active users. Designed event-driven pipelines using Celery and
       Cloud Spanner, reducing p99 latency from 800ms to 200ms. Optimized query
       patterns cutting analytics latency by 60%.
-    techStack: [Python, FastAPI, TypeScript, Node.js, Cloud Spanner, Celery, GCP]
+    techStack: [Python, FastAPI, TypeScript, Express.js, Cloud Spanner, Celery, GCP]
     featured: true
     metrics:
       - 99.99% uptime for 80M+ MAU
@@ -331,4 +330,4 @@ contact:
     at scale and drive technical decisions. Whether it's real-time platforms,
     distributed systems, or high-throughput data pipelines—I enjoy owning hard
     problems end-to-end.
-  availability: Open to remote positions and relocation within the US.
+  availability: Open to Remote (US) or Hybrid/Onsite (NC)

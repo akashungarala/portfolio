@@ -13,7 +13,9 @@ describe('Hero', () => {
   it('should render the title', () => {
     render(<Hero content={mockContent} />);
 
-    expect(screen.getByText(/senior backend engineer/i)).toBeInTheDocument();
+    // Title is rendered in a paragraph element with specific styling
+    const titles = screen.getAllByText(/senior software engineer/i);
+    expect(titles.length).toBeGreaterThan(0);
   });
 
   it('should render a tagline', () => {

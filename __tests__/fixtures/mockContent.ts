@@ -2,7 +2,6 @@ import type { ProfileContent } from '@/lib/types';
 
 export const mockContent: ProfileContent = {
   name: 'Akash Ungarala',
-  title: 'Senior Backend Engineer',
   email: 'akash.ungarala@gmail.com',
   location: 'Los Angeles, CA',
   profileImage: '/assets/profile.jpg',
@@ -14,13 +13,8 @@ export const mockContent: ProfileContent = {
   headline: {
     badge: 'Available for opportunities',
     tagline:
-      'Building distributed systems at scale. 10+ years across gaming, fintech, media, and ad-tech. Focused on reliability, performance, and high-throughput platforms.',
-    highlights: [
-      'distributed systems at scale',
-      'reliability',
-      'performance',
-      'high-throughput platforms',
-    ],
+      'Senior Software Engineer with 9+ years building high-scale distributed systems. Python and TypeScript expertise, architecting real-time platforms processing billions of events.',
+    highlights: ['Senior Software Engineer', 'distributed systems', 'Python', 'TypeScript'],
   },
   about: {
     heading: 'Building systems that scale with confidence',

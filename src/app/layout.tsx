@@ -21,11 +21,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://akashungarala.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Akash Ungarala | Senior Backend Engineer',
+    default: 'Akash Ungarala | Senior Software Engineer',
     template: '%s | Akash Ungarala',
   },
   description:
-    'Senior Backend Engineer with 10+ years building distributed systems across gaming, fintech, media, and ad-tech.',
+    'Senior Backend Engineer with 9+ years building distributed systems across gaming, fintech, media, and ad-tech.',
   keywords: [
     'Backend Engineer',
     'Distributed Systems',
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Akash Ungarala',
-    title: 'Akash Ungarala | Senior Backend Engineer',
+    title: 'Akash Ungarala | Senior Software Engineer',
     description:
-      'Senior Backend Engineer with 10+ years building distributed systems across gaming, fintech, media, and ad-tech.',
+      'Senior Software Engineer with 9+ years building distributed systems across gaming, fintech, media, and ad-tech.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Akash Ungarala | Senior Backend Engineer',
+    title: 'Akash Ungarala | Senior Software Engineer',
     description:
-      'Senior Backend Engineer with 10+ years building distributed systems across gaming, fintech, media, and ad-tech.',
+      'Senior Software Engineer with 9+ years building distributed systems across gaming, fintech, media, and ad-tech.',
   },
   robots: {
     index: true,
