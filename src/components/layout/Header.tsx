@@ -1,6 +1,6 @@
 'use client';
 
-import { FileText, Terminal } from 'lucide-react';
+import { FileText, MessageCircle, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
 ];
 
 function getBreadcrumbPath(pathname: string | null): string {
@@ -87,6 +86,19 @@ export function Header() {
               <FileText className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Resume</span>
             </a>
+            <Link
+              href="/contact"
+              className={cn(
+                'inline-flex items-center gap-1.5',
+                'rounded-md px-3 py-1.5 text-sm font-medium',
+                'bg-[var(--highlight)] text-white',
+                'hover:bg-[var(--highlight)]/90',
+                'transition-colors duration-200',
+              )}
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Let's Talk</span>
+            </Link>
           </div>
         </nav>
       </div>

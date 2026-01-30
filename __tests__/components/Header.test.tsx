@@ -22,7 +22,7 @@ describe('Header', () => {
     const homeLinks = screen.getAllByRole('link', { name: /home/i });
     expect(homeLinks.length).toBeGreaterThanOrEqual(1);
     expect(screen.getByRole('link', { name: /projects/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /let's talk/i })).toBeInTheDocument();
   });
 
   it('should render the theme toggle', () => {
