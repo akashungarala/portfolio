@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/akashungarala/portfolio/compare/v1.14.1...v1.15.0) (2026-01-30)
+
+
+### Features
+
+* implement contact form email functionality with resend ([f0fe5ae](https://github.com/akashungarala/portfolio/commit/f0fe5aef2f7409fc110090f8624c5aee5dc51ece))
+
 ## [1.14.1](https://github.com/akashungarala/portfolio/compare/v1.14.0...v1.14.1) (2026-01-30)
 
 
