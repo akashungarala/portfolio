@@ -1,6 +1,8 @@
 'use client';
 
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { ArrowRight, Briefcase, GraduationCap } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { FadeIn } from '@/components/motion';
 import type { ProfileContent } from '@/lib/types';
@@ -63,21 +65,34 @@ export function Experience({ content }: ExperienceProps) {
               <div className="space-y-0">
                 {workExperience.map((job) => (
                   <div key={job.id} className="timeline-item">
-                    <div className="flex flex-col gap-0.5 mb-2">
-                      <h3 className="font-medium">{job.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {job.company} · {job.location}
-                      </p>
-                      <p className="text-xs text-muted-foreground/75">
-                        {job.startDate} — {job.endDate}
-                      </p>
+                    <div className="flex items-start gap-3 mb-2">
+                      {job.logo && (
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center">
+                          <Image
+                            src={job.logo}
+                            alt={job.company}
+                            width={28}
+                            height={28}
+                            className="text-foreground"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-col gap-0.5">
+                        <h3 className="font-medium">{job.title}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {job.company} · {job.location}
+                        </p>
+                        <p className="text-xs text-muted-foreground/75">
+                          {job.startDate} — {job.endDate}
+                        </p>
+                      </div>
                     </div>
 
                     <p className="mb-2 text-sm text-muted-foreground leading-relaxed">
                       {job.description.trim()}
                     </p>
 
-                    <ul className="space-y-1">
+                    <ul className="space-y-1 mb-3">
                       {job.highlights.map((highlight) => (
                         <li
                           key={highlight}
@@ -88,6 +103,19 @@ export function Experience({ content }: ExperienceProps) {
                         </li>
                       ))}
                     </ul>
+
+                    {job.projectId && (
+                      <Link
+                        href={`/projects/${job.projectId}`}
+                        className={cn(
+                          'inline-flex items-center gap-1.5 text-sm font-medium',
+                          'text-[var(--highlight)] hover:underline underline-offset-4',
+                        )}
+                      >
+                        View Project
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
@@ -100,14 +128,27 @@ export function Experience({ content }: ExperienceProps) {
               <div className="space-y-0">
                 {education.map((edu) => (
                   <div key={edu.id} className="timeline-item">
-                    <div className="flex flex-col gap-0.5 mb-2">
-                      <h3 className="font-medium">
-                        {edu.degree} in {edu.field}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">{edu.school}</p>
-                      <p className="text-xs text-muted-foreground/75">
-                        {edu.startDate} — {edu.endDate} · {edu.location}
-                      </p>
+                    <div className="flex items-start gap-3 mb-2">
+                      {edu.logo && (
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center">
+                          <Image
+                            src={edu.logo}
+                            alt={edu.school}
+                            width={28}
+                            height={28}
+                            className="text-foreground"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-col gap-0.5">
+                        <h3 className="font-medium">
+                          {edu.degree} in {edu.field}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">{edu.school}</p>
+                        <p className="text-xs text-muted-foreground/75">
+                          {edu.startDate} — {edu.endDate} · {edu.location}
+                        </p>
+                      </div>
                     </div>
 
                     <p className="mb-2 text-sm text-muted-foreground leading-relaxed">

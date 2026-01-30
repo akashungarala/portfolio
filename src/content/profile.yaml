@@ -83,7 +83,7 @@ technologies:
   - category: Distributed Systems
     items: [Microservices, Event-Driven, Message Queues (RabbitMQ | Kafka | Pub/Sub), Protocol Buffers, gRPC]
   - category: Cloud & Infrastucture
-    items: [AWS —, Lambda, API Gateway, RDS, DynamoDB, S3, SNS, CloudWatch, GCP —, GKE, Spanner, Pub/Sub, BigQuery, Firestore]
+    items: [AWS (Lambda | API Gateway | RDS | DynamoDB | S3 | SNS | CloudWatch), GCP (GKE | Spanner | Pub/Sub | BigQuery | Firestore)]
   - category: Platform & DevOps
     items: [Docker, Kubernetes, Helm, Terraform, CI/CD (GitHub Actions | GitLab CI | Spinnaker), System Design]
   - category: Data & Observability
@@ -99,6 +99,8 @@ workExperience:
     location: Remote
     startDate: Sep 2024
     endDate: Dec 2025
+    logo: /assets/logos/fox.svg
+    projectId: caption-exchange
     description: |
       Architected CaptionExchange, a real-time AI/human captioning platform
       serving 8M+ concurrent viewers with sub-5-second failover for live
@@ -124,6 +126,8 @@ workExperience:
     location: Durham, NC
     startDate: Oct 2023
     endDate: Jul 2024
+    logo: /assets/logos/fidelity.svg
+    projectId: slo-tracker
     description: |
       Designed centralized SLO tracking platform processing metrics from 200+
       services, reducing Mean Time to Detection by 40% across 50+ engineering teams.
@@ -147,6 +151,8 @@ workExperience:
     location: Sunnyvale, CA
     startDate: Nov 2021
     endDate: Aug 2023
+    logo: /assets/logos/niantic.svg
+    projectId: ad-analytics
     description: |
       Owned AdTech backend platform for Pokemon GO serving 80M+ monthly users
       with 99.99% uptime, processing 2B+ daily events for location-based ads.
@@ -170,6 +176,8 @@ workExperience:
     location: Palo Alto, CA
     startDate: Feb 2019
     endDate: Nov 2021
+    logo: /assets/logos/adara.svg
+    projectId: identity-resolution
     description: |
       Re-architected identity resolution services scaling 4x (5K to 20K+ writes/sec)
       while reducing infrastructure costs by 30%.
@@ -193,6 +201,7 @@ workExperience:
     location: Mountain View, CA
     startDate: Oct 2017
     endDate: Dec 2018
+    logo: /assets/logos/google.svg
     description: |
       Built Dialogflow conversational AI prototypes deployed across 400M+
       Google Assistant devices.
@@ -210,6 +219,7 @@ workExperience:
     location: Hyderabad, India
     startDate: Feb 2014
     endDate: Jul 2015
+    logo: /assets/logos/infosys.svg
     description: |
       Built enterprise Django portal with MySQL backend serving 10K+ users
       for PG&E (Pacific Gas and Electric Company).
@@ -232,6 +242,7 @@ education:
     location: Charlotte, NC
     startDate: Aug 2015
     endDate: Dec 2016
+    logo: /assets/logos/uncc.svg
     description: |
       MS in computer science with database systems and management as majors.
     highlights:
@@ -244,6 +255,8 @@ education:
 workProjects:
   - id: caption-exchange
     title: CaptionExchange
+    company: Fox
+    logo: /assets/logos/fox.svg
     description: |
       Real-time AI/human captioning platform with sub-5-second failover
       serving 8M+ concurrent broadcast viewers.
@@ -268,6 +281,8 @@ workProjects:
 
   - id: slo-tracker
     title: SLO Tracker
+    company: Fidelity
+    logo: /assets/logos/fidelity.svg
     description: |
       Centralized observability platform reducing Mean Time to Detection
       by 40% across 50+ engineering teams.
@@ -290,7 +305,9 @@ workProjects:
       - 20 engineering hours/week saved in alert triage
 
   - id: ad-analytics
-    title: AdTech Platform (Niantic)
+    title: AdTech Platform
+    company: Niantic
+    logo: /assets/logos/niantic.svg
     description: |
       Location-based ad platform for Pokemon GO processing 2B+ daily events
       with 99.99% uptime.
@@ -314,7 +331,9 @@ workProjects:
       - 75% latency reduction (800ms to 200ms)
 
   - id: identity-resolution
-    title: Identity Resolution Platform (Adara)
+    title: Identity Resolution Platform
+    company: Adara
+    logo: /assets/logos/adara.svg
     description: |
       High-throughput identity resolution system scaling 4x while reducing
       infrastructure costs by 30%.
@@ -365,6 +384,7 @@ personalProjects:
     featured: false
     links:
       github: https://github.com/akashungarala/chirp
+      live: https://chirp-x80o.onrender.com/docs
 
 # -----------------------------------------------------------------------------
 # Contact Section
@@ -375,4 +395,4 @@ contact:
     Looking for senior and staff-level roles where I can architect systems at
     scale. Real-time platforms, distributed systems, high-throughput pipelines 
     — I own hard problems end-to-end.
-  availability: Remote (US) or Hybrid/Onsite (NC)
+  availability: Remote (US) or Hybrid (NC, SC)

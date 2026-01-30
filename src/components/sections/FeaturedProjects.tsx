@@ -18,6 +18,7 @@ import { cn } from '@/lib/utils';
 interface Project {
   id: string;
   title: string;
+  company?: string;
   description: string;
   longDescription: string;
   techStack: string[];
@@ -106,9 +107,16 @@ function ProjectCard({ project }: { project: Project }) {
       )}
     >
       <div className="flex items-start justify-between gap-4 mb-3">
-        <h3 className="font-medium group-hover:text-[var(--highlight)] transition-colors underline-offset-4">
-          {project.title}
-        </h3>
+        <div className="flex items-center gap-2">
+          <h3 className="font-medium group-hover:text-[var(--highlight)] transition-colors underline-offset-4">
+            {project.title}
+          </h3>
+          {project.company && (
+            <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400">
+              {project.company}
+            </span>
+          )}
+        </div>
         <div className="flex gap-1.5 flex-shrink-0">
           {project.links?.github && (
             <a

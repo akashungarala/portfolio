@@ -69,7 +69,7 @@ export function Hero({ content }: HeroProps) {
             <span className="hidden sm:inline text-border">•</span>
             <span className="inline-flex items-center gap-1.5">
               <Globe className="h-4 w-4 text-[var(--highlight)]" />
-              Remote-friendly (any timezone in US)
+              Remote (US) or Hybrid (NC, SC)
             </span>
           </div>
         </FadeIn>

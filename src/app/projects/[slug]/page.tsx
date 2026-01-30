@@ -112,6 +112,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 Featured
               </span>
             )}
+            {'company' in project && project.company && (
+              <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                {project.company}
+              </span>
+            )}
           </div>
 
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">{project.title}</h1>

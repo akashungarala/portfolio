@@ -64,9 +64,6 @@ export default function PrivacyPage() {
           <li>
             <strong>Resend</strong> - Email delivery for contact form
           </li>
-          <li>
-            <strong>GitHub API</strong> - Displaying recent activity
-          </li>
         </ul>
 
         <h2>Your Rights</h2>

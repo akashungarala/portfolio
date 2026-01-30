@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 interface Project {
   id: string;
   title: string;
+  company?: string;
   description: string;
   longDescription?: string;
   techStack: string[];
@@ -85,9 +86,16 @@ function ProjectCard({ project }: { project: Project }) {
     >
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-2 flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-foreground group-hover:text-[var(--highlight)] transition-colors">
-            {project.title}
-          </h3>
+          <div className="flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground group-hover:text-[var(--highlight)] transition-colors">
+              {project.title}
+            </h3>
+            {project.company && (
+              <span className="rounded-full px-2 py-0.5 text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                {project.company}
+              </span>
+            )}
+          </div>
           <span
             className={cn(
               'rounded-full px-2 py-0.5 text-xs font-medium',
