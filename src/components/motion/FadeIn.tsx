@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 interface FadeInProps {
   children: ReactNode;
@@ -27,16 +27,31 @@ export function FadeIn({
   direction = 'up',
 }: FadeInProps) {
   const shouldReduceMotion = useReducedMotion();
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Skip animations on reduced motion preference
   if (shouldReduceMotion) {
     return <div className={className}>{children}</div>;
+  }
+
+  // During SSR or before hydration, render content visible to prevent blank page
+  if (!isMounted) {
+    return (
+      <div className={className} style={{ opacity: 1 }}>
+        {children}
+      </div>
+    );
   }
 
   return (
     <motion.div
       initial={{ opacity: 0, ...directionOffset[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{
         duration,
         delay,

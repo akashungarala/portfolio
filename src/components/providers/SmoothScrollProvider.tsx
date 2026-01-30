@@ -10,7 +10,18 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (prefersReducedMotion) {
+    // Disable smooth scroll on touch devices (mobile/tablet) for better compatibility
+    const isTouchDevice =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches;
+
+    // Also check for mobile user agents as a fallback
+    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    );
+
+    if (prefersReducedMotion || isTouchDevice || isMobileUA) {
       return;
     }
 

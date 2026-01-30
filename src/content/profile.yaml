@@ -179,7 +179,7 @@ workExperience:
     location: Palo Alto, CA
     startDate: Feb 2019
     endDate: Nov 2021
-    logo: /assets/logos/adara.jpeg
+    logo: /assets/logos/adara.png
     website: https://adara.com
     projectId: identity-resolution
     description: |
@@ -343,7 +343,7 @@ workProjects:
   - id: identity-resolution
     title: Identity Resolution Platform
     company: Adara
-    logo: /assets/logos/adara.jpeg
+    logo: /assets/logos/adara.png
     website: https://adara.com
     description: |
       High-throughput identity resolution system scaling 4x while reducing

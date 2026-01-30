@@ -75,7 +75,7 @@ export function Experience({ content }: ExperienceProps) {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={cn(
-                            'flex-shrink-0 w-10 h-10 rounded-lg p-1 flex items-center justify-center',
+                            'flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center',
                             'bg-white dark:bg-white/95 border border-border/50',
                             'hover:border-[var(--highlight)]/50 hover:shadow-sm transition-all',
                           )}
@@ -83,9 +83,9 @@ export function Experience({ content }: ExperienceProps) {
                           <Image
                             src={job.logo}
                             alt={job.company}
-                            width={32}
-                            height={32}
-                            className="object-contain rounded"
+                            width={40}
+                            height={40}
+                            className="object-contain w-full h-full"
                           />
                         </a>
                       )}
@@ -159,7 +159,7 @@ export function Experience({ content }: ExperienceProps) {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={cn(
-                            'flex-shrink-0 w-10 h-10 rounded-lg p-1 flex items-center justify-center',
+                            'flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center',
                             'bg-white dark:bg-white/95 border border-border/50',
                             'hover:border-[var(--highlight)]/50 hover:shadow-sm transition-all',
                           )}
@@ -167,9 +167,9 @@ export function Experience({ content }: ExperienceProps) {
                           <Image
                             src={edu.logo}
                             alt={edu.school}
-                            width={32}
-                            height={32}
-                            className="object-contain rounded"
+                            width={40}
+                            height={40}
+                            className="object-contain w-full h-full"
                           />
                         </a>
                       )}
