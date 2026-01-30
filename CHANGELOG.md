@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/akashungarala/portfolio/compare/v1.14.0...v1.14.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* remove redundant let's talk button and fix contact form ([026f528](https://github.com/akashungarala/portfolio/commit/026f528a12f532f6574c19e63b625745a9a83672))
+
 # [1.14.0](https://github.com/akashungarala/portfolio/compare/v1.13.0...v1.14.0) (2026-01-30)
 
 
