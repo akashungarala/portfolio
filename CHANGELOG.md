@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/akashungarala/portfolio/compare/v1.16.0...v1.16.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* use array format for reply-to header with sender name ([3a0b61c](https://github.com/akashungarala/portfolio/commit/3a0b61c41cbd4eca61ceaaf235e60b74b9fdc10a))
+
 # [1.16.0](https://github.com/akashungarala/portfolio/compare/v1.15.0...v1.16.0) (2026-01-30)
 
 
