@@ -9,6 +9,42 @@ interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
+/**
+ * Formats project description with highlighted Challenge/Solution/Impact sections
+ */
+function FormattedDescription({ text }: { text: string }) {
+  const sections = ['Challenge:', 'Solution:', 'Impact:'];
+  const hasStructuredFormat = sections.some((section) => text.includes(section));
+
+  if (!hasStructuredFormat) {
+    return <p className="text-lg text-muted-foreground leading-relaxed">{text}</p>;
+  }
+
+  // Split by section headers while keeping the headers
+  const parts = text.split(/(Challenge:|Solution:|Impact:)/).filter(Boolean);
+
+  const formatted: { label: string; content: string }[] = [];
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i].trim();
+    if (sections.includes(part)) {
+      const content = parts[i + 1]?.trim() || '';
+      formatted.push({ label: part.replace(':', ''), content });
+      i++; // Skip the content part in next iteration
+    }
+  }
+
+  return (
+    <>
+      {formatted.map(({ label, content }) => (
+        <div key={label} className="space-y-2">
+          <h3 className="text-lg font-semibold text-[var(--highlight)]">{label}</h3>
+          <p className="text-lg text-muted-foreground leading-relaxed">{content}</p>
+        </div>
+      ))}
+    </>
+  );
+}
+
 export async function generateStaticParams() {
   const projects = getAllProjects();
   return projects.map((project) => ({
@@ -124,9 +160,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* Overview */}
           <section>
             <h2 className="text-2xl font-bold mb-4">Overview</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {project.longDescription}
-            </p>
+            <div className="space-y-6">
+              <FormattedDescription text={project.longDescription} />
+            </div>
           </section>
 
           {/* Tech Stack */}

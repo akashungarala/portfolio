@@ -29,6 +29,7 @@ headline:
     real-time platforms processing billions of events across broadcast 
     media, fintech, gaming, and ad tech.
   highlights:
+    - Senior Software Engineer
     - resilient
     - high-scale
     - 9+ years
@@ -80,13 +81,13 @@ technologies:
   - category: Languages & Frameworks
     items: [Python (FastAPI | Flask | Django), TypeScript/Node.js (Express | Next), Async (Celery | asyncio)]
   - category: Distributed Systems
-    items: [Microservices, Event-Driven Architecture, Message Queues (RabbitMQ | Kafka | Pub/Sub), Protocol Buffers, gRPC]
+    items: [Microservices, Event-Driven, Message Queues (RabbitMQ | Kafka | Pub/Sub), Protocol Buffers, gRPC]
   - category: Cloud & Infrastucture
-    items: [AWS (Lambda | API Gateway | RDS | DynamoDB | S3 | SNS | CloudWatch), GCP (GKE | Spanner | Pub/Sub | BigQuery | Firestore)]
+    items: [AWS —, Lambda, API Gateway, RDS, DynamoDB, S3, SNS, CloudWatch, GCP —, GKE, Spanner, Pub/Sub, BigQuery, Firestore]
   - category: Platform & DevOps
     items: [Docker, Kubernetes, Helm, Terraform, CI/CD (GitHub Actions | GitLab CI | Spinnaker), System Design]
   - category: Data & Observability
-    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Airflow, OpenTelemetry, Prometheus, Grafana, SLOs/SLIs, System Design]
+    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Airflow, OpenTelemetry, Prometheus, Grafana, SLOs/SLIs]
 
 # -----------------------------------------------------------------------------
 # Work Experience
@@ -312,21 +313,31 @@ workProjects:
       - 2B+ daily events processed
       - 75% latency reduction (800ms to 200ms)
 
-personalProjects:
-  - id: chirp
-    title: Chirp API
+  - id: identity-resolution
+    title: Identity Resolution Platform (Adara)
     description: |
-      Production-ready REST API for user registration, authentication, voting,
-      and relational data management with full CI/CD pipeline.
+      High-throughput identity resolution system scaling 4x while reducing
+      infrastructure costs by 30%.
     longDescription: |
-      Backend API demonstrating modern Python development practices including
-      schema validation with Pydantic, SQLAlchemy ORM, Alembic migrations,
-      and automated CI/CD with GitHub Actions.
-    techStack: [Python, FastAPI, PostgreSQL, SQLAlchemy, Docker, GitHub Actions]
-    featured: false
-    links:
-      github: https://github.com/akashungarala/chirp
+      Challenge: Adara's identity resolution system couldn't keep up with growing
+      data volumes — stuck at 5K writes/sec with rising infrastructure costs as
+      the company scaled to 200+ enterprise partners.
 
+      Solution: Re-architected the system using Python and Cloud Pub/Sub for
+      event-driven processing. Built data pipelines processing 5TB+ daily via
+      BigQuery and PostgreSQL. Created reusable microservice templates.
+
+      Impact: Scaled throughput 4x (5K to 20K+ writes/sec) while cutting infrastructure
+      costs by 30%. Reduced new service bootstrap time from 2 weeks to 2 days with
+      company-wide template adoption.
+    techStack: [Python, Flask, BigQuery, PostgreSQL, Cloud Pub/Sub, Apache Airflow, Auth0]
+    featured: true
+    metrics:
+      - 4x throughput increase (5K to 20K+ writes/sec)
+      - 30% infrastructure cost reduction
+      - 5TB+ daily data processing
+
+personalProjects:
   - id: portfolio-site
     title: Personal Portfolio
     description: |
@@ -340,6 +351,20 @@ personalProjects:
     links:
       github: https://github.com/akashungarala/portfolio
       live: https://akashungarala.com
+
+  - id: chirp
+    title: Chirp API
+    description: |
+      Production-ready REST API for user registration, authentication, voting,
+      and relational data management with full CI/CD pipeline.
+    longDescription: |
+      Backend API demonstrating modern Python development practices including
+      schema validation with Pydantic, SQLAlchemy ORM, Alembic migrations,
+      and automated CI/CD with GitHub Actions.
+    techStack: [Python, FastAPI, PostgreSQL, SQLAlchemy, Docker, GitHub Actions]
+    featured: false
+    links:
+      github: https://github.com/akashungarala/chirp
 
 # -----------------------------------------------------------------------------
 # Contact Section
