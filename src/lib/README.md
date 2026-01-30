@@ -1,20 +1,20 @@
 # Library Functions
 
-Utility functions and API clients used across the application.
+Utility functions and types used across the application.
 
 ## Files
 
-### github.ts
-GitHub GraphQL API client for fetching recent commits.
-- Uses ISR with 1-hour revalidation
-- Graceful fallback on API failures
-- Rate limit aware
+### get-content.ts
+Content loading utilities for profile data.
+- Loads and parses profile.yaml
+- Provides typed access to portfolio content
+- Exports project lookup helpers
 
-### resend.ts
-Email delivery via Resend API.
-- Server-side only (API route)
-- Zod validation for contact form data
-- Error handling with user-friendly messages
+### types.ts
+TypeScript interfaces for all portfolio content.
+- ProfileContent, WorkExperience, Education
+- WorkProject, PersonalProject
+- Contact, Expertise, TechCategory
 
 ### utils.ts
-General utilities: class name merging, date formatting, etc.
+General utilities: class name merging (cn).
