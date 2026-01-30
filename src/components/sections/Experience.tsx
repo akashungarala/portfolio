@@ -74,14 +74,18 @@ export function Experience({ content }: ExperienceProps) {
                           href={job.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center hover:bg-[var(--highlight)]/10 transition-colors"
+                          className={cn(
+                            'flex-shrink-0 w-10 h-10 rounded-lg p-1 flex items-center justify-center',
+                            'bg-white dark:bg-white/95 border border-border/50',
+                            'hover:border-[var(--highlight)]/50 hover:shadow-sm transition-all',
+                          )}
                         >
                           <Image
                             src={job.logo}
                             alt={job.company}
-                            width={28}
-                            height={28}
-                            className="text-foreground"
+                            width={32}
+                            height={32}
+                            className="object-contain rounded"
                           />
                         </a>
                       )}
@@ -154,14 +158,18 @@ export function Experience({ content }: ExperienceProps) {
                           href={edu.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center hover:bg-[var(--highlight)]/10 transition-colors"
+                          className={cn(
+                            'flex-shrink-0 w-10 h-10 rounded-lg p-1 flex items-center justify-center',
+                            'bg-white dark:bg-white/95 border border-border/50',
+                            'hover:border-[var(--highlight)]/50 hover:shadow-sm transition-all',
+                          )}
                         >
                           <Image
                             src={edu.logo}
                             alt={edu.school}
-                            width={28}
-                            height={28}
-                            className="text-foreground"
+                            width={32}
+                            height={32}
+                            className="object-contain rounded"
                           />
                         </a>
                       )}
