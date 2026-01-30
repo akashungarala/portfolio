@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/akashungarala/portfolio/compare/v1.9.0...v1.10.0) (2026-01-30)
+
+
+### Features
+
+* add company tags, logos, and project links ([b50a8e5](https://github.com/akashungarala/portfolio/commit/b50a8e5d6ae82c5744bfd935be955f9b2dd6b984))
+
 # [1.9.0](https://github.com/akashungarala/portfolio/compare/v1.8.0...v1.9.0) (2026-01-30)
 
 
