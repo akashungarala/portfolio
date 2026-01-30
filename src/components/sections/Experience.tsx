@@ -76,8 +76,10 @@ export function Experience({ content }: ExperienceProps) {
                           rel="noopener noreferrer"
                           className={cn(
                             'flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center',
-                            'bg-white dark:bg-white/95 border border-border/50',
-                            'hover:border-[var(--highlight)]/50 hover:shadow-sm transition-all',
+                            'bg-white dark:bg-white/95',
+                            'border-2 border-[var(--highlight)]/30',
+                            'hover:border-[var(--highlight)] hover:shadow-md hover:shadow-[var(--highlight)]/20',
+                            'transition-all duration-200',
                           )}
                         >
                           <Image
@@ -160,8 +162,10 @@ export function Experience({ content }: ExperienceProps) {
                           rel="noopener noreferrer"
                           className={cn(
                             'flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center',
-                            'bg-white dark:bg-white/95 border border-border/50',
-                            'hover:border-[var(--highlight)]/50 hover:shadow-sm transition-all',
+                            'bg-white dark:bg-white/95',
+                            'border-2 border-[var(--highlight)]/30',
+                            'hover:border-[var(--highlight)] hover:shadow-md hover:shadow-[var(--highlight)]/20',
+                            'transition-all duration-200',
                           )}
                         >
                           <Image
