@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/akashungarala/portfolio/compare/v1.13.0...v1.14.0) (2026-01-30)
+
+
+### Features
+
+* add animated favicon with au initials ([0aef4e8](https://github.com/akashungarala/portfolio/commit/0aef4e8edfd76a09bf246331e04b247195733ce7)), closes [#da7756](https://github.com/akashungarala/portfolio/issues/da7756)
+
 # [1.13.0](https://github.com/akashungarala/portfolio/compare/v1.12.1...v1.13.0) (2026-01-30)
 
 
