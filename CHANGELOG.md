@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/akashungarala/portfolio/compare/v1.12.0...v1.12.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* improve mobile compatibility and logo display ([39d9d69](https://github.com/akashungarala/portfolio/commit/39d9d6969c1feed088fefae0540fbc958e2dcd12))
+
 # [1.12.0](https://github.com/akashungarala/portfolio/compare/v1.11.0...v1.12.0) (2026-01-30)
 
 
