@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/akashungarala/portfolio/compare/v1.12.1...v1.13.0) (2026-01-30)
+
+
+### Features
+
+* update logos with stylish highlighted borders ([f2a3287](https://github.com/akashungarala/portfolio/commit/f2a328785bc1af5eb8d982dc6b4d21d9cdb77bf0))
+
 ## [1.12.1](https://github.com/akashungarala/portfolio/compare/v1.12.0...v1.12.1) (2026-01-30)
 
 
