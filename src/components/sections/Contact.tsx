@@ -39,17 +39,19 @@ export function Contact({ content }: ContactProps) {
     email: '',
     message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // TODO: Implement actual form submission with Resend
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Construct mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+    );
+    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
+    // Open email client
+    window.location.href = mailtoLink;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -170,27 +172,16 @@ export function Contact({ content }: ContactProps) {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
                 className={cn(
                   'group inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5',
                   'bg-foreground text-background text-sm font-medium',
                   'hover:bg-[var(--highlight)] hover:scale-105',
                   'transition-all duration-300 ease-out',
                   'shadow-lg hover:shadow-xl hover:shadow-[var(--highlight)]/20',
-                  'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-foreground',
                 )}
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-background/30 border-t-background" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                    Send Message
-                  </>
-                )}
+                <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                Send Message
               </button>
             </form>
           </div>

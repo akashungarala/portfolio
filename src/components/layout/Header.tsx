@@ -87,17 +87,6 @@ export function Header() {
               <FileText className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Resume</span>
             </a>
-            <Link
-              href="/contact"
-              className={cn(
-                'hidden sm:inline-flex items-center gap-1.5',
-                'rounded-md px-3 py-1.5 text-sm font-medium',
-                'bg-foreground text-background',
-                'hover:bg-[var(--highlight)] transition-colors duration-200',
-              )}
-            >
-              Let's Talk
-            </Link>
           </div>
         </nav>
       </div>
