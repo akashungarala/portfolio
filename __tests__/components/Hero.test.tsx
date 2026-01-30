@@ -28,8 +28,8 @@ describe('Hero', () => {
   it('should render a primary CTA button', () => {
     render(<Hero content={mockContent} />);
 
-    // Looking for the primary call-to-action
-    const cta = screen.getByRole('link', { name: /view my work/i });
+    // Looking for the primary call-to-action (now a button for consistent scroll behavior)
+    const cta = screen.getByRole('button', { name: /view my work/i });
     expect(cta).toBeInTheDocument();
   });
 

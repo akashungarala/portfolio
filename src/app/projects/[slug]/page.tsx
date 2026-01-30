@@ -113,9 +113,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </span>
             )}
             {'company' in project && project.company && (
-              <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-500/10 text-blue-600 dark:text-blue-400">
+              <a
+                href={'website' in project ? project.website : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-500/20 transition-colors"
+              >
                 {project.company}
-              </span>
+              </a>
             )}
           </div>
 

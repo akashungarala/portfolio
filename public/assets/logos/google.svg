@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
-  <circle cx="50" cy="50" r="40" fill="currentColor"/>
-  <text x="50" y="60" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="white">G</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="#4285F4" d="M50 41v18h26c-1 6-4 12-9 16l14 11c9-8 14-20 14-32 0-3 0-6-1-8H50z"/>
+  <path fill="#34A853" d="M22 60l-3 2-11 9c7 14 21 23 39 23 12 0 22-4 29-11L62 72c-4 3-9 4-15 4-12 0-22-8-25-18z"/>
+  <path fill="#FBBC05" d="M8 31c-3 6-5 13-5 20s2 14 5 20l14-11c-2-3-3-6-3-9s1-6 3-9L8 31z"/>
+  <path fill="#EA4335" d="M50 20c7 0 13 2 18 7l13-13C73 7 62 2 50 2 32 2 17 11 8 26l14 11c3-10 13-17 28-17z"/>
 </svg>

@@ -2,7 +2,6 @@
 
 import { ArrowRight, Globe, MapPin } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FadeIn } from '@/components/motion';
 import { HighlightText } from '@/components/ui/HighlightText';
 import type { ProfileContent } from '@/lib/types';
@@ -83,8 +82,14 @@ export function Hero({ content }: HeroProps) {
 
         {/* CTA Button with hover animation */}
         <FadeIn delay={0.5}>
-          <Link
-            href="#projects"
+          <button
+            type="button"
+            onClick={() => {
+              const projectsSection = document.getElementById('projects');
+              if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
             className={cn(
               'group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3',
               'bg-foreground text-background font-medium',
@@ -95,7 +100,7 @@ export function Hero({ content }: HeroProps) {
           >
             View My Work
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </button>
         </FadeIn>
       </div>
     </section>

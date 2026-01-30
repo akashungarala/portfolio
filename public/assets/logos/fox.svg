@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
-  <rect x="10" y="25" width="80" height="50" rx="5" fill="currentColor"/>
-  <text x="50" y="58" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">FOX</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" fill="currentColor">
+  <path d="M5 5h18v6H11v10h10v6H11v18H5V5z"/>
+  <path d="M28 5c11 0 20 9 20 20s-9 20-20 20-20-9-20-20S17 5 28 5zm0 6c-7.7 0-14 6.3-14 14s6.3 14 14 14 14-6.3 14-14-6.3-14-14-14z" transform="translate(25 0)"/>
+  <path d="M80 5h18l-8 12 8 12h8l-12-12L106 5h-8l-8 12-8-12h-8l8 12-8 12h8l8-12 8 12h8l-12-12L80 5z" transform="translate(20 0)"/>
 </svg>

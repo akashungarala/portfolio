@@ -100,6 +100,7 @@ workExperience:
     startDate: Sep 2024
     endDate: Dec 2025
     logo: /assets/logos/fox.svg
+    website: https://www.foxcorporation.com
     projectId: caption-exchange
     description: |
       Architected CaptionExchange, a real-time AI/human captioning platform
@@ -127,6 +128,7 @@ workExperience:
     startDate: Oct 2023
     endDate: Jul 2024
     logo: /assets/logos/fidelity.svg
+    website: https://www.fidelity.com
     projectId: slo-tracker
     description: |
       Designed centralized SLO tracking platform processing metrics from 200+
@@ -152,6 +154,7 @@ workExperience:
     startDate: Nov 2021
     endDate: Aug 2023
     logo: /assets/logos/niantic.svg
+    website: https://nianticlabs.com
     projectId: ad-analytics
     description: |
       Owned AdTech backend platform for Pokemon GO serving 80M+ monthly users
@@ -177,6 +180,7 @@ workExperience:
     startDate: Feb 2019
     endDate: Nov 2021
     logo: /assets/logos/adara.svg
+    website: https://adara.com
     projectId: identity-resolution
     description: |
       Re-architected identity resolution services scaling 4x (5K to 20K+ writes/sec)
@@ -202,6 +206,7 @@ workExperience:
     startDate: Oct 2017
     endDate: Dec 2018
     logo: /assets/logos/google.svg
+    website: https://www.google.com
     description: |
       Built Dialogflow conversational AI prototypes deployed across 400M+
       Google Assistant devices.
@@ -220,6 +225,7 @@ workExperience:
     startDate: Feb 2014
     endDate: Jul 2015
     logo: /assets/logos/infosys.svg
+    website: https://www.infosys.com
     description: |
       Built enterprise Django portal with MySQL backend serving 10K+ users
       for PG&E (Pacific Gas and Electric Company).
@@ -243,6 +249,7 @@ education:
     startDate: Aug 2015
     endDate: Dec 2016
     logo: /assets/logos/uncc.svg
+    website: https://www.charlotte.edu
     description: |
       MS in computer science with database systems and management as majors.
     highlights:
@@ -257,6 +264,7 @@ workProjects:
     title: CaptionExchange
     company: Fox
     logo: /assets/logos/fox.svg
+    website: https://www.foxcorporation.com
     description: |
       Real-time AI/human captioning platform with sub-5-second failover
       serving 8M+ concurrent broadcast viewers.
@@ -283,6 +291,7 @@ workProjects:
     title: SLO Tracker
     company: Fidelity
     logo: /assets/logos/fidelity.svg
+    website: https://www.fidelity.com
     description: |
       Centralized observability platform reducing Mean Time to Detection
       by 40% across 50+ engineering teams.
@@ -308,6 +317,7 @@ workProjects:
     title: AdTech Platform
     company: Niantic
     logo: /assets/logos/niantic.svg
+    website: https://nianticlabs.com
     description: |
       Location-based ad platform for Pokemon GO processing 2B+ daily events
       with 99.99% uptime.
@@ -334,6 +344,7 @@ workProjects:
     title: Identity Resolution Platform
     company: Adara
     logo: /assets/logos/adara.svg
+    website: https://adara.com
     description: |
       High-throughput identity resolution system scaling 4x while reducing
       infrastructure costs by 30%.

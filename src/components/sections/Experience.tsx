@@ -13,7 +13,10 @@ interface ExperienceProps {
 }
 
 export function Experience({ content }: ExperienceProps) {
-  const { workExperience, education } = content;
+  const { workExperience, education, workProjects } = content;
+
+  // Create a map of projectId to project title for quick lookup
+  const projectTitleMap = new Map(workProjects.map((p) => [p.id, p.title]));
   const [activeTab, setActiveTab] = useState<'work' | 'education'>('work');
 
   const tabs = [
@@ -67,7 +70,12 @@ export function Experience({ content }: ExperienceProps) {
                   <div key={job.id} className="timeline-item">
                     <div className="flex items-start gap-3 mb-2">
                       {job.logo && (
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center">
+                        <a
+                          href={job.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center hover:bg-[var(--highlight)]/10 transition-colors"
+                        >
                           <Image
                             src={job.logo}
                             alt={job.company}
@@ -75,12 +83,24 @@ export function Experience({ content }: ExperienceProps) {
                             height={28}
                             className="text-foreground"
                           />
-                        </div>
+                        </a>
                       )}
                       <div className="flex flex-col gap-0.5">
                         <h3 className="font-medium">{job.title}</h3>
                         <p className="text-sm text-muted-foreground">
-                          {job.company} · {job.location}
+                          {job.website ? (
+                            <a
+                              href={job.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[var(--highlight)] hover:underline underline-offset-4"
+                            >
+                              {job.company}
+                            </a>
+                          ) : (
+                            job.company
+                          )}{' '}
+                          · {job.location}
                         </p>
                         <p className="text-xs text-muted-foreground/75">
                           {job.startDate} — {job.endDate}
@@ -112,7 +132,7 @@ export function Experience({ content }: ExperienceProps) {
                           'text-[var(--highlight)] hover:underline underline-offset-4',
                         )}
                       >
-                        View Project
+                        {projectTitleMap.get(job.projectId) || 'View Project'}
                         <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
                     )}
@@ -130,7 +150,12 @@ export function Experience({ content }: ExperienceProps) {
                   <div key={edu.id} className="timeline-item">
                     <div className="flex items-start gap-3 mb-2">
                       {edu.logo && (
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center">
+                        <a
+                          href={edu.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted/50 p-1.5 flex items-center justify-center hover:bg-[var(--highlight)]/10 transition-colors"
+                        >
                           <Image
                             src={edu.logo}
                             alt={edu.school}
@@ -138,13 +163,26 @@ export function Experience({ content }: ExperienceProps) {
                             height={28}
                             className="text-foreground"
                           />
-                        </div>
+                        </a>
                       )}
                       <div className="flex flex-col gap-0.5">
                         <h3 className="font-medium">
                           {edu.degree} in {edu.field}
                         </h3>
-                        <p className="text-sm text-muted-foreground">{edu.school}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {edu.website ? (
+                            <a
+                              href={edu.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[var(--highlight)] hover:underline underline-offset-4"
+                            >
+                              {edu.school}
+                            </a>
+                          ) : (
+                            edu.school
+                          )}
+                        </p>
                         <p className="text-xs text-muted-foreground/75">
                           {edu.startDate} — {edu.endDate} · {edu.location}
                         </p>

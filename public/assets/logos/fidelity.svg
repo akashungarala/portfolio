@@ -1,4 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
-  <circle cx="50" cy="50" r="40" fill="currentColor"/>
-  <text x="50" y="58" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">FID</text>
+  <path d="M50 5L5 95h18l8-22h38l8 22h18L50 5zm0 28l13 32H37l13-32z"/>
 </svg>

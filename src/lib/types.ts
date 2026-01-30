@@ -41,6 +41,7 @@ export interface WorkExperience {
   description: string;
   highlights: string[];
   logo?: string;
+  website?: string;
   projectId?: string;
 }
 
@@ -55,6 +56,7 @@ export interface Education {
   description: string;
   highlights: string[];
   logo?: string;
+  website?: string;
 }
 
 export interface ProjectLinks {
@@ -67,6 +69,7 @@ export interface WorkProject {
   title: string;
   company?: string;
   logo?: string;
+  website?: string;
   description: string;
   longDescription: string;
   techStack: string[];

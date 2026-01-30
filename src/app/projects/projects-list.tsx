@@ -8,6 +8,7 @@ interface Project {
   id: string;
   title: string;
   company?: string;
+  website?: string;
   description: string;
   longDescription?: string;
   techStack: string[];
@@ -91,9 +92,15 @@ function ProjectCard({ project }: { project: Project }) {
               {project.title}
             </h3>
             {project.company && (
-              <span className="rounded-full px-2 py-0.5 text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400">
+              <a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                className="rounded-full px-2 py-0.5 text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-500/20 transition-colors"
+              >
                 {project.company}
-              </span>
+              </a>
             )}
           </div>
           <span
