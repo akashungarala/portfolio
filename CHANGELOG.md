@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/akashungarala/portfolio/compare/v1.10.0...v1.11.0) (2026-01-30)
+
+
+### Features
+
+* add clickable company links and improved logos ([0fa5a6f](https://github.com/akashungarala/portfolio/commit/0fa5a6ff9b5ee0d5fcbd0798129b7a0f2c3d64d6))
+
 # [1.10.0](https://github.com/akashungarala/portfolio/compare/v1.9.0...v1.10.0) (2026-01-30)
 
 
