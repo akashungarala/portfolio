@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/akashungarala/portfolio/compare/v1.15.0...v1.16.0) (2026-01-30)
+
+
+### Features
+
+* replace contact nav link with let's talk button ([6863b5c](https://github.com/akashungarala/portfolio/commit/6863b5cb8a109c4a6daca430b932cb35518f600c))
+
 # [1.15.0](https://github.com/akashungarala/portfolio/compare/v1.14.1...v1.15.0) (2026-01-30)
 
 
