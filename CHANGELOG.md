@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/akashungarala/portfolio/compare/v1.11.0...v1.12.0) (2026-01-30)
+
+
+### Features
+
+* update company logos with real images and theme support ([635d4ab](https://github.com/akashungarala/portfolio/commit/635d4ab595f3d6f606e659214a5ea6ab3c8316b6))
+
 # [1.11.0](https://github.com/akashungarala/portfolio/compare/v1.10.0...v1.11.0) (2026-01-30)
 
 
