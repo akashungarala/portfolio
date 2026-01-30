@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/akashungarala/portfolio/compare/v1.8.0...v1.9.0) (2026-01-30)
+
+
+### Features
+
+* format project descriptions and add adara project ([3e73597](https://github.com/akashungarala/portfolio/commit/3e735976a31a363e57d9af524ad3c35ec14540e3))
+
 # [1.8.0](https://github.com/akashungarala/portfolio/compare/v1.7.0...v1.8.0) (2026-01-29)
 
 
