@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
-// Mock Cloudflare Turnstile component
-vi.mock('@marsidev/react-turnstile', () => ({
+// Mock custom Turnstile component
+vi.mock('@/components/ui/Turnstile', () => ({
   Turnstile: () => null,
 }));
 
