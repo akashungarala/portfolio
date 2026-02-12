@@ -1,4 +1,16 @@
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
+
+// Mock Cloudflare Turnstile component
+vi.mock('@marsidev/react-turnstile', () => ({
+  Turnstile: ({ onSuccess }: { onSuccess?: (token: string) => void }) => {
+    // Automatically call onSuccess with a mock token for testing
+    if (onSuccess) {
+      setTimeout(() => onSuccess('mock-turnstile-token'), 0);
+    }
+    return <div data-testid="turnstile-mock">CAPTCHA Mock</div>;
+  },
+}));
 
 // Mock window.matchMedia for next-themes
 Object.defineProperty(window, 'matchMedia', {
