@@ -1,3 +1,10 @@
+## [1.16.2](https://github.com/akashungarala/portfolio/compare/v1.16.1...v1.16.2) (2026-02-12)
+
+
+### Bug Fixes
+
+* prevent XSS vulnerability in contact form email HTML ([abaf5a5](https://github.com/akashungarala/portfolio/commit/abaf5a5663d9beab879c031bae67f44942b035b9))
+
 ## [1.16.1](https://github.com/akashungarala/portfolio/compare/v1.16.0...v1.16.1) (2026-01-30)
 
 
