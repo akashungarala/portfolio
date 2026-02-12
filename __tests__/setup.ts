@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
+import React from 'react';
 
 // Mock Cloudflare Turnstile component
 vi.mock('@marsidev/react-turnstile', () => ({
@@ -8,7 +9,7 @@ vi.mock('@marsidev/react-turnstile', () => ({
     if (onSuccess) {
       setTimeout(() => onSuccess('mock-turnstile-token'), 0);
     }
-    return <div data-testid="turnstile-mock">CAPTCHA Mock</div>;
+    return React.createElement('div', { 'data-testid': 'turnstile-mock' }, 'CAPTCHA Mock');
   },
 }));
 
