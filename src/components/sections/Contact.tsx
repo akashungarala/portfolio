@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, CheckCircle, Github, Linkedin, Mail, Send, XCircle } from 'lucide-react';
 import { useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { FadeIn } from '@/components/motion';
 import type { ProfileContent } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -43,17 +44,34 @@ export function Contact({ content }: ContactProps) {
   });
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     setErrorMessage('');
 
+    // Check if Turnstile is required but not completed
+    if (turnstileSiteKey && !turnstileToken) {
+      setStatus('error');
+      setErrorMessage('Please complete the CAPTCHA verification');
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage('');
+      }, 5000);
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken: turnstileToken || undefined,
+        }),
       });
 
       const data = await response.json();
@@ -64,6 +82,7 @@ export function Contact({ content }: ContactProps) {
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
+      setTurnstileToken(null);
 
       // Reset success message after 5 seconds
       setTimeout(() => setStatus('idle'), 5000);
@@ -217,9 +236,29 @@ export function Contact({ content }: ContactProps) {
                 />
               </div>
 
+              {/* Cloudflare Turnstile CAPTCHA */}
+              {turnstileSiteKey && (
+                <div className="flex justify-center">
+                  <Turnstile
+                    siteKey={turnstileSiteKey}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onError={() => {
+                      setTurnstileToken(null);
+                      setStatus('error');
+                      setErrorMessage('CAPTCHA verification failed. Please refresh and try again.');
+                    }}
+                    onExpire={() => setTurnstileToken(null)}
+                    options={{
+                      theme: 'auto',
+                      size: 'normal',
+                    }}
+                  />
+                </div>
+              )}
+
               <button
                 type="submit"
-                disabled={status === 'submitting'}
+                disabled={status === 'submitting' || (turnstileSiteKey ? !turnstileToken : false)}
                 className={cn(
                   'group inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5',
                   'bg-foreground text-background text-sm font-medium',
