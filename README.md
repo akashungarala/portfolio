@@ -10,7 +10,7 @@ A modern, performant portfolio website built with Next.js 16, showcasing my work
 - **Dark/Light Mode:** System preference detection with manual toggle
 - **Smooth Scrolling:** Lenis physics-based smooth scroll
 - **Animations:** Framer Motion for elegant page transitions and effects
-- **Contact Form:** Integrated email functionality using Resend API
+- **Contact Form:** Integrated email with rate limiting and optional CAPTCHA
 - **SEO Optimized:** Complete meta tags, Open Graph, sitemap, and robots.txt
 - **Fully Tested:** Comprehensive test coverage with Vitest and React Testing Library
 - **Docker Ready:** Multi-stage Docker builds for production deployment
@@ -23,6 +23,7 @@ A modern, performant portfolio website built with Next.js 16, showcasing my work
 - **Styling:** Tailwind CSS 4
 - **Animation:** Framer Motion 12 + Lenis smooth scroll
 - **Email:** Resend API
+- **Security:** Rate limiting + Cloudflare Turnstile CAPTCHA
 - **Linting/Formatting:** Biome 2.3
 - **Testing:** Vitest 4 + React Testing Library
 - **Deployment:** Docker + Vercel
@@ -87,6 +88,8 @@ Copy `.env.example` to `.env.local` and configure:
 |----------|----------|-------------|
 | `NEXT_PUBLIC_SITE_URL` | No | Base URL for SEO (default: https://akashungarala.com) |
 | `RESEND_API_KEY` | For contact form | API key from [resend.com](https://resend.com) |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | No (recommended) | Cloudflare Turnstile site key for CAPTCHA |
+| `TURNSTILE_SECRET_KEY` | No (recommended) | Cloudflare Turnstile secret key (server-side) |
 | `NEXT_PUBLIC_GA_ID` | No | Google Analytics measurement ID |
 
 ### Content Management
@@ -169,6 +172,26 @@ docker-compose up
 ```
 
 The Docker image uses multi-stage builds for optimal size and security, running as a non-root user.
+
+## Security
+
+The portfolio implements multiple layers of security for the contact form:
+
+### Rate Limiting
+- **Built-in protection:** 3 requests per minute per IP address
+- **No configuration needed:** Works automatically to prevent spam and abuse
+- **Smart IP detection:** Handles proxies, load balancers, and Cloudflare
+
+### CAPTCHA (Optional)
+- **Cloudflare Turnstile:** Privacy-friendly alternative to reCAPTCHA
+- **Easy setup:** Add Turnstile keys to environment variables
+- **Graceful degradation:** Form works without CAPTCHA if not configured
+- **Get started:** [Cloudflare Turnstile Dashboard](https://dash.cloudflare.com/turnstile)
+
+### Input Sanitization
+- **XSS protection:** All user inputs are HTML-escaped before email rendering
+- **Email validation:** Server-side regex validation for email format
+- **Required fields:** Name, email, and message validation
 
 ## Testing
 
