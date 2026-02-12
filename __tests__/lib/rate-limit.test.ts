@@ -1,24 +1,33 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { contactFormLimiter, getClientIp } from '@/lib/rate-limit';
 
 describe('Rate Limiter', () => {
+  // Use unique IP for each test to avoid cross-test pollution
+  let testIp: string;
+
   beforeEach(() => {
-    // Reset rate limiter state before each test
-    contactFormLimiter.reset('test-ip');
+    testIp = `test-ip-${Date.now()}-${Math.random()}`;
+  });
+
+  afterEach(() => {
+    // Clean up after each test
+    if (testIp) {
+      contactFormLimiter.reset(testIp);
+    }
   });
 
   describe('contactFormLimiter', () => {
     it('should allow first request', () => {
-      const result = contactFormLimiter.check('test-ip');
+      const result = contactFormLimiter.check(testIp);
 
       expect(result.allowed).toBe(true);
       expect(result.remaining).toBe(2); // 3 max - 1 used = 2 remaining
     });
 
     it('should allow up to 3 requests', () => {
-      const result1 = contactFormLimiter.check('test-ip');
-      const result2 = contactFormLimiter.check('test-ip');
-      const result3 = contactFormLimiter.check('test-ip');
+      const result1 = contactFormLimiter.check(testIp);
+      const result2 = contactFormLimiter.check(testIp);
+      const result3 = contactFormLimiter.check(testIp);
 
       expect(result1.allowed).toBe(true);
       expect(result2.allowed).toBe(true);
@@ -28,44 +37,51 @@ describe('Rate Limiter', () => {
 
     it('should block 4th request', () => {
       // Use up the 3 allowed requests
-      contactFormLimiter.check('test-ip');
-      contactFormLimiter.check('test-ip');
-      contactFormLimiter.check('test-ip');
+      contactFormLimiter.check(testIp);
+      contactFormLimiter.check(testIp);
+      contactFormLimiter.check(testIp);
 
       // 4th request should be blocked
-      const result = contactFormLimiter.check('test-ip');
+      const result = contactFormLimiter.check(testIp);
 
       expect(result.allowed).toBe(false);
       expect(result.remaining).toBe(0);
     });
 
     it('should track different IPs separately', () => {
-      const result1 = contactFormLimiter.check('ip-1');
-      const result2 = contactFormLimiter.check('ip-2');
+      const ip1 = `${testIp}-1`;
+      const ip2 = `${testIp}-2`;
+
+      const result1 = contactFormLimiter.check(ip1);
+      const result2 = contactFormLimiter.check(ip2);
 
       expect(result1.allowed).toBe(true);
       expect(result2.allowed).toBe(true);
       expect(result1.remaining).toBe(2);
       expect(result2.remaining).toBe(2);
+
+      // Clean up
+      contactFormLimiter.reset(ip1);
+      contactFormLimiter.reset(ip2);
     });
 
     it('should reset after time window', () => {
       vi.useFakeTimers();
 
       // Use up all requests
-      contactFormLimiter.check('test-ip');
-      contactFormLimiter.check('test-ip');
-      contactFormLimiter.check('test-ip');
+      contactFormLimiter.check(testIp);
+      contactFormLimiter.check(testIp);
+      contactFormLimiter.check(testIp);
 
       // Should be blocked
-      const blockedResult = contactFormLimiter.check('test-ip');
+      const blockedResult = contactFormLimiter.check(testIp);
       expect(blockedResult.allowed).toBe(false);
 
       // Advance time by 61 seconds (past the 60s window)
       vi.advanceTimersByTime(61000);
 
       // Should be allowed again
-      const allowedResult = contactFormLimiter.check('test-ip');
+      const allowedResult = contactFormLimiter.check(testIp);
       expect(allowedResult.allowed).toBe(true);
       expect(allowedResult.remaining).toBe(2);
 
