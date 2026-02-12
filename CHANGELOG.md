@@ -1,3 +1,20 @@
+# [1.17.0](https://github.com/akashungarala/portfolio/compare/v1.16.2...v1.17.0) (2026-02-12)
+
+
+### Bug Fixes
+
+* replace external Turnstile library with custom implementation ([b5a0e0f](https://github.com/akashungarala/portfolio/commit/b5a0e0f92804b01c488a35d2bc553d4c85d5257b))
+* resolve biome linting issues ([eba2797](https://github.com/akashungarala/portfolio/commit/eba2797153d9ef7a0549f87c94b51ec827824189))
+* resolve test issues and simplify mocks ([1f691a4](https://github.com/akashungarala/portfolio/commit/1f691a4d4aa3694103d36407fa678a8b9582587c))
+* update Turnstile props to match custom component interface ([2b0e3b6](https://github.com/akashungarala/portfolio/commit/2b0e3b6e8ce66140891e63d564675ea6995b1a0b))
+* use React.createElement in Turnstile mock ([8a254ab](https://github.com/akashungarala/portfolio/commit/8a254ab1b23f68bcff3f3da59694d9515180743e))
+
+
+### Features
+
+* add rate limiting to contact form API ([e2a8dc4](https://github.com/akashungarala/portfolio/commit/e2a8dc40b3569a16326427ba4d3cbdd017dd8365))
+* integrate Cloudflare Turnstile CAPTCHA ([7b9c807](https://github.com/akashungarala/portfolio/commit/7b9c8073c99e5d9b41428c9b70a58b16b4fc0afc))
+
 ## [1.16.2](https://github.com/akashungarala/portfolio/compare/v1.16.1...v1.16.2) (2026-02-12)
 
 
