@@ -2,8 +2,8 @@
 
 import { ArrowUpRight, CheckCircle, Github, Linkedin, Mail, Send, XCircle } from 'lucide-react';
 import { useState } from 'react';
-import { Turnstile } from '@/components/ui/Turnstile';
 import { FadeIn } from '@/components/motion';
+import { Turnstile } from '@/components/ui/Turnstile';
 import type { ProfileContent } from '@/lib/types';
 import { cn } from '@/lib/utils';
 

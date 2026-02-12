@@ -53,10 +53,7 @@ export async function POST(request: Request) {
     const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
     if (turnstileSecret) {
       if (!turnstileToken) {
-        return NextResponse.json(
-          { error: 'CAPTCHA verification required' },
-          { status: 400 },
-        );
+        return NextResponse.json({ error: 'CAPTCHA verification required' }, { status: 400 });
       }
 
       const turnstileResponse = await fetch(
