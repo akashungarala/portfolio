@@ -248,10 +248,8 @@ export function Contact({ content }: ContactProps) {
                       setErrorMessage('CAPTCHA verification failed. Please refresh and try again.');
                     }}
                     onExpire={() => setTurnstileToken(null)}
-                    options={{
-                      theme: 'auto',
-                      size: 'normal',
-                    }}
+                    theme="auto"
+                    size="normal"
                   />
                 </div>
               )}
