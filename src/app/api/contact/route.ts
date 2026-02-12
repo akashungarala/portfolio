@@ -7,6 +7,18 @@ interface ContactFormData {
   message: string;
 }
 
+// HTML escape function to prevent XSS attacks in email content
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (char) => map[char]);
+}
+
 export async function POST(request: Request) {
   try {
     // Check for API key at runtime
@@ -32,6 +44,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
+    // Sanitize inputs for HTML email to prevent XSS
+    const sanitizedName = escapeHtml(name);
+    const sanitizedEmail = escapeHtml(email);
+    const sanitizedMessage = escapeHtml(message);
+
     // Send email using Resend
     const { error } = await resend.emails.send({
       from: 'Portfolio Contact <contact@akashungarala.com>',
@@ -42,11 +59,11 @@ export async function POST(request: Request) {
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #da7756;">New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+          <p><strong>Name:</strong> ${sanitizedName}</p>
+          <p><strong>Email:</strong> <a href="mailto:${sanitizedEmail}">${sanitizedEmail}</a></p>
           <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 20px 0;" />
           <p><strong>Message:</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
+          <p style="white-space: pre-wrap;">${sanitizedMessage}</p>
         </div>
       `,
     });
