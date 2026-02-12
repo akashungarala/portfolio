@@ -1,10 +1,12 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { contactFormLimiter, getClientIp } from '@/lib/rate-limit';
 
 interface ContactFormData {
   name: string;
   email: string;
   message: string;
+  turnstileToken?: string;
 }
 
 // HTML escape function to prevent XSS attacks in email content
@@ -21,6 +23,65 @@ function escapeHtml(text: string): string {
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting check
+    const clientIp = getClientIp(request);
+    const rateLimitResult = contactFormLimiter.check(clientIp);
+
+    if (!rateLimitResult.allowed) {
+      const retryAfter = Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000);
+      return NextResponse.json(
+        {
+          error: 'Too many requests. Please try again later.',
+          retryAfter,
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': retryAfter.toString(),
+            'X-RateLimit-Limit': '3',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': new Date(rateLimitResult.resetTime).toISOString(),
+          },
+        },
+      );
+    }
+
+    const body: ContactFormData = await request.json();
+    const { name, email, message, turnstileToken } = body;
+
+    // Verify Turnstile token if configured
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    if (turnstileSecret) {
+      if (!turnstileToken) {
+        return NextResponse.json(
+          { error: 'CAPTCHA verification required' },
+          { status: 400 },
+        );
+      }
+
+      const turnstileResponse = await fetch(
+        'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            secret: turnstileSecret,
+            response: turnstileToken,
+            remoteip: clientIp,
+          }),
+        },
+      );
+
+      const turnstileResult = await turnstileResponse.json();
+
+      if (!turnstileResult.success) {
+        return NextResponse.json(
+          { error: 'CAPTCHA verification failed. Please try again.' },
+          { status: 400 },
+        );
+      }
+    }
+
     // Check for API key at runtime
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
@@ -29,9 +90,6 @@ export async function POST(request: Request) {
     }
 
     const resend = new Resend(apiKey);
-
-    const body: ContactFormData = await request.json();
-    const { name, email, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -73,7 +131,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json(
+      { success: true },
+      {
+        headers: {
+          'X-RateLimit-Limit': '3',
+          'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+          'X-RateLimit-Reset': new Date(rateLimitResult.resetTime).toISOString(),
+        },
+      },
+    );
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
