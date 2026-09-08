@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/akashungarala/portfolio/compare/v1.18.0...v1.18.1) (2026-09-08)
+
+
+### Bug Fixes
+
+* point the api rewrite at a single-label hostname ([4c8bc4d](https://github.com/akashungarala/portfolio/commit/4c8bc4dd0ca66870d40ba4d79c130e51c71ad3cd))
+
 # [1.18.0](https://github.com/akashungarala/portfolio/compare/v1.17.0...v1.18.0) (2026-09-08)
 
 
