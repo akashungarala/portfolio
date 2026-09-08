@@ -8,7 +8,10 @@ const FOOD_DIARY_ORIGIN = process.env.FOOD_DIARY_ORIGIN ?? 'https://akash-food-d
 // runs on a k3s cluster reached through Cloudflare. Both overridable so a
 // preview deployment can point somewhere other than production.
 const CMC_WEB_ORIGIN = process.env.CMC_WEB_ORIGIN ?? 'https://car-maintenance-companion.vercel.app';
-const CMC_API_ORIGIN = process.env.CMC_API_ORIGIN ?? 'https://api.garage.akashungarala.com';
+// Single label below the apex, deliberately: Cloudflare's free Universal SSL
+// covers only akashungarala.com and *.akashungarala.com, and a wildcard matches
+// one label — api.garage.akashungarala.com failed the TLS handshake outright.
+const CMC_API_ORIGIN = process.env.CMC_API_ORIGIN ?? 'https://garage-api.akashungarala.com';
 
 const nextConfig: NextConfig = {
   // Enable standalone output for Docker
