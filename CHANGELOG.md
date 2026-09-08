@@ -1,3 +1,12 @@
+# [1.18.0](https://github.com/akashungarala/portfolio/compare/v1.17.0...v1.18.0) (2026-09-08)
+
+
+### Features
+
+* proxy /apps/car-maintenance-companion to its app and api ([1cad3fc](https://github.com/akashungarala/portfolio/commit/1cad3fc55bf93d27a4084180b9c097cc55540c22))
+* proxy /food-diary to the food-diary app ([5037a8f](https://github.com/akashungarala/portfolio/commit/5037a8ff0739b9c4533847ea347d2b80b595ec56))
+* proxy /food-diary to the food-diary app ([d44b99b](https://github.com/akashungarala/portfolio/commit/d44b99b776c27421c4efc42e49cde4144833ee59))
+
 # [1.17.0](https://github.com/akashungarala/portfolio/compare/v1.16.2...v1.17.0) (2026-02-12)
 
 
