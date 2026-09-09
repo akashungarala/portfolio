@@ -4,10 +4,16 @@ import type { NextConfig } from 'next';
 // deployment can be pointed at somewhere other than production.
 const FOOD_DIARY_ORIGIN = process.env.FOOD_DIARY_ORIGIN ?? 'https://akash-food-diary.vercel.app';
 
-// The car-maintenance-companion frontend is a separate Vercel project; its API
-// runs on a k3s cluster reached through Cloudflare. Both overridable so a
-// preview deployment can point somewhere other than production.
-const CMC_WEB_ORIGIN = process.env.CMC_WEB_ORIGIN ?? 'https://car-maintenance-companion.vercel.app';
+// The car-maintenance-companion frontend and API both run on a k3s cluster
+// reached through Cloudflare. Both overridable so a preview deployment can
+// point somewhere other than production.
+//
+// The frontend moved off Vercel on 2026-09-10. Vercel Hobby rate-limits
+// production deployments and does it silently -- previews from pull requests
+// keep passing their checks while the production alias stays pinned to
+// whatever shipped before the limit was hit, so this origin served a build two
+// epics old for a day with nothing reporting a problem.
+const CMC_WEB_ORIGIN = process.env.CMC_WEB_ORIGIN ?? 'https://garage.akashungarala.com';
 // Single label below the apex, deliberately: Cloudflare's free Universal SSL
 // covers only akashungarala.com and *.akashungarala.com, and a wildcard matches
 // one label — api.garage.akashungarala.com failed the TLS handshake outright.
