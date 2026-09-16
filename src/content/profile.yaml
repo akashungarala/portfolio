@@ -108,7 +108,7 @@ workExperience:
     endDate: Present
     logo: /assets/logos/marathon.jpeg
     website: https://www.marathonpetroleum.com
-    projectId: ngmm
+    projectIds: [ngmm, mara-terra]
     description: |
       Built two enterprise AI systems: NGMM, a multi-agent assistant grounding
       LLM reasoning in refinery maintenance data, and Mara-Terra, an MCP server
@@ -145,7 +145,7 @@ workExperience:
     endDate: Dec 2025
     logo: /assets/logos/fox.jpeg
     website: https://www.foxcorporation.com
-    projectId: caption-exchange
+    projectIds: [caption-exchange]
     description: |
       Architected CaptionExchange, a real-time AI/human captioning platform
       serving 8M+ concurrent viewers with sub-5-second failover for live
@@ -173,7 +173,7 @@ workExperience:
     endDate: Jul 2024
     logo: /assets/logos/fidelity.jpeg
     website: https://www.fidelity.com
-    projectId: slo-tracker
+    projectIds: [slo-tracker]
     description: |
       Designed centralized SLO tracking platform processing metrics from 200+
       services, reducing Mean Time to Detection by 40% across 50+ engineering teams.
@@ -199,7 +199,7 @@ workExperience:
     endDate: Aug 2023
     logo: /assets/logos/niantic.jpeg
     website: https://nianticlabs.com
-    projectId: ad-analytics
+    projectIds: [ad-analytics]
     description: |
       Owned AdTech backend platform for Pokemon GO serving 80M+ monthly users
       with 99.99% uptime, processing 2B+ daily events for location-based ads.
@@ -225,7 +225,7 @@ workExperience:
     endDate: Nov 2021
     logo: /assets/logos/adara.jpeg
     website: https://adara.com
-    projectId: identity-resolution
+    projectIds: [identity-resolution]
     description: |
       Re-architected identity resolution services scaling 4x (5K to 20K+ writes/sec)
       while reducing infrastructure costs by 30%.
@@ -306,6 +306,7 @@ education:
 workProjects:
   - id: ngmm
     title: NGMM
+    fullName: Next Generation Maintenance Management
     company: Marathon
     logo: /assets/logos/marathon.jpeg
     website: https://www.marathonpetroleum.com
