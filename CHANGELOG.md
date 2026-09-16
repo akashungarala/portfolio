@@ -1,3 +1,17 @@
+# [1.19.0](https://github.com/akashungarala/portfolio/compare/v1.18.1...v1.19.0) (2026-09-16)
+
+
+### Bug Fixes
+
+* **docker:** copy pnpm-workspace.yaml and pin pnpm to 10 ([2da6138](https://github.com/akashungarala/portfolio/commit/2da61383a9cf7942f01c8406d24cf0d96444be5a))
+* **resume:** show "resume" as the pdf tab title instead of "faang resume" ([a0842f1](https://github.com/akashungarala/portfolio/commit/a0842f1b5cad90d60d0770af6f3dbbf36ba70f86))
+
+
+### Features
+
+* **content:** add marathon logo, ai platform title, and mara-terra to featured ([1c77760](https://github.com/akashungarala/portfolio/commit/1c77760d7be62972a495ad9ecad78fa02df280b6)), closes [#CCCCCC](https://github.com/akashungarala/portfolio/issues/CCCCCC)
+* **content:** add marathon role with ngmm and mara-terra projects ([0e3df0f](https://github.com/akashungarala/portfolio/commit/0e3df0fa21c0b6e0eff72c96d8e8af8f2b9296e4))
+
 ## [1.18.1](https://github.com/akashungarala/portfolio/compare/v1.18.0...v1.18.1) (2026-09-08)
 
 
