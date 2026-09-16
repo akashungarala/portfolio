@@ -42,7 +42,8 @@ export interface WorkExperience {
   highlights: string[];
   logo?: string;
   website?: string;
-  projectId?: string;
+  /** Projects to link from this role. A role may span more than one. */
+  projectIds?: string[];
 }
 
 export interface Education {
@@ -67,6 +68,8 @@ export interface ProjectLinks {
 export interface WorkProject {
   id: string;
   title: string;
+  /** Expanded form of an abbreviated title, e.g. what an acronym stands for. */
+  fullName?: string;
   company?: string;
   logo?: string;
   website?: string;

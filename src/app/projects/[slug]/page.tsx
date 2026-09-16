@@ -62,8 +62,10 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     };
   }
 
+  const fullName = 'fullName' in project ? project.fullName : undefined;
+
   return {
-    title: `${project.title} | Akash Ungarala`,
+    title: `${project.title}${fullName ? ` (${fullName})` : ''} | Akash Ungarala`,
     description: project.description,
   };
 }
@@ -124,7 +126,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             )}
           </div>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">{project.title}</h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-2">{project.title}</h1>
+
+          {'fullName' in project && project.fullName && (
+            <p className="text-lg font-medium text-muted-foreground/80 mb-4">{project.fullName}</p>
+          )}
 
           <p className="text-xl text-muted-foreground leading-relaxed">{project.description}</p>
         </div>
