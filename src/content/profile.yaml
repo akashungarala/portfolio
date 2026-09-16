@@ -23,16 +23,18 @@ social:
 # Hero Section
 # -----------------------------------------------------------------------------
 headline:
-  badge: Open to senior backend roles
+  badge: Open to senior & staff engineering roles
   tagline: |
-    I build resilient, high-scale backend systems. 9+ years architecting 
-    real-time platforms processing billions of events across broadcast 
-    media, fintech, gaming, and ad tech.
+    I build resilient, high-scale backend systems — and the production AI
+    systems that run on them. 10+ years architecting real-time platforms
+    processing billions of events across broadcast media, fintech, gaming,
+    ad tech, and energy.
   highlights:
     - Senior Software Engineer
     - resilient
     - high-scale
-    - 9+ years
+    - production AI
+    - 10+ years
     - real-time
     - billions of events
 
@@ -42,7 +44,7 @@ headline:
 about:
   heading: Systems that scale when it matters most
   intro: |
-    9+ years building backend systems where failure isn't an option. Real-time
+    10+ years building backend systems where failure isn't an option. Real-time
     broadcast captioning for 8M+ viewers. Ad platforms processing 2B+ daily events.
     Observability tools trusted by 50+ engineering teams. I design systems where
     uptime and throughput are non-negotiable.
@@ -52,9 +54,11 @@ about:
     services teams can maintain and scale. I own problems end-to-end — architecture,
     deployment, and on-call.
   currentFocus: |
-    Recently built CaptionExchange at Fox — a distributed microservices platform
-    with sub-5-second failover for live broadcasts. Drawn to real-time data,
-    event-driven architectures, and systems that work the first time, every time.
+    Most recently built NGMM at Marathon Petroleum — a multi-agent AI assistant
+    that grounds LLM reasoning in refinery maintenance data, with the Azure AD
+    auth, session persistence, and OpenTelemetry tracing it takes to survive
+    production. Same discipline as the broadcast and fintech work, pointed at a
+    newer problem.
   coreValues:
     - failure isn't an option
     - 8M+ viewers
@@ -63,7 +67,8 @@ about:
     - Python
     - TypeScript
     - end-to-end
-    - sub-5-second failover
+    - multi-agent AI assistant
+    - OpenTelemetry
 
 # Core Expertise
 expertise:
@@ -72,9 +77,9 @@ expertise:
   - icon: zap
     label: Real-Time & Event-Driven Architecture
   - icon: database
-    label: High-Throughput Data Pipelines
+    label: AI Agent Orchestration & Retrieval
   - icon: cloud
-    label: Cloud-Native Infrastructure (AWS/GCP)
+    label: Cloud-Native Infrastructure (Azure/AWS/GCP)
 
 # Tech Stack
 technologies:
@@ -82,17 +87,56 @@ technologies:
     items: [Python (FastAPI | Flask | Django), TypeScript/Node.js (Express | Next), Async (Celery | asyncio)]
   - category: Distributed Systems
     items: [Microservices, Event-Driven, Message Queues (RabbitMQ | Kafka | Pub/Sub), Protocol Buffers, gRPC]
-  - category: Cloud & Infrastucture
-    items: [AWS (Lambda | API Gateway | RDS | DynamoDB | S3 | SNS | CloudWatch), GCP (GKE | Spanner | Pub/Sub | BigQuery | Firestore)]
+  - category: Cloud & Infrastructure
+    items: [Azure (Entra ID | Cosmos DB | AI Search | Monitor | AI Foundry | Managed Identity | App Service), AWS (Lambda | API Gateway | RDS | DynamoDB | S3 | SNS | CloudWatch), GCP (GKE | Spanner | Pub/Sub | BigQuery | Firestore)]
   - category: Platform & DevOps
     items: [Docker, Kubernetes, Helm, Terraform, CI/CD (GitHub Actions | GitLab CI | Spinnaker), System Design]
+  - category: AI & Agents
+    items: [Multi-agent orchestration, Semantic Kernel, MCP / FastMCP, LLM grounding & retrieval, Chainlit, Agent tracing]
   - category: Data & Observability
-    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Airflow, OpenTelemetry, Prometheus, Grafana, SLOs/SLIs]
+    items: [PostgreSQL, MongoDB, Redis, Cloud Spanner, Cosmos DB, Airflow, OpenTelemetry, Prometheus, Grafana, SLOs/SLIs]
 
 # -----------------------------------------------------------------------------
 # Work Experience
 # -----------------------------------------------------------------------------
 workExperience:
+  - id: marathon
+    company: Marathon Petroleum Corporation (Contract)
+    title: Senior Software Engineer, AI Platform
+    location: Remote
+    startDate: Feb 2026
+    endDate: Present
+    logo: /assets/logos/marathon.jpeg
+    website: https://www.marathonpetroleum.com
+    projectId: ngmm
+    description: |
+      Built two enterprise AI systems: NGMM, a multi-agent assistant grounding
+      LLM reasoning in refinery maintenance data, and Mara-Terra, an MCP server
+      exposing internal infrastructure knowledge to AI clients.
+    highlights:
+      - |
+        Architected multi-agent orchestration in Python/FastAPI with Semantic
+        Kernel — SQL retrieval, planner, graph, and notification agents under a
+        coordinating manager — reducing manual investigation time by 30-40% and
+        analyst research effort by 50%
+      - |
+        Engineered Cosmos DB session persistence with turn reconstruction and
+        tool-call rehydration, improving continuity by 90% across long-running
+        investigations; secured access with Azure AD, JWT validation, and RBAC
+      - |
+        Instrumented agent execution end-to-end with OpenTelemetry and Azure
+        Monitor, adding span propagation and a usage/trace dashboard that cut
+        issue diagnosis time by 35%
+      - |
+        Built Mara-Terra from scratch — an MCP server in Python and FastMCP
+        exposing Terraform and pipeline module search to AI clients over Azure
+        AI Search, with read-only, idempotent tool contracts and managed-identity
+        auth
+      - |
+        Hardened both platforms with CI quality gates, dependency pinning, and
+        lint enforcement, reducing regressions by 40% and doubling release
+        velocity
+
   - id: fox
     company: Fox Corporation (Contract)
     title: Senior Software Engineer
@@ -260,6 +304,71 @@ education:
 # Projects
 # -----------------------------------------------------------------------------
 workProjects:
+  - id: ngmm
+    title: NGMM
+    company: Marathon
+    logo: /assets/logos/marathon.jpeg
+    website: https://www.marathonpetroleum.com
+    description: |
+      AI-powered refinery maintenance assistant combining multi-agent
+      orchestration, SQL retrieval, and work-order planning for operational
+      decision support.
+    longDescription: |
+      Challenge: Refinery maintenance engineers spent hours manually reconciling
+      work orders, equipment records, and operational notifications before they
+      could diagnose an issue. Generic LLM tooling was unusable here — answers
+      had to be grounded in real maintenance data, not generated.
+
+      Solution: Built a multi-agent system on Python/FastAPI and Semantic Kernel
+      where specialized agents — SQL retrieval, planner, graph, and notification
+      — work under a coordinating manager. SQL retrieval and validation layers
+      narrow to relevant operational data before the model reasons over it.
+      Cosmos DB persistence with turn reconstruction and tool-call rehydration
+      keeps long investigations coherent across sessions.
+
+      Impact: Cut manual investigation time by 30-40% and analyst research effort
+      by 50%. OpenTelemetry and Azure Monitor instrumentation reduced issue
+      diagnosis time by 35%, and Azure AD with RBAC made the platform safe for
+      enterprise operational use.
+    techStack: [Python, FastAPI, Semantic Kernel, Azure AD, Cosmos DB, OpenTelemetry, Azure Monitor, Chainlit, TypeScript]
+    featured: true
+    metrics:
+      - 30-40% reduction in manual investigation time
+      - 50% reduction in analyst research effort
+      - 90% improvement in session continuity
+
+  - id: mara-terra
+    title: Mara-Terra
+    company: Marathon
+    logo: /assets/logos/marathon.jpeg
+    website: https://www.marathonpetroleum.com
+    description: |
+      MCP server exposing internal Terraform and pipeline module knowledge to
+      AI assistants through Azure AI Search.
+    longDescription: |
+      Challenge: Engineers had hundreds of internal Terraform and pipeline
+      modules spread across sprawling repos and documentation. Finding the right
+      module meant asking someone who already knew — tribal knowledge as a
+      dependency.
+
+      Solution: Built an MCP (Model Context Protocol) server from scratch in
+      Python and FastMCP, backed by Azure AI Search indices for Terraform
+      modules, pipeline modules, and documentation. Domain-specific providers
+      expose read-only, idempotent tool contracts over both stdio and HTTP, so
+      any MCP-compatible AI client can query internal infrastructure knowledge
+      directly. Dual-credential identity — Azure CLI locally, managed identity
+      in cloud — with OData sanitization, bounded results, and retry logic.
+
+      Impact: Turned undocumented infrastructure knowledge into a searchable
+      surface that AI assistants can reach, removing the manual hunt through
+      module repos and the dependency on tribal knowledge.
+    techStack: [Python, FastMCP, Azure AI Search, Azure Identity, MCP, Managed Identity, Azure App Service]
+    featured: true
+    metrics:
+      - 7 read-only tools exposed to any MCP-compatible AI client
+      - Hundreds of Terraform and pipeline modules made searchable
+      - Built and shipped from scratch in 2 months
+
   - id: caption-exchange
     title: CaptionExchange
     company: Fox
