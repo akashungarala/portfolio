@@ -2,11 +2,13 @@
 FROM node:22-alpine AS deps
 WORKDIR /app
 
-# Enable pnpm
-RUN corepack enable pnpm
+# Enable pnpm (pinned to match the CI workflow)
+RUN corepack enable pnpm && corepack prepare pnpm@10 --activate
 
 # Copy package files
-COPY package.json pnpm-lock.yaml ./
+# pnpm-workspace.yaml carries ignoredBuiltDependencies; without it pnpm fails
+# with ERR_PNPM_IGNORED_BUILDS for sharp and esbuild.
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
@@ -15,8 +17,8 @@ RUN pnpm install --frozen-lockfile
 FROM node:22-alpine AS builder
 WORKDIR /app
 
-# Enable pnpm
-RUN corepack enable pnpm
+# Enable pnpm (pinned to match the CI workflow)
+RUN corepack enable pnpm && corepack prepare pnpm@10 --activate
 
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
