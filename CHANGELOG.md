@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/akashungarala/portfolio/compare/v1.19.0...v1.20.0) (2026-09-16)
+
+
+### Features
+
+* **projects:** link a role to multiple projects and show expanded names ([fd8a42d](https://github.com/akashungarala/portfolio/commit/fd8a42dd154303124d1d5d84434537c1cd3f9090))
+
 # [1.19.0](https://github.com/akashungarala/portfolio/compare/v1.18.1...v1.19.0) (2026-09-16)
 
 
