@@ -101,33 +101,41 @@ technologies:
 # -----------------------------------------------------------------------------
 workExperience:
   - id: marathon
-    company: Marathon Petroleum (Contract)
-    title: Senior Software Engineer
+    company: Marathon Petroleum Corporation (Contract)
+    title: Senior Software Engineer, AI Platform
     location: Remote
     startDate: Feb 2026
     endDate: Present
+    logo: /assets/logos/marathon.jpeg
     website: https://www.marathonpetroleum.com
     projectId: ngmm
     description: |
-      Built NGMM, an enterprise AI assistant for refinery maintenance that
-      grounds LLM reasoning in work-order and equipment data for maintenance
-      engineers.
+      Built two enterprise AI systems: NGMM, a multi-agent assistant grounding
+      LLM reasoning in refinery maintenance data, and Mara-Terra, an MCP server
+      exposing internal infrastructure knowledge to AI clients.
     highlights:
       - |
         Architected multi-agent orchestration in Python/FastAPI with Semantic
         Kernel — SQL retrieval, planner, graph, and notification agents under a
-        coordinating manager — reducing manual investigation time by 30-40%
+        coordinating manager — reducing manual investigation time by 30-40% and
+        analyst research effort by 50%
       - |
         Engineered Cosmos DB session persistence with turn reconstruction and
         tool-call rehydration, improving continuity by 90% across long-running
-        investigations
+        investigations; secured access with Azure AD, JWT validation, and RBAC
       - |
-        Instrumented agent execution with OpenTelemetry and Azure Monitor,
-        cutting issue diagnosis time by 35%; secured access with Azure AD, JWT
-        validation, and RBAC
+        Instrumented agent execution end-to-end with OpenTelemetry and Azure
+        Monitor, adding span propagation and a usage/trace dashboard that cut
+        issue diagnosis time by 35%
       - |
-        Built Mara-Terra from scratch, an MCP server exposing Terraform and
-        pipeline module search to AI clients via Azure AI Search
+        Built Mara-Terra from scratch — an MCP server in Python and FastMCP
+        exposing Terraform and pipeline module search to AI clients over Azure
+        AI Search, with read-only, idempotent tool contracts and managed-identity
+        auth
+      - |
+        Hardened both platforms with CI quality gates, dependency pinning, and
+        lint enforcement, reducing regressions by 40% and doubling release
+        velocity
 
   - id: fox
     company: Fox Corporation (Contract)
@@ -299,6 +307,7 @@ workProjects:
   - id: ngmm
     title: NGMM
     company: Marathon
+    logo: /assets/logos/marathon.jpeg
     website: https://www.marathonpetroleum.com
     description: |
       AI-powered refinery maintenance assistant combining multi-agent
@@ -331,6 +340,7 @@ workProjects:
   - id: mara-terra
     title: Mara-Terra
     company: Marathon
+    logo: /assets/logos/marathon.jpeg
     website: https://www.marathonpetroleum.com
     description: |
       MCP server exposing internal Terraform and pipeline module knowledge to
@@ -353,7 +363,7 @@ workProjects:
       surface that AI assistants can reach, removing the manual hunt through
       module repos and the dependency on tribal knowledge.
     techStack: [Python, FastMCP, Azure AI Search, Azure Identity, MCP, Managed Identity, Azure App Service]
-    featured: false
+    featured: true
     metrics:
       - 7 read-only tools exposed to any MCP-compatible AI client
       - Hundreds of Terraform and pipeline modules made searchable
